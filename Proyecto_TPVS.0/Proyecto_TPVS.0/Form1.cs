@@ -16,5 +16,18 @@ namespace Proyecto_TPVS._0
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pantallaCompleta();
+        }
+
+        public void pantallaCompleta()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
     }
 }
