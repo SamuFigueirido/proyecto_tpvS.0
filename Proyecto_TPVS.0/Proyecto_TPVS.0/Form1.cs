@@ -11,15 +11,15 @@ using DesktopControl;
 
 namespace Proyecto_TPVS._0
 {
-    public partial class Form1 : Form
+    public partial class FormIniciarSesion : Form
     {
         KunLibertad_DesktopControl desktopControl;
-        public Form1()
+        public FormIniciarSesion()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormIniciarSesion_Load(object sender, EventArgs e)
         {
             pantallaCompleta(this);
         }
@@ -35,7 +35,7 @@ namespace Proyecto_TPVS._0
             f.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormIniciarSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
             desktopControl.TaskBar(false);
         }

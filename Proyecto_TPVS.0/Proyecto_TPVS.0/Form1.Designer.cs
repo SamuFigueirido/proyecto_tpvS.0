@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_TPVS._0
 {
-    partial class Form1
+    partial class FormIniciarSesion
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,17 +30,18 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 342);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(1149, 555);
+            this.Name = "FormIniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TPVS.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIniciarSesion_FormClosing);
+            this.Load += new System.EventHandler(this.FormIniciarSesion_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormIniciarSesion_KeyUp);
             this.ResumeLayout(false);
 
         }
