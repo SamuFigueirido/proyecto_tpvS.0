@@ -120,5 +120,8 @@
   <ItemGroup>
     <None Include="Resources\icono.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apagar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

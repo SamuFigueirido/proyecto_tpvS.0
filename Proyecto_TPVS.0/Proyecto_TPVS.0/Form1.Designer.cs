@@ -142,11 +142,12 @@
             // 
             this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.exit;
-            this.lblSalir.Location = new System.Drawing.Point(476, 45);
+            this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
+            this.lblSalir.Location = new System.Drawing.Point(469, 40);
             this.lblSalir.Name = "lblSalir";
-            this.lblSalir.Size = new System.Drawing.Size(59, 57);
+            this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
+            this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
             // 
             // FormIniciarSesion
             // 

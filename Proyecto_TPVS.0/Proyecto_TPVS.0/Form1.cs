@@ -37,7 +37,14 @@ namespace Proyecto_TPVS._0
 
         private void FormIniciarSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            desktopControl.TaskBar(false);
+            if (MessageBox.Show("¿Seguro que deseas salir?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                desktopControl.TaskBar(false);
+            }
         }
 
         private void FormIniciarSesion_KeyUp(object sender, KeyEventArgs e)
@@ -51,6 +58,11 @@ namespace Proyecto_TPVS._0
         private void FormIniciarSesion_Click(object sender, EventArgs e)
         {
             desktopControl.TaskBar(true);
+        }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
