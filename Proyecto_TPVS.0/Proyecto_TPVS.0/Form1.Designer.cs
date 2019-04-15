@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIniciarSesion));
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblIniciarSesion = new System.Windows.Forms.Label();
             this.lblRegistrarse = new System.Windows.Forms.Label();
-            this.lblSalir = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSalir = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,16 +108,6 @@
             this.lblRegistrarse.Text = "Registrarse";
             this.lblRegistrarse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSalir
-            // 
-            this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.exit;
-            this.lblSalir.Location = new System.Drawing.Point(476, 45);
-            this.lblSalir.Name = "lblSalir";
-            this.lblSalir.Size = new System.Drawing.Size(59, 57);
-            this.lblSalir.TabIndex = 5;
-            // 
             // checkBox1
             // 
             this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -147,6 +138,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iniciar sesion";
             // 
+            // lblSalir
+            // 
+            this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.exit;
+            this.lblSalir.Location = new System.Drawing.Point(476, 45);
+            this.lblSalir.Name = "lblSalir";
+            this.lblSalir.Size = new System.Drawing.Size(59, 57);
+            this.lblSalir.TabIndex = 5;
+            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +156,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblSalir);
             this.Controls.Add(this.lblRegistrarse);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TPVS.0";
