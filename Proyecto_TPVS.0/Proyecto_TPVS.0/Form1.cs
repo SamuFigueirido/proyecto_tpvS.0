@@ -39,5 +39,18 @@ namespace Proyecto_TPVS._0
         {
             desktopControl.TaskBar(false);
         }
+
+        private void FormIniciarSesion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
+            {
+                desktopControl.TaskBar(false);
+            }
+        }
+
+        private void FormIniciarSesion_Click(object sender, EventArgs e)
+        {
+            desktopControl.TaskBar(true);
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIniciarSesion_FormClosing);
             this.Load += new System.EventHandler(this.FormIniciarSesion_Load);
+            this.Click += new System.EventHandler(this.FormIniciarSesion_Click);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormIniciarSesion_KeyUp);
             this.ResumeLayout(false);
 
