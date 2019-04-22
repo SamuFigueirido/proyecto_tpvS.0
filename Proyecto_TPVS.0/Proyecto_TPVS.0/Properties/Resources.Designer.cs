@@ -91,12 +91,13 @@ namespace Proyecto_TPVS._0.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Empleados]
-        ///(
-        ///	[Id] INT NOT NULL PRIMARY KEY, 
-        ///    [Nombre] NCHAR(20) NOT NULL, 
-        ///    [Contraseña] NCHAR(20) NOT NULL 
-        ///)
+        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Empleados] (
+        ///    [Id]         INT        NOT NULL,
+        ///    [Nombre]     NCHAR (20) NOT NULL,
+        ///    [Contraseña] NCHAR (20) NOT NULL,
+        ///    PRIMARY KEY CLUSTERED ([Id] ASC)
+        ///);
+        ///
         ///.
         /// </summary>
         internal static string empleados {
@@ -126,14 +127,15 @@ namespace Proyecto_TPVS._0.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Productos]
-        ///(
-        ///	[Id] INT NOT NULL PRIMARY KEY, 
-        ///    [Nombre] NCHAR(20) NULL, 
-        ///    [Cantidad] FLOAT NOT NULL DEFAULT 0.0, 
-        ///    [Precio] MONEY NOT NULL DEFAULT 0.0, 
-        ///    [Proveedor] NCHAR(20) NULL
-        ///)
+        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Productos] (
+        ///    [Id]        INT        NOT NULL,
+        ///    [Nombre]    NCHAR (20) NULL,
+        ///    [Cantidad]  FLOAT (53) DEFAULT ((0.0)) NOT NULL,
+        ///    [Precio]    MONEY      DEFAULT ((0.0)) NOT NULL,
+        ///    [Proveedor] NCHAR (20) NULL,
+        ///    PRIMARY KEY CLUSTERED ([Id] ASC)
+        ///);
+        ///
         ///.
         /// </summary>
         internal static string productos {

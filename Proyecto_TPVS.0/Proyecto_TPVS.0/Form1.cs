@@ -8,19 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopControl;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Proyecto_TPVS._0
 {
     public partial class FormIniciarSesion : Form
     {
+        SqlConnection connection;
+        string connectionString;
         KunLibertad_DesktopControl desktopControl;
         public FormIniciarSesion()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["Proyecto_TPVS._0.Properties.Settings.DataBaseConnectionString"].ConnectionString;
         }
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(connectionString);
+            connection.Open();
             pantallaCompleta(this);
         }
 
@@ -43,6 +50,10 @@ namespace Proyecto_TPVS._0
             }
             else
             {
+                if(connection != null)
+                {
+                    connection.Close();
+                }
                 desktopControl.TaskBar(false);
             }
         }

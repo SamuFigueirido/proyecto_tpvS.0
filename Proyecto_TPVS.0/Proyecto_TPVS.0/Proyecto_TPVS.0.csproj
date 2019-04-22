@@ -144,12 +144,6 @@
     <None Include="Resources\apagar_seleccionado.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\empleados.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\productos.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DataBase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -157,6 +151,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\productos.sql" />
+    <None Include="Resources\empleados.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
