@@ -148,6 +148,8 @@
             this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
             this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
+            this.lblSalir.MouseEnter += new System.EventHandler(this.lblSalir_MouseEnter);
+            this.lblSalir.MouseLeave += new System.EventHandler(this.lblSalir_MouseLeave);
             // 
             // FormIniciarSesion
             // 
