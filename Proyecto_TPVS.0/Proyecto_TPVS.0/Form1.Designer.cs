@@ -94,6 +94,8 @@
             this.lblIniciarSesion.TabIndex = 3;
             this.lblIniciarSesion.Text = "Iniciar sesión";
             this.lblIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIniciarSesion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblIniciarSesion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
             // lblRegistrarse
             // 
@@ -107,6 +109,8 @@
             this.lblRegistrarse.TabIndex = 4;
             this.lblRegistrarse.Text = "Registrarse";
             this.lblRegistrarse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistrarse.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblRegistrarse.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
             // checkBox1
             // 

@@ -74,5 +74,17 @@ namespace Proyecto_TPVS._0
         {
             lblSalir.Image = Properties.Resources.apagar;
         }
+
+        private void lbl_MouseLeave(object sender, EventArgs e)
+        {
+            ((Label)sender).BackColor = Color.Empty;
+            ((Label)sender).ForeColor = Color.Black;
+        }
+
+        private void lbl_MouseEnter(object sender, EventArgs e)
+        {
+            ((Label)sender).BackColor = Color.Black;
+            ((Label)sender).ForeColor = Color.White;
+        }
     }
 }
