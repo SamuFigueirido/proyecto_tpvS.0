@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DesktopControl;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace Proyecto_TPVS._0
 {
@@ -96,6 +97,11 @@ namespace Proyecto_TPVS._0
         {
             ((Label)sender).BackColor = Color.Black;
             ((Label)sender).ForeColor = Color.White;
+        }
+
+        private void lblRegistrarse_Click(object sender, EventArgs e)
+        {
+            panelRegistrarUsuario.Visible = true;
         }
     }
 }
