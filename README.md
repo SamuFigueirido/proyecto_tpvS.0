@@ -5,3 +5,5 @@ Proyecto de fin de ciclo de Desarrollo de Aplicaciones Multiplataforma. Aplicaci
 - Base de datos y tablas creadas y añadidas.
 - Conexión a la base de datos.
 - Panel para registrar usuario añadido.
+- Botón "Atrás" en cada panel para volver al panel anterior.
+- Panel "Menú", con todas las opciones, añadido.
