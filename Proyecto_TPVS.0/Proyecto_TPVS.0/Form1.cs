@@ -103,5 +103,16 @@ namespace Proyecto_TPVS._0
         {
             panelRegistrarUsuario.Visible = true;
         }
+
+        private void lblIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
+        {
+            panelVisible.Visible = true;
+            panelNoVisible.Visible = false;
+        }
     }
 }
