@@ -80,12 +80,12 @@ namespace Proyecto_TPVS._0
 
         private void lblSalir_MouseEnter(object sender, EventArgs e)
         {
-            lblSalir.Image = Properties.Resources.apagar_seleccionado;
+            ((Label)sender).Image = Properties.Resources.apagar_seleccionado;
         }
 
         private void lblSalir_MouseLeave(object sender, EventArgs e)
         {
-            lblSalir.Image = Properties.Resources.apagar;
+            ((Label)sender).Image = Properties.Resources.apagar;
         }
 
         private void lbl_MouseLeave(object sender, EventArgs e)
