@@ -27,6 +27,7 @@ namespace Proyecto_TPVS._0
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)
         {
+            ajustarPaneles();
             connection = new SqlConnection(connectionString);
             connection.Open();
             pantallaCompleta(this);
@@ -101,18 +102,50 @@ namespace Proyecto_TPVS._0
 
         private void lblRegistrarse_Click(object sender, EventArgs e)
         {
-            panelRegistrarUsuario.Visible = true;
+            cambioDePanel(panelRegistrarUsuario, panelIniciarSesion);
         }
 
         private void lblIniciarSesion_Click(object sender, EventArgs e)
         {
-
+            cambioDePanel(panelMenu, panelIniciarSesion);
         }
 
         private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
         {
             panelVisible.Visible = true;
             panelNoVisible.Visible = false;
+        }
+
+        private void ajustarPaneles()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Panel)
+                {
+                    control.Dock = DockStyle.Fill;
+                }
+            }
+        }
+
+        private void labelAtras_MouseEnter(object sender, EventArgs e)
+        {
+            lblAtras.Image = Properties.Resources.atras_seleccionado;
+        }
+
+        private void labelAtras_MouseLeave(object sender, EventArgs e)
+        {
+            lblAtras.Image = Properties.Resources.atras;
+        }
+
+        private void lblAtras_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelIniciarSesion, panelRegistrarUsuario);
+        }
+
+        private void lblRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+            //TODO comprobación si no existe un usuario con el mismo nombre
+            cambioDePanel(panelMenu, panelRegistrarUsuario);
         }
     }
 }

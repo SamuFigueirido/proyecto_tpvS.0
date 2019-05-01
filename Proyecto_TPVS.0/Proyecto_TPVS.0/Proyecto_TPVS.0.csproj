@@ -151,6 +151,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\atras.png" />
+    <None Include="Resources\atras_seleccionado.png" />
     <None Include="Resources\productos.sql" />
     <None Include="Resources\empleados.sql" />
   </ItemGroup>

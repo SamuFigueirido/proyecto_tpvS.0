@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblSalir = new System.Windows.Forms.Label();
             this.panelRegistrarUsuario = new System.Windows.Forms.Panel();
+            this.lblAtras = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblRegistrarUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioRegistro = new System.Windows.Forms.Label();
@@ -47,9 +48,14 @@
             this.txtContrseñaRegistro = new System.Windows.Forms.TextBox();
             this.lblConfirmarContraseña = new System.Windows.Forms.Label();
             this.txtUsuarioRegistro = new System.Windows.Forms.TextBox();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelIniciarSesion = new System.Windows.Forms.Panel();
+            this.lblSalirMenu = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            this.panelIniciarSesion.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -115,7 +121,7 @@
             this.lblRegistrarse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrarse.Location = new System.Drawing.Point(289, 53);
+            this.lblRegistrarse.Location = new System.Drawing.Point(-71, 30);
             this.lblRegistrarse.Name = "lblRegistrarse";
             this.lblRegistrarse.Size = new System.Drawing.Size(139, 46);
             this.lblRegistrarse.TabIndex = 4;
@@ -148,7 +154,7 @@
             this.groupBox1.Controls.Add(this.lblContraseña);
             this.groupBox1.Controls.Add(this.lblIniciarSesion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(116, 134);
+            this.groupBox1.Location = new System.Drawing.Point(-80, -70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 322);
             this.groupBox1.TabIndex = 7;
@@ -160,7 +166,7 @@
             this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalir.Location = new System.Drawing.Point(469, 40);
+            this.lblSalir.Location = new System.Drawing.Point(88, 19);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
@@ -170,14 +176,26 @@
             // 
             // panelRegistrarUsuario
             // 
+            this.panelRegistrarUsuario.Controls.Add(this.lblAtras);
             this.panelRegistrarUsuario.Controls.Add(this.groupBox2);
-            this.panelRegistrarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegistrarUsuario.Location = new System.Drawing.Point(0, 0);
+            this.panelRegistrarUsuario.Location = new System.Drawing.Point(23, 154);
             this.panelRegistrarUsuario.Name = "panelRegistrarUsuario";
-            this.panelRegistrarUsuario.Size = new System.Drawing.Size(600, 555);
+            this.panelRegistrarUsuario.Size = new System.Drawing.Size(149, 129);
             this.panelRegistrarUsuario.TabIndex = 8;
             this.panelRegistrarUsuario.Visible = false;
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtras.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtras.Location = new System.Drawing.Point(24, 22);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(60, 45);
+            this.lblAtras.TabIndex = 8;
+            this.lblAtras.Click += new System.EventHandler(this.lblAtras_Click);
+            this.lblAtras.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
+            this.lblAtras.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
             // groupBox2
             // 
@@ -189,7 +207,7 @@
             this.groupBox2.Controls.Add(this.txtContrseñaRegistro);
             this.groupBox2.Controls.Add(this.lblConfirmarContraseña);
             this.groupBox2.Controls.Add(this.txtUsuarioRegistro);
-            this.groupBox2.Location = new System.Drawing.Point(141, 81);
+            this.groupBox2.Location = new System.Drawing.Point(-85, -132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(322, 402);
             this.groupBox2.TabIndex = 7;
@@ -208,6 +226,7 @@
             this.lblRegistrarUsuario.TabIndex = 7;
             this.lblRegistrarUsuario.Text = "Registrarse";
             this.lblRegistrarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistrarUsuario.Click += new System.EventHandler(this.lblRegistrarUsuario_Click);
             this.lblRegistrarUsuario.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblRegistrarUsuario.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -280,14 +299,44 @@
             this.txtUsuarioRegistro.Size = new System.Drawing.Size(302, 29);
             this.txtUsuarioRegistro.TabIndex = 4;
             // 
+            // panelMenu
+            // 
+            this.panelMenu.Controls.Add(this.lblSalirMenu);
+            this.panelMenu.Location = new System.Drawing.Point(216, 64);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(791, 427);
+            this.panelMenu.TabIndex = 8;
+            this.panelMenu.Visible = false;
+            // 
+            // panelIniciarSesion
+            // 
+            this.panelIniciarSesion.Controls.Add(this.groupBox1);
+            this.panelIniciarSesion.Controls.Add(this.lblSalir);
+            this.panelIniciarSesion.Controls.Add(this.lblRegistrarse);
+            this.panelIniciarSesion.Location = new System.Drawing.Point(12, 12);
+            this.panelIniciarSesion.Name = "panelIniciarSesion";
+            this.panelIniciarSesion.Size = new System.Drawing.Size(176, 119);
+            this.panelIniciarSesion.TabIndex = 9;
+            // 
+            // lblSalirMenu
+            // 
+            this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
+            this.lblSalirMenu.Location = new System.Drawing.Point(702, 14);
+            this.lblSalirMenu.Name = "lblSalirMenu";
+            this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
+            this.lblSalirMenu.TabIndex = 6;
+            this.lblSalirMenu.MouseEnter += new System.EventHandler(this.lblSalir_MouseEnter);
+            this.lblSalirMenu.MouseLeave += new System.EventHandler(this.lblSalir_MouseLeave);
+            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 555);
-            this.Controls.Add(this.lblSalir);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblRegistrarse);
+            this.ClientSize = new System.Drawing.Size(1105, 638);
+            this.Controls.Add(this.panelIniciarSesion);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIniciarSesion";
@@ -303,6 +352,8 @@
             this.panelRegistrarUsuario.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
+            this.panelIniciarSesion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,6 +378,10 @@
         private System.Windows.Forms.TextBox txtUsuarioRegistro;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblRegistrarUsuario;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panelIniciarSesion;
+        private System.Windows.Forms.Label lblAtras;
+        private System.Windows.Forms.Label lblSalirMenu;
     }
 }
 
