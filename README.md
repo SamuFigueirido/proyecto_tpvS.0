@@ -7,3 +7,4 @@ Proyecto de fin de ciclo de Desarrollo de Aplicaciones Multiplataforma. Aplicaci
 - Panel para registrar usuario añadido.
 - Botón "Atrás" en cada panel para volver al panel anterior.
 - Panel "Menú", con todas las opciones, añadido.
+- Botones "Atrás" en cada opción.
