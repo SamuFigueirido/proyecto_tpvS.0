@@ -129,12 +129,12 @@ namespace Proyecto_TPVS._0
 
         private void labelAtras_MouseEnter(object sender, EventArgs e)
         {
-            lblAtras.Image = Properties.Resources.atras_seleccionado;
+            ((Label)sender).Image = Properties.Resources.atras_seleccionado;
         }
 
         private void labelAtras_MouseLeave(object sender, EventArgs e)
         {
-            lblAtras.Image = Properties.Resources.atras;
+            ((Label)sender).Image = Properties.Resources.atras;
         }
 
         private void lblAtras_Click(object sender, EventArgs e)
@@ -146,6 +146,56 @@ namespace Proyecto_TPVS._0
         {
             //TODO comprobación si no existe un usuario con el mismo nombre
             cambioDePanel(panelMenu, panelRegistrarUsuario);
+        }
+
+        private void lblComedor_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelComedor, panelMenu);
+        }
+
+        private void lblAlmacen_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelAlmacen, panelMenu);
+        }
+
+        private void lblFacturas_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelFacturas, panelMenu);
+        }
+
+        private void lblReservas_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelReservas, panelMenu);
+        }
+
+        private void lblConfiguracion_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelConfiguracion, panelMenu);
+        }
+
+        private void lblSalirComedor_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelMenu, panelComedor);
+        }
+
+        private void lblSalirAlmacen_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelMenu, panelAlmacen);
+        }
+
+        private void lblSalirFacturas_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelMenu, panelFacturas);
+        }
+
+        private void lblSalirReservas_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelMenu, panelReservas);
+        }
+
+        private void lblSalirConfiguracion_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelMenu, panelConfiguracion);
         }
     }
 }
