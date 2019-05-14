@@ -48,24 +48,24 @@
             this.lblConfirmarContraseña = new System.Windows.Forms.Label();
             this.txtUsuarioRegistro = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.lblSalirMenu = new System.Windows.Forms.Label();
             this.lblFacturas = new System.Windows.Forms.Label();
             this.lblConfiguracion = new System.Windows.Forms.Label();
             this.lblAlmacen = new System.Windows.Forms.Label();
             this.lblReservas = new System.Windows.Forms.Label();
             this.lblComedor = new System.Windows.Forms.Label();
-            this.lblSalirMenu = new System.Windows.Forms.Label();
             this.panelIniciarSesion = new System.Windows.Forms.Panel();
             this.lblSalir = new System.Windows.Forms.Label();
             this.panelComedor = new System.Windows.Forms.Panel();
-            this.panelReservas = new System.Windows.Forms.Panel();
-            this.panelConfiguracion = new System.Windows.Forms.Panel();
-            this.panelAlmacen = new System.Windows.Forms.Panel();
-            this.panelFacturas = new System.Windows.Forms.Panel();
             this.lblSalirComedor = new System.Windows.Forms.Label();
-            this.lblSalirConfiguracion = new System.Windows.Forms.Label();
-            this.lblSalirFacturas = new System.Windows.Forms.Label();
+            this.panelReservas = new System.Windows.Forms.Panel();
             this.lblSalirReservas = new System.Windows.Forms.Label();
+            this.panelConfiguracion = new System.Windows.Forms.Panel();
+            this.lblSalirConfiguracion = new System.Windows.Forms.Label();
+            this.panelAlmacen = new System.Windows.Forms.Panel();
             this.lblSalirAlmacen = new System.Windows.Forms.Label();
+            this.panelFacturas = new System.Windows.Forms.Panel();
+            this.lblSalirFacturas = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -320,6 +320,19 @@
             this.panelMenu.TabIndex = 8;
             this.panelMenu.Visible = false;
             // 
+            // lblSalirMenu
+            // 
+            this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
+            this.lblSalirMenu.Location = new System.Drawing.Point(165, 19);
+            this.lblSalirMenu.Name = "lblSalirMenu";
+            this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
+            this.lblSalirMenu.TabIndex = 6;
+            this.lblSalirMenu.Click += new System.EventHandler(this.lblSalir_Click);
+            this.lblSalirMenu.MouseEnter += new System.EventHandler(this.lblSalir_MouseEnter);
+            this.lblSalirMenu.MouseLeave += new System.EventHandler(this.lblSalir_MouseLeave);
+            // 
             // lblFacturas
             // 
             this.lblFacturas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -400,19 +413,6 @@
             this.lblComedor.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblComedor.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // lblSalirMenu
-            // 
-            this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(165, 19);
-            this.lblSalirMenu.Name = "lblSalirMenu";
-            this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
-            this.lblSalirMenu.TabIndex = 6;
-            this.lblSalirMenu.Click += new System.EventHandler(this.lblSalir_Click);
-            this.lblSalirMenu.MouseEnter += new System.EventHandler(this.lblSalir_MouseEnter);
-            this.lblSalirMenu.MouseLeave += new System.EventHandler(this.lblSalir_MouseLeave);
-            // 
             // panelIniciarSesion
             // 
             this.panelIniciarSesion.Controls.Add(this.lblSalir);
@@ -439,42 +439,10 @@
             // panelComedor
             // 
             this.panelComedor.Controls.Add(this.lblSalirComedor);
-            this.panelComedor.Location = new System.Drawing.Point(344, 28);
+            this.panelComedor.Location = new System.Drawing.Point(299, 22);
             this.panelComedor.Name = "panelComedor";
-            this.panelComedor.Size = new System.Drawing.Size(200, 100);
+            this.panelComedor.Size = new System.Drawing.Size(598, 369);
             this.panelComedor.TabIndex = 10;
-            // 
-            // panelReservas
-            // 
-            this.panelReservas.Controls.Add(this.lblSalirReservas);
-            this.panelReservas.Location = new System.Drawing.Point(594, 28);
-            this.panelReservas.Name = "panelReservas";
-            this.panelReservas.Size = new System.Drawing.Size(200, 100);
-            this.panelReservas.TabIndex = 11;
-            // 
-            // panelConfiguracion
-            // 
-            this.panelConfiguracion.Controls.Add(this.lblSalirConfiguracion);
-            this.panelConfiguracion.Location = new System.Drawing.Point(417, 191);
-            this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(200, 100);
-            this.panelConfiguracion.TabIndex = 12;
-            // 
-            // panelAlmacen
-            // 
-            this.panelAlmacen.Controls.Add(this.lblSalirAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(810, 208);
-            this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(200, 100);
-            this.panelAlmacen.TabIndex = 13;
-            // 
-            // panelFacturas
-            // 
-            this.panelFacturas.Controls.Add(this.lblSalirFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(432, 379);
-            this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(200, 100);
-            this.panelFacturas.TabIndex = 14;
             // 
             // lblSalirComedor
             // 
@@ -484,33 +452,18 @@
             this.lblSalirComedor.Name = "lblSalirComedor";
             this.lblSalirComedor.Size = new System.Drawing.Size(60, 45);
             this.lblSalirComedor.TabIndex = 9;
+            this.lblSalirComedor.Tag = "";
             this.lblSalirComedor.Click += new System.EventHandler(this.lblSalirComedor_Click);
             this.lblSalirComedor.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirComedor.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
-            // lblSalirConfiguracion
+            // panelReservas
             // 
-            this.lblSalirConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirConfiguracion.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirConfiguracion.Name = "lblSalirConfiguracion";
-            this.lblSalirConfiguracion.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirConfiguracion.TabIndex = 9;
-            this.lblSalirConfiguracion.Click += new System.EventHandler(this.lblSalirConfiguracion_Click);
-            this.lblSalirConfiguracion.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirConfiguracion.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
-            // 
-            // lblSalirFacturas
-            // 
-            this.lblSalirFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirFacturas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirFacturas.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirFacturas.Name = "lblSalirFacturas";
-            this.lblSalirFacturas.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirFacturas.TabIndex = 9;
-            this.lblSalirFacturas.Click += new System.EventHandler(this.lblSalirFacturas_Click);
-            this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            this.panelReservas.Controls.Add(this.lblSalirReservas);
+            this.panelReservas.Location = new System.Drawing.Point(450, 480);
+            this.panelReservas.Name = "panelReservas";
+            this.panelReservas.Size = new System.Drawing.Size(200, 100);
+            this.panelReservas.TabIndex = 11;
             // 
             // lblSalirReservas
             // 
@@ -524,6 +477,34 @@
             this.lblSalirReservas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirReservas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
+            // panelConfiguracion
+            // 
+            this.panelConfiguracion.Controls.Add(this.lblSalirConfiguracion);
+            this.panelConfiguracion.Location = new System.Drawing.Point(244, 480);
+            this.panelConfiguracion.Name = "panelConfiguracion";
+            this.panelConfiguracion.Size = new System.Drawing.Size(200, 100);
+            this.panelConfiguracion.TabIndex = 12;
+            // 
+            // lblSalirConfiguracion
+            // 
+            this.lblSalirConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSalirConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblSalirConfiguracion.Location = new System.Drawing.Point(24, 22);
+            this.lblSalirConfiguracion.Name = "lblSalirConfiguracion";
+            this.lblSalirConfiguracion.Size = new System.Drawing.Size(60, 45);
+            this.lblSalirConfiguracion.TabIndex = 9;
+            this.lblSalirConfiguracion.Click += new System.EventHandler(this.lblSalirConfiguracion_Click);
+            this.lblSalirConfiguracion.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
+            this.lblSalirConfiguracion.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            // 
+            // panelAlmacen
+            // 
+            this.panelAlmacen.Controls.Add(this.lblSalirAlmacen);
+            this.panelAlmacen.Location = new System.Drawing.Point(656, 480);
+            this.panelAlmacen.Name = "panelAlmacen";
+            this.panelAlmacen.Size = new System.Drawing.Size(200, 100);
+            this.panelAlmacen.TabIndex = 13;
+            // 
             // lblSalirAlmacen
             // 
             this.lblSalirAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -535,6 +516,26 @@
             this.lblSalirAlmacen.Click += new System.EventHandler(this.lblSalirAlmacen_Click);
             this.lblSalirAlmacen.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirAlmacen.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            // 
+            // panelFacturas
+            // 
+            this.panelFacturas.Controls.Add(this.lblSalirFacturas);
+            this.panelFacturas.Location = new System.Drawing.Point(38, 480);
+            this.panelFacturas.Name = "panelFacturas";
+            this.panelFacturas.Size = new System.Drawing.Size(200, 100);
+            this.panelFacturas.TabIndex = 14;
+            // 
+            // lblSalirFacturas
+            // 
+            this.lblSalirFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSalirFacturas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblSalirFacturas.Location = new System.Drawing.Point(24, 22);
+            this.lblSalirFacturas.Name = "lblSalirFacturas";
+            this.lblSalirFacturas.Size = new System.Drawing.Size(60, 45);
+            this.lblSalirFacturas.TabIndex = 9;
+            this.lblSalirFacturas.Click += new System.EventHandler(this.lblSalirFacturas_Click);
+            this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
+            this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
             // FormIniciarSesion
             // 
