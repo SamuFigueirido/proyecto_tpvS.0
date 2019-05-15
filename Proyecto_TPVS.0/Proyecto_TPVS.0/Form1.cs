@@ -11,6 +11,8 @@ using DesktopControl;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Data;
+using System.Data.OleDb;
 
 namespace Proyecto_TPVS._0
 {
@@ -18,7 +20,7 @@ namespace Proyecto_TPVS._0
     {
         SqlConnection connection;
         string connectionString;
-        KunLibertad_DesktopControl desktopControl;
+        //KunLibertad_DesktopControl desktopControl;
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -35,12 +37,12 @@ namespace Proyecto_TPVS._0
 
         public void pantallaCompleta(Form f)
         {
-            desktopControl = new KunLibertad_DesktopControl();
-            desktopControl.TaskBar(true);
+            //desktopControl = new KunLibertad_DesktopControl();
+            //desktopControl.TaskBar(true);
             f.Size = Screen.PrimaryScreen.WorkingArea.Size;
             f.Location = Screen.PrimaryScreen.WorkingArea.Location;
             f.WindowState = FormWindowState.Maximized;
-            f.TopMost = true;
+            //f.TopMost = true;
             f.FormBorderStyle = FormBorderStyle.None;
         }
 
@@ -52,11 +54,11 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                if(connection != null)
+                if (connection != null)
                 {
                     connection.Close();
                 }
-                desktopControl.TaskBar(false);
+                //desktopControl.TaskBar(false);
             }
         }
 
@@ -64,13 +66,13 @@ namespace Proyecto_TPVS._0
         {
             if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
             {
-                desktopControl.TaskBar(false);
+                //desktopControl.TaskBar(false);
             }
         }
 
         private void FormIniciarSesion_Click(object sender, EventArgs e)
         {
-            desktopControl.TaskBar(true);
+            //desktopControl.TaskBar(true);
         }
 
         private void lblSalir_Click(object sender, EventArgs e)
@@ -145,7 +147,61 @@ namespace Proyecto_TPVS._0
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
             //TODO comprobación si no existe un usuario con el mismo nombre
-            cambioDePanel(panelMenu, panelRegistrarUsuario);
+            if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
+            {
+                MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string newName = txtUsuarioRegistro.Text.Trim();
+                string consultName = "";
+                SqlCommand query = new SqlCommand("select * from empleados where nombre = '" + newName + "'", connection);
+                SqlDataReader dr = query.ExecuteReader();
+                if (dr.Read())
+                {
+                    consultName = Convert.ToString(dr["nombre"]).Trim();
+                    Console.WriteLine("Nombre de la consulta: "+ consultName);
+                    Console.WriteLine("Nombre del nuevo usuario: " + newName);
+                }
+                dr.Close();
+                if (txtContraseñaRegistro.Text.Trim() == txtConfirmarContraseña.Text.Trim())
+                {
+                    if (consultName != newName)
+                    {
+                        string password = txtContraseñaRegistro.Text.Trim();
+                        int id= 1;
+                        do
+                        {
+                            try
+                            {
+                                query = new SqlCommand("insert into empleados (id, nombre, contraseña) values (" + id + ", '" + newName + "', '" + password + "')", connection);
+                                int res = query.ExecuteNonQuery();
+                                if (res > 0)
+                                {
+                                    MessageBox.Show("Nuevo usuario creado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    cambioDePanel(panelMenu, panelRegistrarUsuario);
+                                    return;
+                                }
+                            }
+                            catch (System.Data.SqlClient.SqlException)
+                            {
+                                id++;
+                            }
+                        } while (true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre de usuario ya está en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtUsuarioRegistro.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtContraseñaRegistro.Text = "";
+                    txtConfirmarContraseña.Text = "";
+                }
+            }
         }
 
         private void lblComedor_Click(object sender, EventArgs e)

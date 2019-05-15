@@ -44,7 +44,7 @@
             this.lblUsuarioRegistro = new System.Windows.Forms.Label();
             this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.lblContraseñaRegistro = new System.Windows.Forms.Label();
-            this.txtContrseñaRegistro = new System.Windows.Forms.TextBox();
+            this.txtContraseñaRegistro = new System.Windows.Forms.TextBox();
             this.lblConfirmarContraseña = new System.Windows.Forms.Label();
             this.txtUsuarioRegistro = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -211,7 +211,7 @@
             this.groupBox2.Controls.Add(this.lblUsuarioRegistro);
             this.groupBox2.Controls.Add(this.txtConfirmarContraseña);
             this.groupBox2.Controls.Add(this.lblContraseñaRegistro);
-            this.groupBox2.Controls.Add(this.txtContrseñaRegistro);
+            this.groupBox2.Controls.Add(this.txtContraseñaRegistro);
             this.groupBox2.Controls.Add(this.lblConfirmarContraseña);
             this.groupBox2.Controls.Add(this.txtUsuarioRegistro);
             this.groupBox2.Location = new System.Drawing.Point(-85, -132);
@@ -257,6 +257,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConfirmarContraseña.Location = new System.Drawing.Point(14, 257);
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            this.txtConfirmarContraseña.PasswordChar = '•';
             this.txtConfirmarContraseña.Size = new System.Drawing.Size(302, 29);
             this.txtConfirmarContraseña.TabIndex = 6;
             // 
@@ -273,15 +274,16 @@
             this.lblContraseñaRegistro.TabIndex = 1;
             this.lblContraseñaRegistro.Text = "Contraseña:";
             // 
-            // txtContrseñaRegistro
+            // txtContraseñaRegistro
             // 
-            this.txtContrseñaRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtContraseñaRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContrseñaRegistro.Location = new System.Drawing.Point(14, 169);
-            this.txtContrseñaRegistro.Name = "txtContrseñaRegistro";
-            this.txtContrseñaRegistro.Size = new System.Drawing.Size(302, 29);
-            this.txtContrseñaRegistro.TabIndex = 5;
+            this.txtContraseñaRegistro.Location = new System.Drawing.Point(14, 169);
+            this.txtContraseñaRegistro.Name = "txtContraseñaRegistro";
+            this.txtContraseñaRegistro.PasswordChar = '•';
+            this.txtContraseñaRegistro.Size = new System.Drawing.Size(302, 29);
+            this.txtContraseñaRegistro.TabIndex = 5;
             // 
             // lblConfirmarContraseña
             // 
@@ -590,7 +592,7 @@
         private System.Windows.Forms.Label lblContraseñaRegistro;
         private System.Windows.Forms.Label lblUsuarioRegistro;
         private System.Windows.Forms.TextBox txtConfirmarContraseña;
-        private System.Windows.Forms.TextBox txtContrseñaRegistro;
+        private System.Windows.Forms.TextBox txtContraseñaRegistro;
         private System.Windows.Forms.TextBox txtUsuarioRegistro;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblRegistrarUsuario;

@@ -414,10 +414,10 @@ namespace Proyecto_TPVS._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpleadosRow AddEmpleadosRow(int Id, string Nombre, string Contraseña) {
+            public EmpleadosRow AddEmpleadosRow(string Nombre, string Contraseña) {
                 EmpleadosRow rowEmpleadosRow = ((EmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         Contraseña};
                 rowEmpleadosRow.ItemArray = columnValuesArray;
@@ -465,6 +465,8 @@ namespace Proyecto_TPVS._0 {
                 base.Columns.Add(this.columnContraseña);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 3;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.AllowDBNull = false;
@@ -724,10 +726,10 @@ namespace Proyecto_TPVS._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRow AddProductosRow(int Id, string Nombre, double Cantidad, decimal Precio, string Proveedor) {
+            public ProductosRow AddProductosRow(string Nombre, double Cantidad, decimal Precio, string Proveedor) {
                 ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         Cantidad,
                         Precio,
@@ -783,6 +785,9 @@ namespace Proyecto_TPVS._0 {
                 base.Columns.Add(this.columnProveedor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 20;
