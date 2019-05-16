@@ -109,7 +109,44 @@ namespace Proyecto_TPVS._0
 
         private void lblIniciarSesion_Click(object sender, EventArgs e)
         {
-            cambioDePanel(panelMenu, panelIniciarSesion);
+            //TODO comprobación
+            string userName = txtUsuario.Text.Trim();
+            string userPassword = txtContraseña.Text.Trim();
+            if (userName == "" || userPassword == "")
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string consultName = "";
+                string consultPassword = "";
+                SqlCommand query = new SqlCommand("select * from empleados where nombre = '" + userName + "'", connection);
+                SqlDataReader dr = query.ExecuteReader();
+                if (dr.Read())
+                {
+                    consultName = Convert.ToString(dr["nombre"]).Trim();
+                    Console.WriteLine("Nombre de la consulta: " + consultName);
+                    Console.WriteLine("Nombre del usuario introducido: " + userName);
+                }
+                dr.Close();
+                query = new SqlCommand("select * from empleados where contraseña = '" + userPassword + "'", connection);
+                dr = query.ExecuteReader();
+                if (dr.Read())
+                {
+                    consultPassword = Convert.ToString(dr["contraseña"]).Trim();
+                    Console.WriteLine("Contraseña de la consulta: " + consultPassword);
+                    Console.WriteLine("Contraseña del usuario introducido: " + userPassword);
+                }
+                dr.Close();
+                if (userName == consultName && userPassword == consultPassword)
+                {
+                    cambioDePanel(panelMenu, panelIniciarSesion);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
@@ -146,7 +183,7 @@ namespace Proyecto_TPVS._0
 
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            //TODO comprobación si no existe un usuario con el mismo nombre
+            //TODO encriptar contraseña al guardarla en la base de datos
             if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
             {
                 MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -160,7 +197,7 @@ namespace Proyecto_TPVS._0
                 if (dr.Read())
                 {
                     consultName = Convert.ToString(dr["nombre"]).Trim();
-                    Console.WriteLine("Nombre de la consulta: "+ consultName);
+                    Console.WriteLine("Nombre de la consulta: " + consultName);
                     Console.WriteLine("Nombre del nuevo usuario: " + newName);
                 }
                 dr.Close();
@@ -169,7 +206,7 @@ namespace Proyecto_TPVS._0
                     if (consultName != newName)
                     {
                         string password = txtContraseñaRegistro.Text.Trim();
-                        int id= 1;
+                        int id = 1;
                         do
                         {
                             try
@@ -183,7 +220,7 @@ namespace Proyecto_TPVS._0
                                     return;
                                 }
                             }
-                            catch (System.Data.SqlClient.SqlException)
+                            catch (SqlException)
                             {
                                 id++;
                             }
