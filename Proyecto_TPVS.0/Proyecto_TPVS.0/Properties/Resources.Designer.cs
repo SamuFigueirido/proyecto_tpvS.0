@@ -111,22 +111,6 @@ namespace Proyecto_TPVS._0.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Empleados] (
-        ///    [Id]         INT        NOT NULL,
-        ///    [Nombre]     NCHAR (20) NOT NULL,
-        ///    [Contraseña] NCHAR (20) NOT NULL,
-        ///    PRIMARY KEY CLUSTERED ([Id] ASC)
-        ///);
-        ///
-        ///.
-        /// </summary>
-        internal static string empleados {
-            get {
-                return ResourceManager.GetString("empleados", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exit {
@@ -143,24 +127,6 @@ namespace Proyecto_TPVS._0.Properties {
             get {
                 object obj = ResourceManager.GetObject("icono", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a CREATE TABLE [dbo].[Productos] (
-        ///    [Id]        INT        NOT NULL,
-        ///    [Nombre]    NCHAR (20) NULL,
-        ///    [Cantidad]  FLOAT (53) DEFAULT ((0.0)) NOT NULL,
-        ///    [Precio]    MONEY      DEFAULT ((0.0)) NOT NULL,
-        ///    [Proveedor] NCHAR (20) NULL,
-        ///    PRIMARY KEY CLUSTERED ([Id] ASC)
-        ///);
-        ///
-        ///.
-        /// </summary>
-        internal static string productos {
-            get {
-                return ResourceManager.GetString("productos", resourceCulture);
             }
         }
     }
