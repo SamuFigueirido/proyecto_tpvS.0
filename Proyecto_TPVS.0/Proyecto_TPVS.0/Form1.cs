@@ -24,7 +24,8 @@ namespace Proyecto_TPVS._0
         public FormIniciarSesion()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["Proyecto_TPVS._0.Properties.Settings.DataBaseConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["Proyecto_TPVS._0.Properties.Settings.DataBaseConnectionString"].ConnectionString;
         }
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)

@@ -33,5 +33,16 @@ namespace Proyecto_TPVS._0.Properties {
                 return ((string)(this["DataBaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G00NJE1\\SQLEXPRESS;Initial Catalog=Datos;Integrated Security=" +
+            "True;Pooling=False")]
+        public string DatosConnectionString {
+            get {
+                return ((string)(this["DatosConnectionString"]));
+            }
+        }
     }
 }
