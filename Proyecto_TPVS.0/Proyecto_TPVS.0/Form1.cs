@@ -109,7 +109,6 @@ namespace Proyecto_TPVS._0
 
         private void lblIniciarSesion_Click(object sender, EventArgs e)
         {
-            //TODO comprobación
             string userName = txtUsuario.Text.Trim();
             string userPassword = txtContraseña.Text.Trim();
             if (userName == "" || userPassword == "")
@@ -125,19 +124,9 @@ namespace Proyecto_TPVS._0
                 if (dr.Read())
                 {
                     consultName = Convert.ToString(dr["nombre"]).Trim();
-                    Console.WriteLine("Nombre de la consulta: " + consultName);
-                    Console.WriteLine("Nombre del usuario introducido: " + userName);
+                    consultPassword = decrypt(Convert.ToString(dr["contraseña"]).Trim());
                 }
-                dr.Close();
-                query = new SqlCommand("select * from empleados where contraseña = '" + userPassword + "'", connection);
-                dr = query.ExecuteReader();
-                if (dr.Read())
-                {
-                    consultPassword = Convert.ToString(dr["contraseña"]).Trim();
-                    Console.WriteLine("Contraseña de la consulta: " + consultPassword);
-                    Console.WriteLine("Contraseña del usuario introducido: " + userPassword);
-                }
-                dr.Close();
+                dr.Close(); 
                 if (userName == consultName && userPassword == consultPassword)
                 {
                     cambioDePanel(panelMenu, panelIniciarSesion);
@@ -147,6 +136,19 @@ namespace Proyecto_TPVS._0
                     MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        public static string encrypt(string password) {
+            string result = string.Empty;
+            byte[] encryted = Encoding.Unicode.GetBytes(password);
+            return Convert.ToBase64String(encryted);
+        }
+
+        public static string decrypt(string password)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(password);
+            return Encoding.Unicode.GetString(decryted);
         }
 
         private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
@@ -183,7 +185,7 @@ namespace Proyecto_TPVS._0
 
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            //TODO encriptar contraseña al guardarla en la base de datos
+            //TODO que se guarden los datos de verdad en la base de datos en la base de datos
             if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
             {
                 MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -197,8 +199,6 @@ namespace Proyecto_TPVS._0
                 if (dr.Read())
                 {
                     consultName = Convert.ToString(dr["nombre"]).Trim();
-                    Console.WriteLine("Nombre de la consulta: " + consultName);
-                    Console.WriteLine("Nombre del nuevo usuario: " + newName);
                 }
                 dr.Close();
                 if (txtContraseñaRegistro.Text.Trim() == txtConfirmarContraseña.Text.Trim())
@@ -211,7 +211,7 @@ namespace Proyecto_TPVS._0
                         {
                             try
                             {
-                                query = new SqlCommand("insert into empleados (id, nombre, contraseña) values (" + id + ", '" + newName + "', '" + password + "')", connection);
+                                query = new SqlCommand("insert into empleados (id, nombre, contraseña) values (" + id + ", '" + newName + "', '" + encrypt(password) + "')", connection);
                                 int res = query.ExecuteNonQuery();
                                 if (res > 0)
                                 {
