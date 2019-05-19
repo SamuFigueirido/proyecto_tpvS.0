@@ -56,6 +56,7 @@
             this.panelIniciarSesion = new System.Windows.Forms.Panel();
             this.lblSalir = new System.Windows.Forms.Label();
             this.panelComedor = new System.Windows.Forms.Panel();
+            this.txtCantMesas = new System.Windows.Forms.TextBox();
             this.lblSalirComedor = new System.Windows.Forms.Label();
             this.panelReservas = new System.Windows.Forms.Panel();
             this.lblSalirReservas = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.lblSalirAlmacen = new System.Windows.Forms.Label();
             this.panelFacturas = new System.Windows.Forms.Panel();
             this.lblSalirFacturas = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -430,11 +432,24 @@
             // 
             // panelComedor
             // 
+            this.panelComedor.Controls.Add(this.label1);
+            this.panelComedor.Controls.Add(this.txtCantMesas);
             this.panelComedor.Controls.Add(this.lblSalirComedor);
             this.panelComedor.Location = new System.Drawing.Point(299, 22);
             this.panelComedor.Name = "panelComedor";
             this.panelComedor.Size = new System.Drawing.Size(598, 369);
             this.panelComedor.TabIndex = 10;
+            // 
+            // txtCantMesas
+            // 
+            this.txtCantMesas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantMesas.Location = new System.Drawing.Point(280, 35);
+            this.txtCantMesas.MaxLength = 2;
+            this.txtCantMesas.Name = "txtCantMesas";
+            this.txtCantMesas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCantMesas.Size = new System.Drawing.Size(62, 20);
+            this.txtCantMesas.TabIndex = 10;
             // 
             // lblSalirComedor
             // 
@@ -529,6 +544,15 @@
             this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(175, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Cantidad de mesas:";
+            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +583,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelIniciarSesion.ResumeLayout(false);
             this.panelComedor.ResumeLayout(false);
+            this.panelComedor.PerformLayout();
             this.panelReservas.ResumeLayout(false);
             this.panelConfiguracion.ResumeLayout(false);
             this.panelAlmacen.ResumeLayout(false);
@@ -605,6 +630,8 @@
         private System.Windows.Forms.Label lblSalirConfiguracion;
         private System.Windows.Forms.Label lblSalirAlmacen;
         private System.Windows.Forms.Label lblSalirFacturas;
+        private System.Windows.Forms.TextBox txtCantMesas;
+        private System.Windows.Forms.Label label1;
     }
 }
 
