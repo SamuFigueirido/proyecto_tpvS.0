@@ -186,7 +186,6 @@ namespace Proyecto_TPVS._0
 
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            //TODO que se guarden los datos de verdad en la base de datos en la base de datos
             if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
             {
                 MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -303,6 +302,16 @@ namespace Proyecto_TPVS._0
                 }
             }
             return panel;
+        }
+
+        private void lblConfiguracion_MouseEnter(object sender, EventArgs e)
+        {
+            ((Label)sender).Image = Properties.Resources.ajustes_seleccionado;
+        }
+
+        private void lblConfiguracion_MouseLeave(object sender, EventArgs e)
+        {
+            ((Label)sender).Image = Properties.Resources.ajustes;
         }
     }
 }

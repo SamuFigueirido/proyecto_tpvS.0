@@ -35,7 +35,6 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblIniciarSesion = new System.Windows.Forms.Label();
             this.lblRegistrarse = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelRegistrarUsuario = new System.Windows.Forms.Panel();
             this.lblAtras = new System.Windows.Forms.Label();
@@ -82,7 +81,7 @@
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(47, 68);
+            this.txtUsuario.Location = new System.Drawing.Point(47, 71);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(241, 31);
             this.txtUsuario.TabIndex = 0;
@@ -91,7 +90,7 @@
             // 
             this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(47, 149);
+            this.txtContraseña.Location = new System.Drawing.Point(47, 152);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '•';
             this.txtContraseña.Size = new System.Drawing.Size(241, 31);
@@ -102,7 +101,7 @@
             this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(43, 41);
+            this.lblUsuario.Location = new System.Drawing.Point(43, 44);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(79, 24);
             this.lblUsuario.TabIndex = 2;
@@ -113,7 +112,7 @@
             this.lblContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(43, 122);
+            this.lblContraseña.Location = new System.Drawing.Point(43, 125);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(111, 24);
             this.lblContraseña.TabIndex = 3;
@@ -125,7 +124,7 @@
             this.lblIniciarSesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIniciarSesion.Location = new System.Drawing.Point(47, 212);
+            this.lblIniciarSesion.Location = new System.Drawing.Point(47, 215);
             this.lblIniciarSesion.Name = "lblIniciarSesion";
             this.lblIniciarSesion.Size = new System.Drawing.Size(241, 46);
             this.lblIniciarSesion.TabIndex = 3;
@@ -141,7 +140,7 @@
             this.lblRegistrarse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrarse.Location = new System.Drawing.Point(-71, 30);
+            this.lblRegistrarse.Location = new System.Drawing.Point(-62, 30);
             this.lblRegistrarse.Name = "lblRegistrarse";
             this.lblRegistrarse.Size = new System.Drawing.Size(139, 46);
             this.lblRegistrarse.TabIndex = 4;
@@ -151,32 +150,19 @@
             this.lblRegistrarse.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblRegistrarse.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(47, 275);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 22);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Recordar";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.txtContraseña);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.lblUsuario);
             this.groupBox1.Controls.Add(this.lblContraseña);
             this.groupBox1.Controls.Add(this.lblIniciarSesion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(-80, -70);
+            this.groupBox1.Location = new System.Drawing.Point(-76, -71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 322);
+            this.groupBox1.Size = new System.Drawing.Size(331, 329);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iniciar sesion";
@@ -186,9 +172,9 @@
             this.panelRegistrarUsuario.Controls.Add(this.lblAtras);
             this.panelRegistrarUsuario.Controls.Add(this.groupBox2);
             this.panelRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegistrarUsuario.Location = new System.Drawing.Point(23, 154);
+            this.panelRegistrarUsuario.Location = new System.Drawing.Point(12, 154);
             this.panelRegistrarUsuario.Name = "panelRegistrarUsuario";
-            this.panelRegistrarUsuario.Size = new System.Drawing.Size(149, 129);
+            this.panelRegistrarUsuario.Size = new System.Drawing.Size(185, 129);
             this.panelRegistrarUsuario.TabIndex = 8;
             this.panelRegistrarUsuario.Visible = false;
             // 
@@ -214,7 +200,7 @@
             this.groupBox2.Controls.Add(this.txtContraseñaRegistro);
             this.groupBox2.Controls.Add(this.lblConfirmarContraseña);
             this.groupBox2.Controls.Add(this.txtUsuarioRegistro);
-            this.groupBox2.Location = new System.Drawing.Point(-85, -132);
+            this.groupBox2.Location = new System.Drawing.Point(-67, -132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(322, 402);
             this.groupBox2.TabIndex = 7;
@@ -316,9 +302,9 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(23, 91);
+            this.panelMenu.Location = new System.Drawing.Point(12, 304);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(833, 356);
+            this.panelMenu.Size = new System.Drawing.Size(185, 114);
             this.panelMenu.TabIndex = 8;
             this.panelMenu.Visible = false;
             // 
@@ -327,7 +313,7 @@
             this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(745, 19);
+            this.lblSalirMenu.Location = new System.Drawing.Point(97, 19);
             this.lblSalirMenu.Name = "lblSalirMenu";
             this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
             this.lblSalirMenu.TabIndex = 6;
@@ -341,7 +327,7 @@
             this.lblFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.Location = new System.Drawing.Point(74, 153);
+            this.lblFacturas.Location = new System.Drawing.Point(-250, 32);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(264, 131);
             this.lblFacturas.TabIndex = 11;
@@ -355,19 +341,18 @@
             // lblConfiguracion
             // 
             this.lblConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblConfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfiguracion.Location = new System.Drawing.Point(650, 288);
+            this.lblConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.ajustes;
+            this.lblConfiguracion.Location = new System.Drawing.Point(95, 22);
             this.lblConfiguracion.Name = "lblConfiguracion";
-            this.lblConfiguracion.Size = new System.Drawing.Size(155, 44);
+            this.lblConfiguracion.Size = new System.Drawing.Size(69, 69);
             this.lblConfiguracion.TabIndex = 10;
             this.lblConfiguracion.Tag = "configuracion";
-            this.lblConfiguracion.Text = "Configuración";
             this.lblConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblConfiguracion.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
-            this.lblConfiguracion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lblConfiguracion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            this.lblConfiguracion.MouseEnter += new System.EventHandler(this.lblConfiguracion_MouseEnter);
+            this.lblConfiguracion.MouseLeave += new System.EventHandler(this.lblConfiguracion_MouseLeave);
             // 
             // lblAlmacen
             // 
@@ -375,7 +360,7 @@
             this.lblAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlmacen.Location = new System.Drawing.Point(344, 9);
+            this.lblAlmacen.Location = new System.Drawing.Point(20, -112);
             this.lblAlmacen.Name = "lblAlmacen";
             this.lblAlmacen.Size = new System.Drawing.Size(264, 131);
             this.lblAlmacen.TabIndex = 9;
@@ -392,7 +377,7 @@
             this.lblReservas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblReservas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(344, 153);
+            this.lblReservas.Location = new System.Drawing.Point(20, 32);
             this.lblReservas.Name = "lblReservas";
             this.lblReservas.Size = new System.Drawing.Size(264, 131);
             this.lblReservas.TabIndex = 8;
@@ -409,7 +394,7 @@
             this.lblComedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblComedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComedor.Location = new System.Drawing.Point(74, 9);
+            this.lblComedor.Location = new System.Drawing.Point(-250, -112);
             this.lblComedor.Name = "lblComedor";
             this.lblComedor.Size = new System.Drawing.Size(264, 131);
             this.lblComedor.TabIndex = 7;
@@ -427,7 +412,7 @@
             this.panelIniciarSesion.Controls.Add(this.lblRegistrarse);
             this.panelIniciarSesion.Location = new System.Drawing.Point(12, 12);
             this.panelIniciarSesion.Name = "panelIniciarSesion";
-            this.panelIniciarSesion.Size = new System.Drawing.Size(176, 119);
+            this.panelIniciarSesion.Size = new System.Drawing.Size(185, 116);
             this.panelIniciarSesion.TabIndex = 9;
             // 
             // lblSalir
@@ -435,7 +420,7 @@
             this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalir.Location = new System.Drawing.Point(88, 19);
+            this.lblSalir.Location = new System.Drawing.Point(97, 19);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
@@ -590,7 +575,6 @@
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblIniciarSesion;
         private System.Windows.Forms.Label lblRegistrarse;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panelRegistrarUsuario;
         private System.Windows.Forms.Label lblConfirmarContraseña;

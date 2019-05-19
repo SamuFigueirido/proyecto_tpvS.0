@@ -139,4 +139,10 @@
   <data name="atras_seleccionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atras_seleccionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ajustes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ajustes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ajustes_seleccionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ajustes_seleccionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
