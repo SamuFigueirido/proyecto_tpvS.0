@@ -316,9 +316,9 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(23, 314);
+            this.panelMenu.Location = new System.Drawing.Point(23, 91);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(253, 133);
+            this.panelMenu.Size = new System.Drawing.Size(833, 356);
             this.panelMenu.TabIndex = 8;
             this.panelMenu.Visible = false;
             // 
@@ -327,7 +327,7 @@
             this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(165, 19);
+            this.lblSalirMenu.Location = new System.Drawing.Point(745, 19);
             this.lblSalirMenu.Name = "lblSalirMenu";
             this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
             this.lblSalirMenu.TabIndex = 6;
@@ -341,13 +341,14 @@
             this.lblFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.Location = new System.Drawing.Point(-216, 41);
+            this.lblFacturas.Location = new System.Drawing.Point(74, 153);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(264, 131);
             this.lblFacturas.TabIndex = 11;
+            this.lblFacturas.Tag = "facturas";
             this.lblFacturas.Text = "Facturas";
             this.lblFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblFacturas.Click += new System.EventHandler(this.lblFacturas_Click);
+            this.lblFacturas.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
             this.lblFacturas.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblFacturas.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -357,13 +358,14 @@
             this.lblConfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfiguracion.Location = new System.Drawing.Point(70, 65);
+            this.lblConfiguracion.Location = new System.Drawing.Point(650, 288);
             this.lblConfiguracion.Name = "lblConfiguracion";
             this.lblConfiguracion.Size = new System.Drawing.Size(155, 44);
             this.lblConfiguracion.TabIndex = 10;
+            this.lblConfiguracion.Tag = "configuracion";
             this.lblConfiguracion.Text = "Configuración";
             this.lblConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblConfiguracion.Click += new System.EventHandler(this.lblConfiguracion_Click);
+            this.lblConfiguracion.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
             this.lblConfiguracion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblConfiguracion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -373,13 +375,14 @@
             this.lblAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlmacen.Location = new System.Drawing.Point(54, -103);
+            this.lblAlmacen.Location = new System.Drawing.Point(344, 9);
             this.lblAlmacen.Name = "lblAlmacen";
             this.lblAlmacen.Size = new System.Drawing.Size(264, 131);
             this.lblAlmacen.TabIndex = 9;
+            this.lblAlmacen.Tag = "almacen";
             this.lblAlmacen.Text = "Almacén";
             this.lblAlmacen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAlmacen.Click += new System.EventHandler(this.lblAlmacen_Click);
+            this.lblAlmacen.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
             this.lblAlmacen.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblAlmacen.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -389,13 +392,14 @@
             this.lblReservas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblReservas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(54, 41);
+            this.lblReservas.Location = new System.Drawing.Point(344, 153);
             this.lblReservas.Name = "lblReservas";
             this.lblReservas.Size = new System.Drawing.Size(264, 131);
             this.lblReservas.TabIndex = 8;
+            this.lblReservas.Tag = "reservas";
             this.lblReservas.Text = "Reservas";
             this.lblReservas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblReservas.Click += new System.EventHandler(this.lblReservas_Click);
+            this.lblReservas.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
             this.lblReservas.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblReservas.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -405,13 +409,14 @@
             this.lblComedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblComedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComedor.Location = new System.Drawing.Point(-216, -103);
+            this.lblComedor.Location = new System.Drawing.Point(74, 9);
             this.lblComedor.Name = "lblComedor";
             this.lblComedor.Size = new System.Drawing.Size(264, 131);
             this.lblComedor.TabIndex = 7;
+            this.lblComedor.Tag = "comedor";
             this.lblComedor.Text = "Comedor";
             this.lblComedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblComedor.Click += new System.EventHandler(this.lblComedor_Click);
+            this.lblComedor.Click += new System.EventHandler(this.lblOpcionesMenu_Click);
             this.lblComedor.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblComedor.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -455,7 +460,7 @@
             this.lblSalirComedor.Size = new System.Drawing.Size(60, 45);
             this.lblSalirComedor.TabIndex = 9;
             this.lblSalirComedor.Tag = "";
-            this.lblSalirComedor.Click += new System.EventHandler(this.lblSalirComedor_Click);
+            this.lblSalirComedor.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
             this.lblSalirComedor.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirComedor.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
@@ -475,7 +480,7 @@
             this.lblSalirReservas.Name = "lblSalirReservas";
             this.lblSalirReservas.Size = new System.Drawing.Size(60, 45);
             this.lblSalirReservas.TabIndex = 9;
-            this.lblSalirReservas.Click += new System.EventHandler(this.lblSalirReservas_Click);
+            this.lblSalirReservas.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
             this.lblSalirReservas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirReservas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
@@ -495,7 +500,7 @@
             this.lblSalirConfiguracion.Name = "lblSalirConfiguracion";
             this.lblSalirConfiguracion.Size = new System.Drawing.Size(60, 45);
             this.lblSalirConfiguracion.TabIndex = 9;
-            this.lblSalirConfiguracion.Click += new System.EventHandler(this.lblSalirConfiguracion_Click);
+            this.lblSalirConfiguracion.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
             this.lblSalirConfiguracion.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirConfiguracion.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
@@ -515,7 +520,7 @@
             this.lblSalirAlmacen.Name = "lblSalirAlmacen";
             this.lblSalirAlmacen.Size = new System.Drawing.Size(60, 45);
             this.lblSalirAlmacen.TabIndex = 9;
-            this.lblSalirAlmacen.Click += new System.EventHandler(this.lblSalirAlmacen_Click);
+            this.lblSalirAlmacen.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
             this.lblSalirAlmacen.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirAlmacen.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
@@ -535,7 +540,7 @@
             this.lblSalirFacturas.Name = "lblSalirFacturas";
             this.lblSalirFacturas.Size = new System.Drawing.Size(60, 45);
             this.lblSalirFacturas.TabIndex = 9;
-            this.lblSalirFacturas.Click += new System.EventHandler(this.lblSalirFacturas_Click);
+            this.lblSalirFacturas.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
             this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 

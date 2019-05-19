@@ -25,7 +25,6 @@ namespace Proyecto_TPVS._0
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-            //connectionString = ConfigurationManager.ConnectionStrings["Proyecto_TPVS._0.Properties.Settings.DataBaseConnectionString"].ConnectionString;
         }
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)
@@ -127,7 +126,7 @@ namespace Proyecto_TPVS._0
                     consultName = Convert.ToString(dr["nombre"]).Trim();
                     consultPassword = decrypt(Convert.ToString(dr["contraseña"]).Trim());
                 }
-                dr.Close(); 
+                dr.Close();
                 if (userName == consultName && userPassword == consultPassword)
                 {
                     cambioDePanel(panelMenu, panelIniciarSesion);
@@ -139,7 +138,8 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        public static string encrypt(string password) {
+        public static string encrypt(string password)
+        {
             string result = string.Empty;
             byte[] encryted = Encoding.Unicode.GetBytes(password);
             return Convert.ToBase64String(encryted);
@@ -242,54 +242,67 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        private void lblComedor_Click(object sender, EventArgs e)
+        private void lblOpcionesMenu_Click(object sender, EventArgs e)
         {
-            cambioDePanel(panelComedor, panelMenu);
+            cambioDePanel(panelMenu, panelSeleccionado(((Label)sender), false));
         }
 
-        private void lblAlmacen_Click(object sender, EventArgs e)
+        private void lblOpcionesSalir_Click(object sender, EventArgs e)
         {
-            cambioDePanel(panelAlmacen, panelMenu);
+            cambioDePanel(panelMenu, panelSeleccionado(((Label)sender), true));
         }
 
-        private void lblFacturas_Click(object sender, EventArgs e)
+        public Panel panelSeleccionado(Label lbl, bool salir)
         {
-            cambioDePanel(panelFacturas, panelMenu);
-        }
-
-        private void lblReservas_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelReservas, panelMenu);
-        }
-
-        private void lblConfiguracion_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelConfiguracion, panelMenu);
-        }
-
-        private void lblSalirComedor_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelComedor);
-        }
-
-        private void lblSalirAlmacen_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelAlmacen);
-        }
-
-        private void lblSalirFacturas_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelFacturas);
-        }
-
-        private void lblSalirReservas_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelReservas);
-        }
-
-        private void lblSalirConfiguracion_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelConfiguracion);
+            Panel panel;
+            string option = lbl.Tag.ToString();
+            if (!salir)
+            {
+                if (option == "comedor")
+                {
+                    panel = panelComedor;
+                }
+                else if (option == "almacen")
+                {
+                    panel = panelAlmacen;
+                }
+                else if (option == "facturas")
+                {
+                    panel = panelFacturas;
+                }
+                else if (option == "reservas")
+                {
+                    panel = panelReservas;
+                }
+                else
+                {
+                    panel = panelConfiguracion;
+                }
+            }
+            else
+            {
+                if (option == "comedor")
+                {
+                    panel = panelComedor;
+                }
+                else if (option == "almacen")
+                {
+                    panel = panelAlmacen;
+                }
+                else if (option == "facturas")
+                {
+                    panel = panelFacturas;
+                }
+                else if (option == "reservas")
+                {
+                    panel = panelReservas;
+                }
+                else
+                {
+                    panel = panelConfiguracion;
+                }
+            }
+            return panel;
         }
     }
 }
