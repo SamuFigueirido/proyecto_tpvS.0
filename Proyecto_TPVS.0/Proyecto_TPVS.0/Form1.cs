@@ -21,6 +21,7 @@ namespace Proyecto_TPVS._0
         SqlConnection connection;
         string connectionString;
         //KunLibertad_DesktopControl desktopControl;
+        bool flag = true;
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -241,65 +242,34 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        private void lblOpcionesMenu_Click(object sender, EventArgs e)
-        {
-            cambioDePanel(panelMenu, panelSeleccionado(((Label)sender), false));
-        }
-
         private void lblOpcionesSalir_Click(object sender, EventArgs e)
         {
-            cambioDePanel(panelMenu, panelSeleccionado(((Label)sender), true));
+            cambioDePanel(panelMenu, panelSeleccionado((Label)sender));
         }
 
-        public Panel panelSeleccionado(Label lbl, bool salir)
+        public Panel panelSeleccionado(Label lbl)
         {
             Panel panel;
             string option = lbl.Tag.ToString();
-            if (!salir)
+            if (option == "comedor")
             {
-                if (option == "comedor")
-                {
-                    panel = panelComedor;
-                }
-                else if (option == "almacen")
-                {
-                    panel = panelAlmacen;
-                }
-                else if (option == "facturas")
-                {
-                    panel = panelFacturas;
-                }
-                else if (option == "reservas")
-                {
-                    panel = panelReservas;
-                }
-                else
-                {
-                    panel = panelConfiguracion;
-                }
+                panel = panelComedor;
+            }
+            else if (option == "almacen")
+            {
+                panel = panelAlmacen;
+            }
+            else if (option == "facturas")
+            {
+                panel = panelFacturas;
+            }
+            else if (option == "reservas")
+            {
+                panel = panelReservas;
             }
             else
             {
-                if (option == "comedor")
-                {
-                    panel = panelComedor;
-                }
-                else if (option == "almacen")
-                {
-                    panel = panelAlmacen;
-                }
-                else if (option == "facturas")
-                {
-                    panel = panelFacturas;
-                }
-                else if (option == "reservas")
-                {
-                    panel = panelReservas;
-                }
-                else
-                {
-                    panel = panelConfiguracion;
-                }
+                panel = panelConfiguracion;
             }
             return panel;
         }
@@ -312,6 +282,56 @@ namespace Proyecto_TPVS._0
         private void lblConfiguracion_MouseLeave(object sender, EventArgs e)
         {
             ((Label)sender).Image = Properties.Resources.ajustes;
+        }
+
+        private void lblComedor_Click(object sender, EventArgs e)
+        {
+            panelMenu.Visible = false;
+            panelComedor.Visible = true;
+        }
+
+        private void lblAlmacen_Click(object sender, EventArgs e)
+        {
+            panelMenu.Visible = false;
+            panelAlmacen.Visible = true;
+        }
+
+        private void lblFacturas_Click(object sender, EventArgs e)
+        {
+            panelMenu.Visible = false;
+            panelFacturas.Visible = true;
+        }
+
+        private void lblReservas_Click(object sender, EventArgs e)
+        {
+            panelMenu.Visible = false;
+            panelReservas.Visible = true;
+        }
+
+        private void lblConfiguracion_Click(object sender, EventArgs e)
+        {
+            panelMenu.Visible = false;
+            panelConfiguracion.Visible = true;
+        }
+
+        private void txtCantMesas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnAceptarCantMesas_Click(object sender, EventArgs e)
+        {
+            if (txtCantMesas.Text.Trim() == "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 20)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Introduce un número del 1-20", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
