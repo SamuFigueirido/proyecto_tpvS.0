@@ -168,13 +168,6 @@
     <None Include="Resources\apagar_seleccionado.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataBase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DataBase.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\ajustes_seleccionado.png" />
     <None Include="Resources\ajustes.png" />
     <None Include="Resources\atras.png" />
