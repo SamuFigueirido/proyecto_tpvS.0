@@ -56,6 +56,7 @@
             this.panelIniciarSesion = new System.Windows.Forms.Panel();
             this.lblSalir = new System.Windows.Forms.Label();
             this.panelComedor = new System.Windows.Forms.Panel();
+            this.btnAceptarCantMesas = new System.Windows.Forms.Button();
             this.lblCantMesas = new System.Windows.Forms.Label();
             this.txtCantMesas = new System.Windows.Forms.TextBox();
             this.lblSalirComedor = new System.Windows.Forms.Label();
@@ -67,7 +68,10 @@
             this.lblSalirAlmacen = new System.Windows.Forms.Label();
             this.panelFacturas = new System.Windows.Forms.Panel();
             this.lblSalirFacturas = new System.Windows.Forms.Label();
-            this.btnAceptarCantMesas = new System.Windows.Forms.Button();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
+            this.lblBorrarUsuario = new System.Windows.Forms.Label();
+            this.lblBorrarDato = new System.Windows.Forms.Label();
+            this.panelBorrarUsuario = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -305,9 +309,9 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(804, 214);
+            this.panelMenu.Location = new System.Drawing.Point(696, 154);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(254, 151);
+            this.panelMenu.Size = new System.Drawing.Size(380, 165);
             this.panelMenu.TabIndex = 8;
             // 
             // lblSalirMenu
@@ -315,7 +319,7 @@
             this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(166, 19);
+            this.lblSalirMenu.Location = new System.Drawing.Point(292, 19);
             this.lblSalirMenu.Name = "lblSalirMenu";
             this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
             this.lblSalirMenu.TabIndex = 6;
@@ -329,7 +333,7 @@
             this.lblFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.Location = new System.Drawing.Point(-215, 50);
+            this.lblFacturas.Location = new System.Drawing.Point(-152, 57);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(264, 131);
             this.lblFacturas.TabIndex = 11;
@@ -346,7 +350,7 @@
             this.lblConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.ajustes;
-            this.lblConfiguracion.Location = new System.Drawing.Point(164, 59);
+            this.lblConfiguracion.Location = new System.Drawing.Point(290, 73);
             this.lblConfiguracion.Name = "lblConfiguracion";
             this.lblConfiguracion.Size = new System.Drawing.Size(69, 69);
             this.lblConfiguracion.TabIndex = 10;
@@ -362,7 +366,7 @@
             this.lblAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlmacen.Location = new System.Drawing.Point(55, -94);
+            this.lblAlmacen.Location = new System.Drawing.Point(118, -87);
             this.lblAlmacen.Name = "lblAlmacen";
             this.lblAlmacen.Size = new System.Drawing.Size(264, 131);
             this.lblAlmacen.TabIndex = 9;
@@ -379,7 +383,7 @@
             this.lblReservas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblReservas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(55, 50);
+            this.lblReservas.Location = new System.Drawing.Point(118, 57);
             this.lblReservas.Name = "lblReservas";
             this.lblReservas.Size = new System.Drawing.Size(264, 131);
             this.lblReservas.TabIndex = 8;
@@ -396,7 +400,7 @@
             this.lblComedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblComedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComedor.Location = new System.Drawing.Point(-215, -94);
+            this.lblComedor.Location = new System.Drawing.Point(-152, -87);
             this.lblComedor.Name = "lblComedor";
             this.lblComedor.Size = new System.Drawing.Size(264, 131);
             this.lblComedor.TabIndex = 7;
@@ -442,6 +446,16 @@
             this.panelComedor.TabIndex = 10;
             this.panelComedor.Visible = false;
             // 
+            // btnAceptarCantMesas
+            // 
+            this.btnAceptarCantMesas.Location = new System.Drawing.Point(345, 33);
+            this.btnAceptarCantMesas.Name = "btnAceptarCantMesas";
+            this.btnAceptarCantMesas.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarCantMesas.TabIndex = 12;
+            this.btnAceptarCantMesas.Text = "Aceptar";
+            this.btnAceptarCantMesas.UseVisualStyleBackColor = true;
+            this.btnAceptarCantMesas.Click += new System.EventHandler(this.btnAceptarCantMesas_Click);
+            // 
             // lblCantMesas
             // 
             this.lblCantMesas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -479,7 +493,7 @@
             // panelReservas
             // 
             this.panelReservas.Controls.Add(this.lblSalirReservas);
-            this.panelReservas.Location = new System.Drawing.Point(450, 480);
+            this.panelReservas.Location = new System.Drawing.Point(244, 480);
             this.panelReservas.Name = "panelReservas";
             this.panelReservas.Size = new System.Drawing.Size(200, 100);
             this.panelReservas.TabIndex = 11;
@@ -500,10 +514,13 @@
             // 
             // panelConfiguracion
             // 
+            this.panelConfiguracion.Controls.Add(this.lblBorrarDato);
+            this.panelConfiguracion.Controls.Add(this.lblBorrarUsuario);
+            this.panelConfiguracion.Controls.Add(this.lblCerrarSesion);
             this.panelConfiguracion.Controls.Add(this.lblSalirConfiguracion);
-            this.panelConfiguracion.Location = new System.Drawing.Point(244, 480);
+            this.panelConfiguracion.Location = new System.Drawing.Point(534, 336);
             this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(200, 100);
+            this.panelConfiguracion.Size = new System.Drawing.Size(380, 165);
             this.panelConfiguracion.TabIndex = 12;
             this.panelConfiguracion.Visible = false;
             // 
@@ -523,7 +540,7 @@
             // panelAlmacen
             // 
             this.panelAlmacen.Controls.Add(this.lblSalirAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(656, 480);
+            this.panelAlmacen.Location = new System.Drawing.Point(40, 586);
             this.panelAlmacen.Name = "panelAlmacen";
             this.panelAlmacen.Size = new System.Drawing.Size(200, 100);
             this.panelAlmacen.TabIndex = 13;
@@ -564,15 +581,59 @@
             this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
             this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
             // 
-            // btnAceptarCantMesas
+            // lblCerrarSesion
             // 
-            this.btnAceptarCantMesas.Location = new System.Drawing.Point(345, 33);
-            this.btnAceptarCantMesas.Name = "btnAceptarCantMesas";
-            this.btnAceptarCantMesas.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarCantMesas.TabIndex = 12;
-            this.btnAceptarCantMesas.Text = "Aceptar";
-            this.btnAceptarCantMesas.UseVisualStyleBackColor = true;
-            this.btnAceptarCantMesas.Click += new System.EventHandler(this.btnAceptarCantMesas_Click);
+            this.lblCerrarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.Location = new System.Drawing.Point(-152, -87);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(264, 131);
+            this.lblCerrarSesion.TabIndex = 10;
+            this.lblCerrarSesion.Text = "Cerrar sesión";
+            this.lblCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
+            this.lblCerrarSesion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblCerrarSesion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblBorrarUsuario
+            // 
+            this.lblBorrarUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBorrarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBorrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBorrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrarUsuario.Location = new System.Drawing.Point(118, -87);
+            this.lblBorrarUsuario.Name = "lblBorrarUsuario";
+            this.lblBorrarUsuario.Size = new System.Drawing.Size(264, 131);
+            this.lblBorrarUsuario.TabIndex = 11;
+            this.lblBorrarUsuario.Text = "Borrar usuario";
+            this.lblBorrarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBorrarUsuario.Click += new System.EventHandler(this.lblBorrarUsuario_Click);
+            this.lblBorrarUsuario.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblBorrarUsuario.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblBorrarDato
+            // 
+            this.lblBorrarDato.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBorrarDato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBorrarDato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBorrarDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrarDato.Location = new System.Drawing.Point(-152, 58);
+            this.lblBorrarDato.Name = "lblBorrarDato";
+            this.lblBorrarDato.Size = new System.Drawing.Size(264, 131);
+            this.lblBorrarDato.TabIndex = 12;
+            this.lblBorrarDato.Text = "Borrar dato";
+            this.lblBorrarDato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBorrarDato.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblBorrarDato.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // panelBorrarUsuario
+            // 
+            this.panelBorrarUsuario.Location = new System.Drawing.Point(732, 526);
+            this.panelBorrarUsuario.Name = "panelBorrarUsuario";
+            this.panelBorrarUsuario.Size = new System.Drawing.Size(200, 100);
+            this.panelBorrarUsuario.TabIndex = 15;
             // 
             // FormIniciarSesion
             // 
@@ -580,13 +641,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 638);
             this.Controls.Add(this.panelIniciarSesion);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Controls.Add(this.panelComedor);
             this.Controls.Add(this.panelReservas);
             this.Controls.Add(this.panelConfiguracion);
             this.Controls.Add(this.panelFacturas);
             this.Controls.Add(this.panelAlmacen);
+            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelBorrarUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -615,45 +677,49 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.Label lblIniciarSesion;
-        private System.Windows.Forms.Label lblRegistrarse;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panelRegistrarUsuario;
-        private System.Windows.Forms.Label lblConfirmarContraseña;
-        private System.Windows.Forms.Label lblContraseñaRegistro;
-        private System.Windows.Forms.Label lblUsuarioRegistro;
-        private System.Windows.Forms.TextBox txtConfirmarContraseña;
-        private System.Windows.Forms.TextBox txtContraseñaRegistro;
-        private System.Windows.Forms.TextBox txtUsuarioRegistro;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblRegistrarUsuario;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelIniciarSesion;
-        private System.Windows.Forms.Label lblAtras;
-        private System.Windows.Forms.Label lblSalirMenu;
-        private System.Windows.Forms.Label lblComedor;
-        private System.Windows.Forms.Label lblFacturas;
-        private System.Windows.Forms.Label lblConfiguracion;
-        private System.Windows.Forms.Label lblAlmacen;
-        private System.Windows.Forms.Label lblReservas;
-        private System.Windows.Forms.Label lblSalir;
-        private System.Windows.Forms.Panel panelComedor;
-        private System.Windows.Forms.Panel panelReservas;
-        private System.Windows.Forms.Panel panelConfiguracion;
-        private System.Windows.Forms.Panel panelAlmacen;
-        private System.Windows.Forms.Panel panelFacturas;
-        private System.Windows.Forms.Label lblSalirComedor;
-        private System.Windows.Forms.Label lblSalirReservas;
-        private System.Windows.Forms.Label lblSalirConfiguracion;
-        private System.Windows.Forms.Label lblSalirAlmacen;
-        private System.Windows.Forms.Label lblSalirFacturas;
-        private System.Windows.Forms.TextBox txtCantMesas;
-        private System.Windows.Forms.Label lblCantMesas;
-        private System.Windows.Forms.Button btnAceptarCantMesas;
+        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.TextBox txtContraseña;
+        public System.Windows.Forms.Label lblUsuario;
+        public System.Windows.Forms.Label lblContraseña;
+        public System.Windows.Forms.Label lblIniciarSesion;
+        public System.Windows.Forms.Label lblRegistrarse;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Panel panelRegistrarUsuario;
+        public System.Windows.Forms.Label lblConfirmarContraseña;
+        public System.Windows.Forms.Label lblContraseñaRegistro;
+        public System.Windows.Forms.Label lblUsuarioRegistro;
+        public System.Windows.Forms.TextBox txtConfirmarContraseña;
+        public System.Windows.Forms.TextBox txtContraseñaRegistro;
+        public System.Windows.Forms.TextBox txtUsuarioRegistro;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.Label lblRegistrarUsuario;
+        public System.Windows.Forms.Panel panelMenu;
+        public System.Windows.Forms.Panel panelIniciarSesion;
+        public System.Windows.Forms.Label lblAtras;
+        public System.Windows.Forms.Label lblSalirMenu;
+        public System.Windows.Forms.Label lblComedor;
+        public System.Windows.Forms.Label lblFacturas;
+        public System.Windows.Forms.Label lblConfiguracion;
+        public System.Windows.Forms.Label lblAlmacen;
+        public System.Windows.Forms.Label lblReservas;
+        public System.Windows.Forms.Label lblSalir;
+        public System.Windows.Forms.Panel panelComedor;
+        public System.Windows.Forms.Panel panelReservas;
+        public System.Windows.Forms.Panel panelConfiguracion;
+        public System.Windows.Forms.Panel panelAlmacen;
+        public System.Windows.Forms.Panel panelFacturas;
+        public System.Windows.Forms.Label lblSalirComedor;
+        public System.Windows.Forms.Label lblSalirReservas;
+        public System.Windows.Forms.Label lblSalirConfiguracion;
+        public System.Windows.Forms.Label lblSalirAlmacen;
+        public System.Windows.Forms.Label lblSalirFacturas;
+        public System.Windows.Forms.TextBox txtCantMesas;
+        public System.Windows.Forms.Label lblCantMesas;
+        public System.Windows.Forms.Button btnAceptarCantMesas;
+        public System.Windows.Forms.Label lblCerrarSesion;
+        public System.Windows.Forms.Label lblBorrarDato;
+        public System.Windows.Forms.Label lblBorrarUsuario;
+        private System.Windows.Forms.Panel panelBorrarUsuario;
     }
 }
 
