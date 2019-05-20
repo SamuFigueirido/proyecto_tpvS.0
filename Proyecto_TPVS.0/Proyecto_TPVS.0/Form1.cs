@@ -19,22 +19,23 @@ namespace Proyecto_TPVS._0
 {
     public partial class FormIniciarSesion : Form
     {
-        //SqlConnection connection;
-        //string connectionString;
         //KunLibertad_DesktopControl desktopControl;
-        bool flag = true;
+        ConnectionSQL connectionSQL;
+        Pass encryptDecrypt = new Pass();
         public FormIniciarSesion()
         {
             InitializeComponent();
-            //connectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         }
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)
         {
             ajustarPaneles();
-            connectionBD();
-            //connection = new SqlConnection(connectionString);
-            //connection.Open();
+            connectionSQL = new ConnectionSQL();
+            connectionSQL.createBD();
+            foreach (string user in connectionSQL.empleados())
+            {
+                Console.WriteLine(user);
+            }
             pantallaCompleta(this);
         }
 
@@ -57,11 +58,7 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                //if (connection != null)
-                //{
-                //    connection.Close();
-                //}
-                //desktopControl.TaskBar(false);
+                connectionSQL.cerrarConexion();
             }
         }
 
@@ -110,37 +107,6 @@ namespace Proyecto_TPVS._0
             cambioDePanel(panelRegistrarUsuario, panelIniciarSesion);
         }
 
-        //private void lblIniciarSesion_Click(object sender, EventArgs e)
-        //{
-        //    string userName = txtUsuario.Text.Trim();
-        //    string userPassword = txtContraseña.Text.Trim();
-        //    if (userName == "" || userPassword == "")
-        //    {
-        //        MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    else
-        //    {
-        //        string consultName = "";
-        //        string consultPassword = "";
-        //        SqlCommand query = new SqlCommand("select * from empleados where nombre = '" + userName + "'", connection);
-        //        SqlDataReader dr = query.ExecuteReader();
-        //        if (dr.Read())
-        //        {
-        //            consultName = Convert.ToString(dr["nombre"]).Trim();
-        //            consultPassword = decrypt(Convert.ToString(dr["contraseña"]).Trim());
-        //        }
-        //        dr.Close();
-        //        if (userName == consultName && userPassword == consultPassword)
-        //        {
-        //            cambioDePanel(panelMenu, panelIniciarSesion);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
-
         private void lblIniciarSesion_Click(object sender, EventArgs e)
         {
             string userName = txtUsuario.Text.Trim();
@@ -151,48 +117,11 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                using (SQLiteConnection conn = new SQLiteConnection("data source=database.db"))
+                if(connectionSQL.loginEmpleado(userName, userPassword))
                 {
-                    string consultName = "";
-                    string consultPassword = "";
-                    using (SQLiteCommand query = new SQLiteCommand("select * from [empleados] where nombre = '" + userName + "'"))
-                    {
-                        using (SQLiteCommand cmd = new SQLiteCommand(conn))
-                        {
-                            using (SQLiteDataReader dr = query.ExecuteReader())
-                            {
-                                while (dr.Read())
-                                {
-                                    consultName = Convert.ToString(dr["nombre"]).Trim();
-                                    consultPassword = decrypt(Convert.ToString(dr["contraseña"]).Trim());
-                                }
-                            }
-                            if (userName == consultName && userPassword == consultPassword)
-                            {
-                                cambioDePanel(panelMenu, panelIniciarSesion);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
+                    cambioDePanel(panelMenu, panelIniciarSesion);
                 }
             }
-        }
-
-        public static string encrypt(string password)
-        {
-            string result = string.Empty;
-            byte[] encryted = Encoding.Unicode.GetBytes(password);
-            return Convert.ToBase64String(encryted);
-        }
-
-        public static string decrypt(string password)
-        {
-            string result = string.Empty;
-            byte[] decryted = Convert.FromBase64String(password);
-            return Encoding.Unicode.GetString(decryted);
         }
 
         private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
@@ -227,113 +156,26 @@ namespace Proyecto_TPVS._0
             cambioDePanel(panelIniciarSesion, panelRegistrarUsuario);
         }
 
-        //private void lblRegistrarUsuario_Click(object sender, EventArgs e)
-        //{
-        //    if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
-        //    {
-        //        MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    else
-        //    {
-        //        string newName = txtUsuarioRegistro.Text.Trim();
-        //        string consultName = "";
-        //        SqlCommand query = new SqlCommand("select * from empleados where nombre = '" + newName + "'", connection);
-        //        SqlDataReader dr = query.ExecuteReader();
-        //        if (dr.Read())
-        //        {
-        //            consultName = Convert.ToString(dr["nombre"]).Trim();
-        //        }
-        //        dr.Close();
-        //        if (txtContraseñaRegistro.Text.Trim() == txtConfirmarContraseña.Text.Trim())
-        //        {
-        //            if (consultName != newName)
-        //            {
-        //                string password = txtContraseñaRegistro.Text.Trim();
-        //                int id = 1;
-        //                do
-        //                {
-        //                    try
-        //                    {
-        //                        query = new SqlCommand("insert into empleados (id, nombre, contraseña) values (" + id + ", '" + newName + "', '" + encrypt(password) + "')", connection);
-        //                        int res = query.ExecuteNonQuery();
-        //                        if (res > 0)
-        //                        {
-        //                            MessageBox.Show("Nuevo usuario creado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                            cambioDePanel(panelMenu, panelRegistrarUsuario);
-        //                            return;
-        //                        }
-        //                    }
-        //                    catch (SqlException)
-        //                    {
-        //                        id++;
-        //                    }
-        //                } while (true);
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("El nombre de usuario ya está en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                txtUsuarioRegistro.Text = "";
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            txtContraseñaRegistro.Text = "";
-        //            txtConfirmarContraseña.Text = "";
-        //        }
-        //    }
-        //}
-
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
             if (txtContraseñaRegistro.Text.Trim() == "" || txtConfirmarContraseña.Text.Trim() == "" || txtUsuarioRegistro.Text.Trim() == "")
             {
                 MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (txtContraseñaRegistro.Text.Trim() == txtConfirmarContraseña.Text.Trim())
             {
                 string newName = txtUsuarioRegistro.Text.Trim();
-                string consultName = "";
-                SQLiteCommand query = new SQLiteCommand("select * from empleados where nombre = '" + newName + "'");
-                SQLiteDataReader dr = query.ExecuteReader();
-                if (dr.Read())
+                string password = txtContraseñaRegistro.Text.Trim();
+                if(connectionSQL.addEmpleado(newName, password))
                 {
-                    consultName = Convert.ToString(dr["nombre"]).Trim();
+                    cambioDePanel(panelMenu, panelRegistrarUsuario);
                 }
-                dr.Close();
-                if (txtContraseñaRegistro.Text.Trim() == txtConfirmarContraseña.Text.Trim())
-                {
-                    if (consultName != newName)
-                    {
-                        string password = txtContraseñaRegistro.Text.Trim();
-                        try
-                        {
-                            query = new SQLiteCommand("insert into [empleados] (nombre, contraseña) values ('" + newName + "', '" + encrypt(password) + "')");
-                            int res = query.ExecuteNonQuery();
-                            if (res > 0)
-                            {
-                                MessageBox.Show("Nuevo usuario creado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                cambioDePanel(panelMenu, panelRegistrarUsuario);
-                                return;
-                            }
-                        }
-                        catch (SqlException)
-                        {
-                            Console.WriteLine("Error");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El nombre de usuario ya está en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtUsuarioRegistro.Text = "";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtContraseñaRegistro.Text = "";
-                    txtConfirmarContraseña.Text = "";
-                }
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtContraseñaRegistro.Text = "";
+                txtConfirmarContraseña.Text = "";
             }
         }
 
@@ -428,82 +270,21 @@ namespace Proyecto_TPVS._0
                 MessageBox.Show("Introduce un número del 1-20", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void connectionBD()
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
         {
-            SQLiteConnection.CreateFile("database.db");
-
-            using (SQLiteConnection conn = new SQLiteConnection("data source=database.db"))
+            
+            if (MessageBox.Show("¿Seguro que deseas cerrar sesión?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.Cancel)
             {
-                using (SQLiteCommand cmd = new SQLiteCommand(conn))
-                {
-                    string empleados = @"CREATE TABLE IF NOT EXISTS
-                            [empleados](
-                            [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NOT NULL,
-                            [contraseña] VARCHAR(50)
-                            )";
-                    string bebidas = @"CREATE TABLE IF NOT EXISTS
-                            [bebidas](
-                            [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NULL,
-                            [cantidad] VARCHAR(50) NULL,
-                            [precio] float NOT NULL
-                            )";
-                    string tapas = @"CREATE TABLE IF NOT EXISTS
-                            [tapas](
-                            [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NULL,
-                            [cantidad] VARCHAR(50) NULL,
-                            [precio] float NOT NULL
-                            )";
-                    string facturas = @"CREATE TABLE IF NOT EXISTS
-                            [facturas](
-                            [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [platos] VARCHAR(50) NULL,
-                            [total] float NOT NULL
-                            )";
-                    string reservas = @"CREATE TABLE IF NOT EXISTS
-                            [reservas](
-                            [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NULL,
-                            [fecha] datetimeoffset NULL
-                            )";
-                    conn.Open();
-                    cmd.CommandText = empleados;
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = "INSERT INTO [empleados] (nombre, contraseña) values('admin', '" + encrypt("0000") + "')";
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = "INSERT INTO [empleados] (nombre, contraseña) values('samuel', '" + encrypt("1234") + "')";
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = bebidas;
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = tapas;
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = facturas;
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = reservas;
-                    cmd.ExecuteNonQuery();
-
-                    cmd.CommandText = "SELECT * FROM [empleados]";
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            MessageBox.Show(reader["id"].ToString() + "\n" + reader["nombre"].ToString() + "\n" + reader["contraseña"].ToString());
-                        }
-
-                        conn.Close();
-
-                    }
-
-                }
+                txtUsuario.Text = "";
+                txtContraseña.Text = "";
+                cambioDePanel(panelIniciarSesion, panelConfiguracion);
             }
+        }
+
+        private void lblBorrarUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
