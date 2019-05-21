@@ -22,6 +22,7 @@ namespace Proyecto_TPVS._0
         //KunLibertad_DesktopControl desktopControl;
         ConnectionSQL connectionSQL;
         Pass encryptDecrypt = new Pass();
+        List<string> datosNombres;
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -117,7 +118,7 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                if(connectionSQL.loginEmpleado(userName, userPassword))
+                if (connectionSQL.loginEmpleado(userName, userPassword))
                 {
                     cambioDePanel(panelMenu, panelIniciarSesion);
                 }
@@ -141,12 +142,12 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        private void labelAtras_MouseEnter(object sender, EventArgs e)
+        private void lblAtras_MouseEnter(object sender, EventArgs e)
         {
             ((Label)sender).Image = Properties.Resources.atras_seleccionado;
         }
 
-        private void labelAtras_MouseLeave(object sender, EventArgs e)
+        private void lblAtras_MouseLeave(object sender, EventArgs e)
         {
             ((Label)sender).Image = Properties.Resources.atras;
         }
@@ -154,6 +155,8 @@ namespace Proyecto_TPVS._0
         private void lblAtras_Click(object sender, EventArgs e)
         {
             cambioDePanel(panelIniciarSesion, panelRegistrarUsuario);
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
         }
 
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
@@ -166,7 +169,7 @@ namespace Proyecto_TPVS._0
             {
                 string newName = txtUsuarioRegistro.Text.Trim();
                 string password = txtContraseñaRegistro.Text.Trim();
-                if(connectionSQL.addEmpleado(newName, password))
+                if (connectionSQL.addEmpleado(newName, password))
                 {
                     cambioDePanel(panelMenu, panelRegistrarUsuario);
                 }
@@ -179,7 +182,7 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        private void lblOpcionesSalir_Click(object sender, EventArgs e)
+        private void lblOpcionesAtras_Click(object sender, EventArgs e)
         {
             cambioDePanel(panelMenu, panelSeleccionado((Label)sender));
         }
@@ -231,6 +234,11 @@ namespace Proyecto_TPVS._0
         {
             panelMenu.Visible = false;
             panelAlmacen.Visible = true;
+            listBoxTablas.DataSource = connectionSQL.almacen();
+            foreach (string tabla in connectionSQL.almacen())
+            {
+                Console.WriteLine(tabla);
+            }
         }
 
         private void lblFacturas_Click(object sender, EventArgs e)
@@ -273,7 +281,7 @@ namespace Proyecto_TPVS._0
 
         private void lblCerrarSesion_Click(object sender, EventArgs e)
         {
-            
+
             if (MessageBox.Show("¿Seguro que deseas cerrar sesión?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.Cancel)
             {
                 txtUsuario.Text = "";
@@ -284,7 +292,87 @@ namespace Proyecto_TPVS._0
 
         private void lblBorrarUsuario_Click(object sender, EventArgs e)
         {
+            cambioDePanel(panelBorrarUsuario, panelConfiguracion);
+            listBoxUsuarios.DataSource = connectionSQL.empleados();
+        }
 
+        private void lblAtrasBorrarUsuario_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelConfiguracion, panelBorrarUsuario);
+        }
+
+        private void btnBorrarUsuario_Click(object sender, EventArgs e)
+        {
+            string nombre = listBoxUsuarios.SelectedValue.ToString();
+            string query = "delete from [empleados] where nombre='" + nombre + "'";
+            Console.WriteLine(query);
+            connectionSQL.abrirConexion();
+            if (listBoxUsuarios.Items.Count == 1)
+            {
+                if (MessageBox.Show("¿Seguro que deseas eliminar el último usuario?\nVolverás a la pantalla de registro", "Eliminar usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.Cancel)
+                {
+                    connectionSQL.executeQuery(query);
+                    cambioDePanel(panelRegistrarUsuario, panelBorrarUsuario);
+                }
+            }
+            else
+            {
+                connectionSQL.executeQuery(query);
+            }
+            connectionSQL.cerrarConexion();
+            listBoxUsuarios.DataSource = connectionSQL.empleados();
+        }
+
+        private void listBoxTablas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxDatos.Visible = true;
+            listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
+            lblTablaSeleccionada.Text = "Tabla seleccionada: " + listBoxTablas.SelectedValue.ToString();
+            datosNombres = connectionSQL.datosAlmacenNombres(listBoxTablas.SelectedValue.ToString());
+            foreach (string nombres in datosNombres)
+            {
+                Console.WriteLine(nombres);
+            }
+        }
+
+        private void btnEliminarDato_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tabla = listBoxTablas.SelectedValue.ToString();
+                int pos = listBoxDatos.SelectedIndex;
+                string nombre = connectionSQL.datosAlmacenNombres(tabla)[pos];
+                Console.WriteLine(tabla + " " + pos + " " + nombre);
+                connectionSQL.deleteDatos(tabla, nombre);
+                listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("No hay más datos para eliminar", "Tabla vacía", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnInsertarDato_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNombre.Text.Trim() == "" || txtCantidad.Text.Trim() == "" || txtPrecio.Text.Trim() == "")
+                {
+                    MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
+                    listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
+                    txtNombre.Text= "";
+                    txtCantidad.Text = "";
+                    txtPrecio.Text= "";
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

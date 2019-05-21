@@ -15,12 +15,15 @@ namespace Proyecto_TPVS._0
         Pass encryptDecrypt = new Pass();
         SQLiteConnection conn = new SQLiteConnection("Data Source=database.db");
         List<string> empleadosList;
-        Hashtable bebidasHash;
-        Hashtable tapasHash;
         List<string> facturasList;
+        List<string> tablasList;
+        List<string> tablasAlmacenList;
+        List<string> datosAlmacenList;
+        List<string> datosNombres;
 
         public void abrirConexion()
         {
+            cerrarConexion();
             try
             {
                 conn.Open();
@@ -80,14 +83,24 @@ namespace Proyecto_TPVS._0
                             [nombre] VARCHAR(50) NULL,
                             [fecha] datetimeoffset NULL
                             )";
-            //string insertAdmin = "INSERT INTO [empleados] (nombre, contraseña) values('admin', '" + encryptDecrypt.encrypt("0000") + "')";
             abrirConexion();
             executeQuery(empleados);
             executeQuery(bebidas);
             executeQuery(tapas);
             executeQuery(facturas);
             executeQuery(reservas);
-            //executeQuery(insertAdmin);
+            //executeQuery("INSERT INTO [empleados] (nombre, contraseña) values('admin', '" + encryptDecrypt.encrypt("0000") + "')");
+            //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('Fanta', 20, 2.5)");
+            //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Calamares', 10, 8.5)");
+            //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('CocaCola', 20, 2.5)");
+            //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Croquetas', 10, 6)");
+            //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('Nestea', 20, 2)");
+            //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Tortilla', 10, 7)");
+            //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('Aquarius', 20, 2)");
+            //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Callos', 10, 6.5)");
+            //executeQuery("DELETE FROM [empleados]");
+            //executeQuery("DELETE FROM [bebidas]");
+            //executeQuery("DELETE FROM [tapas]");
             cerrarConexion();
         }
 
@@ -181,49 +194,13 @@ namespace Proyecto_TPVS._0
             {
                 cmd.CommandText = query;
                 SQLiteDataReader reader = cmd.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     empleadosList.Add(Convert.ToString(reader["nombre"]).Trim());
                 }
             }
             cerrarConexion();
             return empleadosList;
-        }
-
-        public Hashtable bebidas()
-        {
-            abrirConexion();
-            bebidasHash = new Hashtable();
-            string query = "select * from [bebidas]";
-            using (SQLiteCommand cmd = new SQLiteCommand(conn))
-            {
-                cmd.CommandText = query;
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    bebidasHash.Add(Convert.ToString(reader["nombre"]).Trim(), Convert.ToDouble(reader["precio"]));
-                }
-            }
-            cerrarConexion();
-            return bebidasHash;
-        }
-
-        public Hashtable tapas()
-        {
-            abrirConexion();
-            tapasHash = new Hashtable();
-            string query = "select * from [tapas]";
-            using (SQLiteCommand cmd = new SQLiteCommand(conn))
-            {
-                cmd.CommandText = query;
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    tapasHash.Add(Convert.ToString(reader["nombre"]).Trim(), Convert.ToDouble(reader["precio"]));
-                }
-            }
-            cerrarConexion();
-            return tapasHash;
         }
 
         public List<string> facturas()
@@ -247,6 +224,100 @@ namespace Proyecto_TPVS._0
             }
             cerrarConexion();
             return facturasList;
+        }
+
+        public List<string> tablas()
+        {
+            tablasList = new List<string>();
+            abrirConexion();
+            string query = "SELECT * FROM sqlite_master WHERE type='table'";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tablasList.Add(Convert.ToString(reader["name"]).Trim());
+                }
+            }
+            cerrarConexion();
+            return tablasList;
+        }
+
+        public List<string> almacen()
+        {
+            tablasAlmacenList = new List<string>();
+            abrirConexion();
+            string query = "SELECT * FROM sqlite_master WHERE type='table' and name='tapas'";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tablasAlmacenList.Add(Convert.ToString(reader["name"]).Trim());
+                }
+                reader.Close();
+                query = "SELECT * FROM sqlite_master WHERE type='table' and name='bebidas'";
+                cmd.CommandText = query;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tablasAlmacenList.Add(Convert.ToString(reader["name"]).Trim());
+                }
+            }
+            cerrarConexion();
+            return tablasAlmacenList;
+        }
+
+        public List<string> datosAlmacen(string tabla)
+        {
+            abrirConexion();
+            datosAlmacenList = new List<string>();
+            string query = "select * from [" + tabla + "]";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    datosAlmacenList.Add(string.Format("{0, -20}{1, -20}{2, -20}", Convert.ToString(reader["nombre"]).Trim(), Convert.ToString(reader["precio"]).Trim() + "€", Convert.ToString(reader["cantidad"]).Trim() + "Uds."));
+                }
+            }
+            cerrarConexion();
+            return datosAlmacenList;
+        }
+
+        public List<string> datosAlmacenNombres(string tabla)
+        {
+            abrirConexion();
+            datosNombres = new List<string>();
+            string query = "select * from [" + tabla + "]";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    datosNombres.Add(Convert.ToString(reader["nombre"]).Trim());
+                }
+            }
+            cerrarConexion();
+            return datosNombres;
+        }
+
+        public void insertDatos(string tabla, string nombre, int cantidad, double precio)
+        {
+            abrirConexion();
+            executeQuery("INSERT INTO [" + tabla + "] (nombre, cantidad, precio) values('" + nombre + "', " + cantidad + ", '" + precio + "')");
+            cerrarConexion();
+        }
+
+        public void deleteDatos(string tabla, string nombre)
+        {
+            abrirConexion();
+            executeQuery("DELETE FROM [" + tabla + "] where nombre='" + nombre + "'");
+            cerrarConexion();
         }
     }
 }

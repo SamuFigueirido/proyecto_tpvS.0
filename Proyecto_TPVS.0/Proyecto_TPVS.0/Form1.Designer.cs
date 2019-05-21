@@ -59,19 +59,34 @@
             this.btnAceptarCantMesas = new System.Windows.Forms.Button();
             this.lblCantMesas = new System.Windows.Forms.Label();
             this.txtCantMesas = new System.Windows.Forms.TextBox();
-            this.lblSalirComedor = new System.Windows.Forms.Label();
+            this.lblAtrasComedor = new System.Windows.Forms.Label();
             this.panelReservas = new System.Windows.Forms.Panel();
-            this.lblSalirReservas = new System.Windows.Forms.Label();
+            this.lblAtrasReservas = new System.Windows.Forms.Label();
             this.panelConfiguracion = new System.Windows.Forms.Panel();
-            this.lblSalirConfiguracion = new System.Windows.Forms.Label();
-            this.panelAlmacen = new System.Windows.Forms.Panel();
-            this.lblSalirAlmacen = new System.Windows.Forms.Label();
-            this.panelFacturas = new System.Windows.Forms.Panel();
-            this.lblSalirFacturas = new System.Windows.Forms.Label();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.lblBorrarUsuario = new System.Windows.Forms.Label();
-            this.lblBorrarDato = new System.Windows.Forms.Label();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
+            this.lblAtrasConfiguracion = new System.Windows.Forms.Label();
+            this.panelAlmacen = new System.Windows.Forms.Panel();
+            this.btnEliminarDato = new System.Windows.Forms.Button();
+            this.btnInsertarDato = new System.Windows.Forms.Button();
+            this.listBoxDatos = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBoxTablas = new System.Windows.Forms.ListBox();
+            this.lblAtrasAlmacen = new System.Windows.Forms.Label();
+            this.panelFacturas = new System.Windows.Forms.Panel();
+            this.lblAtrasFacturas = new System.Windows.Forms.Label();
             this.panelBorrarUsuario = new System.Windows.Forms.Panel();
+            this.btnBorrarUsuario = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxUsuarios = new System.Windows.Forms.ListBox();
+            this.lblAtrasBorrarUsuario = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTablaSeleccionada = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,6 +97,7 @@
             this.panelConfiguracion.SuspendLayout();
             this.panelAlmacen.SuspendLayout();
             this.panelFacturas.SuspendLayout();
+            this.panelBorrarUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -147,7 +163,7 @@
             this.lblRegistrarse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrarse.Location = new System.Drawing.Point(166, 30);
+            this.lblRegistrarse.Location = new System.Drawing.Point(-62, 30);
             this.lblRegistrarse.Name = "lblRegistrarse";
             this.lblRegistrarse.Size = new System.Drawing.Size(139, 46);
             this.lblRegistrarse.TabIndex = 4;
@@ -167,21 +183,21 @@
             this.groupBox1.Controls.Add(this.lblContraseña);
             this.groupBox1.Controls.Add(this.lblIniciarSesion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(38, 77);
+            this.groupBox1.Location = new System.Drawing.Point(-76, -71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 329);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Iniciar sesion";
+            this.groupBox1.Text = "Iniciar sesión";
             // 
             // panelRegistrarUsuario
             // 
             this.panelRegistrarUsuario.Controls.Add(this.lblAtras);
             this.panelRegistrarUsuario.Controls.Add(this.groupBox2);
             this.panelRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegistrarUsuario.Location = new System.Drawing.Point(12, 154);
+            this.panelRegistrarUsuario.Location = new System.Drawing.Point(203, 12);
             this.panelRegistrarUsuario.Name = "panelRegistrarUsuario";
-            this.panelRegistrarUsuario.Size = new System.Drawing.Size(185, 129);
+            this.panelRegistrarUsuario.Size = new System.Drawing.Size(185, 112);
             this.panelRegistrarUsuario.TabIndex = 8;
             this.panelRegistrarUsuario.Visible = false;
             // 
@@ -194,8 +210,8 @@
             this.lblAtras.Size = new System.Drawing.Size(60, 45);
             this.lblAtras.TabIndex = 8;
             this.lblAtras.Click += new System.EventHandler(this.lblAtras_Click);
-            this.lblAtras.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblAtras.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            this.lblAtras.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtras.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
             // 
             // groupBox2
             // 
@@ -207,7 +223,7 @@
             this.groupBox2.Controls.Add(this.txtContraseñaRegistro);
             this.groupBox2.Controls.Add(this.lblConfirmarContraseña);
             this.groupBox2.Controls.Add(this.txtUsuarioRegistro);
-            this.groupBox2.Location = new System.Drawing.Point(-67, -132);
+            this.groupBox2.Location = new System.Drawing.Point(-67, -140);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(322, 402);
             this.groupBox2.TabIndex = 7;
@@ -309,9 +325,9 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(696, 154);
+            this.panelMenu.Location = new System.Drawing.Point(394, 12);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(380, 165);
+            this.panelMenu.Size = new System.Drawing.Size(185, 116);
             this.panelMenu.TabIndex = 8;
             // 
             // lblSalirMenu
@@ -319,7 +335,7 @@
             this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(292, 19);
+            this.lblSalirMenu.Location = new System.Drawing.Point(97, 19);
             this.lblSalirMenu.Name = "lblSalirMenu";
             this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
             this.lblSalirMenu.TabIndex = 6;
@@ -333,7 +349,7 @@
             this.lblFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.Location = new System.Drawing.Point(-152, 57);
+            this.lblFacturas.Location = new System.Drawing.Point(-250, 33);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(264, 131);
             this.lblFacturas.TabIndex = 11;
@@ -350,7 +366,7 @@
             this.lblConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.ajustes;
-            this.lblConfiguracion.Location = new System.Drawing.Point(290, 73);
+            this.lblConfiguracion.Location = new System.Drawing.Point(95, 24);
             this.lblConfiguracion.Name = "lblConfiguracion";
             this.lblConfiguracion.Size = new System.Drawing.Size(69, 69);
             this.lblConfiguracion.TabIndex = 10;
@@ -366,7 +382,7 @@
             this.lblAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlmacen.Location = new System.Drawing.Point(118, -87);
+            this.lblAlmacen.Location = new System.Drawing.Point(20, -111);
             this.lblAlmacen.Name = "lblAlmacen";
             this.lblAlmacen.Size = new System.Drawing.Size(264, 131);
             this.lblAlmacen.TabIndex = 9;
@@ -383,7 +399,7 @@
             this.lblReservas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblReservas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(118, 57);
+            this.lblReservas.Location = new System.Drawing.Point(20, 33);
             this.lblReservas.Name = "lblReservas";
             this.lblReservas.Size = new System.Drawing.Size(264, 131);
             this.lblReservas.TabIndex = 8;
@@ -400,7 +416,7 @@
             this.lblComedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblComedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComedor.Location = new System.Drawing.Point(-152, -87);
+            this.lblComedor.Location = new System.Drawing.Point(-250, -111);
             this.lblComedor.Name = "lblComedor";
             this.lblComedor.Size = new System.Drawing.Size(264, 131);
             this.lblComedor.TabIndex = 7;
@@ -418,7 +434,7 @@
             this.panelIniciarSesion.Controls.Add(this.lblRegistrarse);
             this.panelIniciarSesion.Location = new System.Drawing.Point(12, 12);
             this.panelIniciarSesion.Name = "panelIniciarSesion";
-            this.panelIniciarSesion.Size = new System.Drawing.Size(413, 412);
+            this.panelIniciarSesion.Size = new System.Drawing.Size(185, 116);
             this.panelIniciarSesion.TabIndex = 9;
             // 
             // lblSalir
@@ -426,7 +442,7 @@
             this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalir.Location = new System.Drawing.Point(325, 19);
+            this.lblSalir.Location = new System.Drawing.Point(97, 19);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
@@ -439,10 +455,10 @@
             this.panelComedor.Controls.Add(this.btnAceptarCantMesas);
             this.panelComedor.Controls.Add(this.lblCantMesas);
             this.panelComedor.Controls.Add(this.txtCantMesas);
-            this.panelComedor.Controls.Add(this.lblSalirComedor);
-            this.panelComedor.Location = new System.Drawing.Point(534, 22);
+            this.panelComedor.Controls.Add(this.lblAtrasComedor);
+            this.panelComedor.Location = new System.Drawing.Point(12, 265);
             this.panelComedor.Name = "panelComedor";
-            this.panelComedor.Size = new System.Drawing.Size(524, 119);
+            this.panelComedor.Size = new System.Drawing.Size(161, 119);
             this.panelComedor.TabIndex = 10;
             this.panelComedor.Visible = false;
             // 
@@ -477,125 +493,51 @@
             this.txtCantMesas.TabIndex = 10;
             this.txtCantMesas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMesas_KeyPress);
             // 
-            // lblSalirComedor
+            // lblAtrasComedor
             // 
-            this.lblSalirComedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirComedor.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirComedor.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirComedor.Name = "lblSalirComedor";
-            this.lblSalirComedor.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirComedor.TabIndex = 9;
-            this.lblSalirComedor.Tag = "comedor";
-            this.lblSalirComedor.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
-            this.lblSalirComedor.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirComedor.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            this.lblAtrasComedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasComedor.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasComedor.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasComedor.Name = "lblAtrasComedor";
+            this.lblAtrasComedor.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasComedor.TabIndex = 9;
+            this.lblAtrasComedor.Tag = "comedor";
+            this.lblAtrasComedor.Click += new System.EventHandler(this.lblOpcionesAtras_Click);
+            this.lblAtrasComedor.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasComedor.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
             // 
             // panelReservas
             // 
-            this.panelReservas.Controls.Add(this.lblSalirReservas);
-            this.panelReservas.Location = new System.Drawing.Point(244, 480);
+            this.panelReservas.Controls.Add(this.lblAtrasReservas);
+            this.panelReservas.Location = new System.Drawing.Point(12, 408);
             this.panelReservas.Name = "panelReservas";
-            this.panelReservas.Size = new System.Drawing.Size(200, 100);
+            this.panelReservas.Size = new System.Drawing.Size(185, 100);
             this.panelReservas.TabIndex = 11;
             this.panelReservas.Visible = false;
             // 
-            // lblSalirReservas
+            // lblAtrasReservas
             // 
-            this.lblSalirReservas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirReservas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirReservas.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirReservas.Name = "lblSalirReservas";
-            this.lblSalirReservas.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirReservas.TabIndex = 9;
-            this.lblSalirReservas.Tag = "reservas";
-            this.lblSalirReservas.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
-            this.lblSalirReservas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirReservas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
+            this.lblAtrasReservas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasReservas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasReservas.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasReservas.Name = "lblAtrasReservas";
+            this.lblAtrasReservas.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasReservas.TabIndex = 9;
+            this.lblAtrasReservas.Tag = "reservas";
+            this.lblAtrasReservas.Click += new System.EventHandler(this.lblOpcionesAtras_Click);
+            this.lblAtrasReservas.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasReservas.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
             // 
             // panelConfiguracion
             // 
-            this.panelConfiguracion.Controls.Add(this.lblBorrarDato);
             this.panelConfiguracion.Controls.Add(this.lblBorrarUsuario);
             this.panelConfiguracion.Controls.Add(this.lblCerrarSesion);
-            this.panelConfiguracion.Controls.Add(this.lblSalirConfiguracion);
-            this.panelConfiguracion.Location = new System.Drawing.Point(534, 336);
+            this.panelConfiguracion.Controls.Add(this.lblAtrasConfiguracion);
+            this.panelConfiguracion.Location = new System.Drawing.Point(602, 12);
             this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(380, 165);
+            this.panelConfiguracion.Size = new System.Drawing.Size(165, 116);
             this.panelConfiguracion.TabIndex = 12;
             this.panelConfiguracion.Visible = false;
-            // 
-            // lblSalirConfiguracion
-            // 
-            this.lblSalirConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirConfiguracion.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirConfiguracion.Name = "lblSalirConfiguracion";
-            this.lblSalirConfiguracion.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirConfiguracion.TabIndex = 9;
-            this.lblSalirConfiguracion.Tag = "configuracion";
-            this.lblSalirConfiguracion.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
-            this.lblSalirConfiguracion.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirConfiguracion.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
-            // 
-            // panelAlmacen
-            // 
-            this.panelAlmacen.Controls.Add(this.lblSalirAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(40, 586);
-            this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(200, 100);
-            this.panelAlmacen.TabIndex = 13;
-            this.panelAlmacen.Visible = false;
-            // 
-            // lblSalirAlmacen
-            // 
-            this.lblSalirAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirAlmacen.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirAlmacen.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirAlmacen.Name = "lblSalirAlmacen";
-            this.lblSalirAlmacen.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirAlmacen.TabIndex = 9;
-            this.lblSalirAlmacen.Tag = "almacen";
-            this.lblSalirAlmacen.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
-            this.lblSalirAlmacen.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirAlmacen.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
-            // 
-            // panelFacturas
-            // 
-            this.panelFacturas.Controls.Add(this.lblSalirFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(38, 480);
-            this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(200, 100);
-            this.panelFacturas.TabIndex = 14;
-            this.panelFacturas.Visible = false;
-            // 
-            // lblSalirFacturas
-            // 
-            this.lblSalirFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalirFacturas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
-            this.lblSalirFacturas.Location = new System.Drawing.Point(24, 22);
-            this.lblSalirFacturas.Name = "lblSalirFacturas";
-            this.lblSalirFacturas.Size = new System.Drawing.Size(60, 45);
-            this.lblSalirFacturas.TabIndex = 9;
-            this.lblSalirFacturas.Tag = "facturas";
-            this.lblSalirFacturas.Click += new System.EventHandler(this.lblOpcionesSalir_Click);
-            this.lblSalirFacturas.MouseEnter += new System.EventHandler(this.labelAtras_MouseEnter);
-            this.lblSalirFacturas.MouseLeave += new System.EventHandler(this.labelAtras_MouseLeave);
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.Location = new System.Drawing.Point(-152, -87);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(264, 131);
-            this.lblCerrarSesion.TabIndex = 10;
-            this.lblCerrarSesion.Text = "Cerrar sesión";
-            this.lblCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
-            this.lblCerrarSesion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lblCerrarSesion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
             // lblBorrarUsuario
             // 
@@ -603,7 +545,7 @@
             this.lblBorrarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBorrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBorrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrarUsuario.Location = new System.Drawing.Point(118, -87);
+            this.lblBorrarUsuario.Location = new System.Drawing.Point(10, -111);
             this.lblBorrarUsuario.Name = "lblBorrarUsuario";
             this.lblBorrarUsuario.Size = new System.Drawing.Size(264, 131);
             this.lblBorrarUsuario.TabIndex = 11;
@@ -613,33 +555,269 @@
             this.lblBorrarUsuario.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblBorrarUsuario.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // lblBorrarDato
+            // lblCerrarSesion
             // 
-            this.lblBorrarDato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBorrarDato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBorrarDato.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBorrarDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrarDato.Location = new System.Drawing.Point(-152, 58);
-            this.lblBorrarDato.Name = "lblBorrarDato";
-            this.lblBorrarDato.Size = new System.Drawing.Size(264, 131);
-            this.lblBorrarDato.TabIndex = 12;
-            this.lblBorrarDato.Text = "Borrar dato";
-            this.lblBorrarDato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblBorrarDato.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lblBorrarDato.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            this.lblCerrarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.Location = new System.Drawing.Point(-260, -111);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(264, 131);
+            this.lblCerrarSesion.TabIndex = 10;
+            this.lblCerrarSesion.Text = "Cerrar sesión";
+            this.lblCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
+            this.lblCerrarSesion.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblCerrarSesion.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblAtrasConfiguracion
+            // 
+            this.lblAtrasConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasConfiguracion.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasConfiguracion.Name = "lblAtrasConfiguracion";
+            this.lblAtrasConfiguracion.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasConfiguracion.TabIndex = 9;
+            this.lblAtrasConfiguracion.Tag = "configuracion";
+            this.lblAtrasConfiguracion.Click += new System.EventHandler(this.lblOpcionesAtras_Click);
+            this.lblAtrasConfiguracion.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasConfiguracion.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
+            // 
+            // panelAlmacen
+            // 
+            this.panelAlmacen.Controls.Add(this.txtPrecio);
+            this.panelAlmacen.Controls.Add(this.txtCantidad);
+            this.panelAlmacen.Controls.Add(this.label5);
+            this.panelAlmacen.Controls.Add(this.label4);
+            this.panelAlmacen.Controls.Add(this.lblTablaSeleccionada);
+            this.panelAlmacen.Controls.Add(this.label3);
+            this.panelAlmacen.Controls.Add(this.txtNombre);
+            this.panelAlmacen.Controls.Add(this.btnEliminarDato);
+            this.panelAlmacen.Controls.Add(this.btnInsertarDato);
+            this.panelAlmacen.Controls.Add(this.listBoxDatos);
+            this.panelAlmacen.Controls.Add(this.label2);
+            this.panelAlmacen.Controls.Add(this.listBoxTablas);
+            this.panelAlmacen.Controls.Add(this.lblAtrasAlmacen);
+            this.panelAlmacen.Location = new System.Drawing.Point(-121, -7);
+            this.panelAlmacen.Name = "panelAlmacen";
+            this.panelAlmacen.Size = new System.Drawing.Size(1227, 730);
+            this.panelAlmacen.TabIndex = 13;
+            this.panelAlmacen.Visible = false;
+            // 
+            // btnEliminarDato
+            // 
+            this.btnEliminarDato.Location = new System.Drawing.Point(684, 661);
+            this.btnEliminarDato.Name = "btnEliminarDato";
+            this.btnEliminarDato.Size = new System.Drawing.Size(134, 23);
+            this.btnEliminarDato.TabIndex = 17;
+            this.btnEliminarDato.Text = "Borrar dato seleccionado";
+            this.btnEliminarDato.UseVisualStyleBackColor = true;
+            this.btnEliminarDato.Click += new System.EventHandler(this.btnEliminarDato_Click);
+            // 
+            // btnInsertarDato
+            // 
+            this.btnInsertarDato.Location = new System.Drawing.Point(1009, 368);
+            this.btnInsertarDato.Name = "btnInsertarDato";
+            this.btnInsertarDato.Size = new System.Drawing.Size(110, 23);
+            this.btnInsertarDato.TabIndex = 16;
+            this.btnInsertarDato.Text = "Insertar";
+            this.btnInsertarDato.UseVisualStyleBackColor = true;
+            this.btnInsertarDato.Click += new System.EventHandler(this.btnInsertarDato_Click);
+            // 
+            // listBoxDatos
+            // 
+            this.listBoxDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxDatos.FormattingEnabled = true;
+            this.listBoxDatos.ItemHeight = 18;
+            this.listBoxDatos.Location = new System.Drawing.Point(468, 147);
+            this.listBoxDatos.Name = "listBoxDatos";
+            this.listBoxDatos.ScrollAlwaysVisible = true;
+            this.listBoxDatos.Size = new System.Drawing.Size(350, 508);
+            this.listBoxDatos.TabIndex = 15;
+            this.listBoxDatos.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(99, 113);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 25);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Tablas:";
+            // 
+            // listBoxTablas
+            // 
+            this.listBoxTablas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxTablas.FormattingEnabled = true;
+            this.listBoxTablas.ItemHeight = 18;
+            this.listBoxTablas.Location = new System.Drawing.Point(99, 147);
+            this.listBoxTablas.Name = "listBoxTablas";
+            this.listBoxTablas.ScrollAlwaysVisible = true;
+            this.listBoxTablas.Size = new System.Drawing.Size(350, 508);
+            this.listBoxTablas.TabIndex = 13;
+            this.listBoxTablas.SelectedIndexChanged += new System.EventHandler(this.listBoxTablas_SelectedIndexChanged);
+            // 
+            // lblAtrasAlmacen
+            // 
+            this.lblAtrasAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasAlmacen.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasAlmacen.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasAlmacen.Name = "lblAtrasAlmacen";
+            this.lblAtrasAlmacen.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasAlmacen.TabIndex = 9;
+            this.lblAtrasAlmacen.Tag = "almacen";
+            this.lblAtrasAlmacen.Click += new System.EventHandler(this.lblOpcionesAtras_Click);
+            this.lblAtrasAlmacen.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasAlmacen.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
+            // 
+            // panelFacturas
+            // 
+            this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
+            this.panelFacturas.Location = new System.Drawing.Point(12, 156);
+            this.panelFacturas.Name = "panelFacturas";
+            this.panelFacturas.Size = new System.Drawing.Size(185, 100);
+            this.panelFacturas.TabIndex = 14;
+            this.panelFacturas.Visible = false;
+            // 
+            // lblAtrasFacturas
+            // 
+            this.lblAtrasFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasFacturas.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasFacturas.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasFacturas.Name = "lblAtrasFacturas";
+            this.lblAtrasFacturas.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasFacturas.TabIndex = 9;
+            this.lblAtrasFacturas.Tag = "facturas";
+            this.lblAtrasFacturas.Click += new System.EventHandler(this.lblOpcionesAtras_Click);
+            this.lblAtrasFacturas.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasFacturas.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
             // 
             // panelBorrarUsuario
             // 
-            this.panelBorrarUsuario.Location = new System.Drawing.Point(732, 526);
+            this.panelBorrarUsuario.Controls.Add(this.btnBorrarUsuario);
+            this.panelBorrarUsuario.Controls.Add(this.label1);
+            this.panelBorrarUsuario.Controls.Add(this.listBoxUsuarios);
+            this.panelBorrarUsuario.Controls.Add(this.lblAtrasBorrarUsuario);
+            this.panelBorrarUsuario.Location = new System.Drawing.Point(773, 12);
             this.panelBorrarUsuario.Name = "panelBorrarUsuario";
-            this.panelBorrarUsuario.Size = new System.Drawing.Size(200, 100);
+            this.panelBorrarUsuario.Size = new System.Drawing.Size(204, 116);
             this.panelBorrarUsuario.TabIndex = 15;
+            // 
+            // btnBorrarUsuario
+            // 
+            this.btnBorrarUsuario.Location = new System.Drawing.Point(474, 154);
+            this.btnBorrarUsuario.Name = "btnBorrarUsuario";
+            this.btnBorrarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrarUsuario.TabIndex = 13;
+            this.btnBorrarUsuario.Text = "Borrar";
+            this.btnBorrarUsuario.UseVisualStyleBackColor = true;
+            this.btnBorrarUsuario.Click += new System.EventHandler(this.btnBorrarUsuario_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(99, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Usuarios:";
+            // 
+            // listBoxUsuarios
+            // 
+            this.listBoxUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxUsuarios.FormattingEnabled = true;
+            this.listBoxUsuarios.ItemHeight = 18;
+            this.listBoxUsuarios.Location = new System.Drawing.Point(99, 147);
+            this.listBoxUsuarios.Name = "listBoxUsuarios";
+            this.listBoxUsuarios.ScrollAlwaysVisible = true;
+            this.listBoxUsuarios.Size = new System.Drawing.Size(350, 508);
+            this.listBoxUsuarios.TabIndex = 11;
+            // 
+            // lblAtrasBorrarUsuario
+            // 
+            this.lblAtrasBorrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAtrasBorrarUsuario.Image = global::Proyecto_TPVS._0.Properties.Resources.atras;
+            this.lblAtrasBorrarUsuario.Location = new System.Drawing.Point(24, 22);
+            this.lblAtrasBorrarUsuario.Name = "lblAtrasBorrarUsuario";
+            this.lblAtrasBorrarUsuario.Size = new System.Drawing.Size(60, 45);
+            this.lblAtrasBorrarUsuario.TabIndex = 10;
+            this.lblAtrasBorrarUsuario.Tag = "borrarUsuario";
+            this.lblAtrasBorrarUsuario.Click += new System.EventHandler(this.lblAtrasBorrarUsuario_Click);
+            this.lblAtrasBorrarUsuario.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
+            this.lblAtrasBorrarUsuario.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(959, 205);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(211, 24);
+            this.txtNombre.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(956, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 18);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nombre:";
+            // 
+            // lblTablaSeleccionada
+            // 
+            this.lblTablaSeleccionada.AutoSize = true;
+            this.lblTablaSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTablaSeleccionada.Location = new System.Drawing.Point(956, 145);
+            this.lblTablaSeleccionada.Name = "lblTablaSeleccionada";
+            this.lblTablaSeleccionada.Size = new System.Drawing.Size(163, 18);
+            this.lblTablaSeleccionada.TabIndex = 20;
+            this.lblTablaSeleccionada.Text = "Tabla seleccionada: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(956, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Cantidad:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(956, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Precio:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(959, 263);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(211, 24);
+            this.txtCantidad.TabIndex = 23;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(959, 321);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(211, 24);
+            this.txtPrecio.TabIndex = 24;
             // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 638);
+            this.ClientSize = new System.Drawing.Size(1221, 638);
             this.Controls.Add(this.panelIniciarSesion);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Controls.Add(this.panelComedor);
@@ -670,7 +848,10 @@
             this.panelReservas.ResumeLayout(false);
             this.panelConfiguracion.ResumeLayout(false);
             this.panelAlmacen.ResumeLayout(false);
+            this.panelAlmacen.PerformLayout();
             this.panelFacturas.ResumeLayout(false);
+            this.panelBorrarUsuario.ResumeLayout(false);
+            this.panelBorrarUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -708,18 +889,33 @@
         public System.Windows.Forms.Panel panelConfiguracion;
         public System.Windows.Forms.Panel panelAlmacen;
         public System.Windows.Forms.Panel panelFacturas;
-        public System.Windows.Forms.Label lblSalirComedor;
-        public System.Windows.Forms.Label lblSalirReservas;
-        public System.Windows.Forms.Label lblSalirConfiguracion;
-        public System.Windows.Forms.Label lblSalirAlmacen;
-        public System.Windows.Forms.Label lblSalirFacturas;
+        public System.Windows.Forms.Label lblAtrasComedor;
+        public System.Windows.Forms.Label lblAtrasReservas;
+        public System.Windows.Forms.Label lblAtrasConfiguracion;
+        public System.Windows.Forms.Label lblAtrasAlmacen;
+        public System.Windows.Forms.Label lblAtrasFacturas;
         public System.Windows.Forms.TextBox txtCantMesas;
         public System.Windows.Forms.Label lblCantMesas;
         public System.Windows.Forms.Button btnAceptarCantMesas;
         public System.Windows.Forms.Label lblCerrarSesion;
-        public System.Windows.Forms.Label lblBorrarDato;
         public System.Windows.Forms.Label lblBorrarUsuario;
         private System.Windows.Forms.Panel panelBorrarUsuario;
+        public System.Windows.Forms.Label lblAtrasBorrarUsuario;
+        public System.Windows.Forms.ListBox listBoxUsuarios;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBorrarUsuario;
+        public System.Windows.Forms.ListBox listBoxDatos;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ListBox listBoxTablas;
+        private System.Windows.Forms.Button btnInsertarDato;
+        private System.Windows.Forms.Button btnEliminarDato;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTablaSeleccionada;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }
 
