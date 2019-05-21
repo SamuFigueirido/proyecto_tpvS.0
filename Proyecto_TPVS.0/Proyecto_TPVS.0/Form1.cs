@@ -14,6 +14,7 @@ using System.Collections;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SQLite;
+using System.Reflection;
 
 namespace Proyecto_TPVS._0
 {
@@ -23,6 +24,12 @@ namespace Proyecto_TPVS._0
         ConnectionSQL connectionSQL;
         Pass encryptDecrypt = new Pass();
         List<string> datosNombres;
+        List<Label> mesas;
+        Label mesa;
+        Panel panel;
+        bool flag = true;
+        List<Panel> panelesMesas;
+
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -269,25 +276,124 @@ namespace Proyecto_TPVS._0
 
         private void btnAceptarCantMesas_Click(object sender, EventArgs e)
         {
-            if (txtCantMesas.Text.Trim() == "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 20)
+            if (txtCantMesas.Text.Trim() == "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 25)
             {
+                for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
+                {
+                    if (panelComedor.Controls[i] is Label && panelComedor.Controls[i].Tag != null && panelComedor.Controls[i].Tag.ToString().Contains("Mesa"))
+                    {
+                        panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                    }
+                }
+                flag = true;
 
+                int x = 150, y = 110;
+                int numMesas = Convert.ToInt32(txtCantMesas.Text.Trim());
+                mesas = new List<Label>();
+                panelesMesas = new List<Panel>(numMesas);
+                int cont = 0;
+                for (int i = 0; i < numMesas; i++)
+                {
+                    cont++;
+                    mesa = new Label();
+                    mesa.Image = Properties.Resources.mesa2p;
+                    mesa.Width = 162;
+                    mesa.Height = 162;
+                    mesa.Cursor = Cursors.Hand;
+                    mesa.Text = "";
+                    mesa.Tag = "Mesa " + cont;
+                    mesa.Location = new Point(x, y);
+                    mesa.Click += new EventHandler(mesa_Click);
+                    panelComedor.Controls.Add(mesa);
+                    mesas.Add(mesa);
+                    if (cont % 5 == 0)
+                    {
+                        y += 175;
+                        x = 150;
+                    }
+                    else
+                    {
+                        x += 350;
+                    }
+                }
+                txtCantMesas.Text = "";
             }
             else
             {
-                MessageBox.Show("Introduce un número del 1-20", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Introduce un número del 1-25", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void mesa_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < panelesMesas.Count; i++)
+            {
+                if (((Label)sender).Tag.ToString().Trim() == panelesMesas[i].Tag.ToString().Trim())
+                {
+                    panel = panelesMesas[i];
+                    panel.Controls.Add(panelMesa);
+                    panelMesa.Dock = DockStyle.Fill;
+                    cambioDePanel(panel, panelComedor);
+                    Console.WriteLine("Panel abierto: " + panel.Tag);
+                    return;
+                }
+                else
+                {
+                    flag = true;
+                }
+            }
+
+            if (flag)
+            {
+                int num = Convert.ToInt32(((Label)sender).Tag.ToString().Substring(5).Trim());
+                panel = new Panel();
+                panel.Tag = ((Label)sender).Tag;
+                panel.Controls.Add(panelMesa);
+                panelMesa.Dock = DockStyle.Fill;
+                panelMesa.Dock = DockStyle.Fill;
+                this.Controls.Add(panel);
+                panel.Dock = DockStyle.Fill;
+                panel.BringToFront();
+                panelesMesas.Add(panel);
+                Console.WriteLine("Panel creado: " + panel.Tag);
+                flag = false;
+            }
+        }
+
+        private void lblAtrasMesa_Click(object sender, EventArgs e)
+        {
+            cambioDePanel(panelComedor, panel);
         }
 
         private void lblCerrarSesion_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("¿Seguro que deseas cerrar sesión?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.Cancel)
             {
-                txtUsuario.Text = "";
-                txtContraseña.Text = "";
-                cambioDePanel(panelIniciarSesion, panelConfiguracion);
+                cerrarSesion();
             }
+        }
+
+        public void cerrarSesion()
+        {
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
+            txtCantMesas.Text = "";
+            for (int i = mesas.Count - 1; i >= 0; i--)
+            {
+                mesas.RemoveAt(i);
+            }
+            for (int i = panelesMesas.Count - 1; i >= 0; i--)
+            {
+                panelesMesas.RemoveAt(i);
+            }
+            for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
+            {
+                if(panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
+                {
+                    panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                }
+            }
+            cambioDePanel(panelIniciarSesion, panelConfiguracion);
         }
 
         private void lblBorrarUsuario_Click(object sender, EventArgs e)
@@ -364,14 +470,40 @@ namespace Proyecto_TPVS._0
                 {
                     connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
                     listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
-                    txtNombre.Text= "";
+                    txtNombre.Text = "";
                     txtCantidad.Text = "";
-                    txtPrecio.Text= "";
+                    txtPrecio.Text = "";
                 }
             }
             catch (FormatException)
             {
                 MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void lblBebidasTapas_Click(object sender, EventArgs e)
+        {
+            for (int i = flowLayoutPanelDatos.Controls.Count-1; i >= 0; i--)
+            {
+                flowLayoutPanelDatos.Controls.RemoveAt(i);
+            }
+            Label lblOpcion;
+            List<string> datos = connectionSQL.datosAlmacenNombres(((Label)sender).Tag.ToString());
+            for (int i = 0; i < datos.Count; i++)
+            {
+                lblOpcion = new Label();
+                lblOpcion.Text = datos[i];
+                lblOpcion.BorderStyle = BorderStyle.FixedSingle;
+                lblOpcion.Cursor = Cursors.Hand;
+                lblOpcion.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                lblOpcion.Location = new Point(0, 0);
+                lblOpcion.Tag = datos[i];
+                lblOpcion.Size = new Size(241, 131);
+                lblOpcion.TextAlign = ContentAlignment.MiddleCenter;
+                lblOpcion.MouseEnter += new EventHandler(this.lbl_MouseEnter);
+                lblOpcion.MouseLeave += new EventHandler(this.lbl_MouseLeave);
+                //TODO evento click
+                flowLayoutPanelDatos.Controls.Add(lblOpcion);
             }
         }
     }
