@@ -145,4 +145,16 @@
   <data name="ajustes_seleccionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ajustes_seleccionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mesa2p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mesa2p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mesa4p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mesa4p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mesa6p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mesa6p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mesa8p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mesa8p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
