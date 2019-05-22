@@ -18,7 +18,6 @@ using System.Reflection;
 
 namespace Proyecto_TPVS._0
 {
-    //TODO SOLUCIONAR ERRORES EN ALAMCÉN AL INTRODUCIR LOS DATOS (VALORES NEGATIVOS, DEMASIADO GRANDES, PRECIO Y CANT = 0)
     public partial class FormIniciarSesion : Form
     {
         //KunLibertad_DesktopControl desktopControl;
@@ -32,7 +31,9 @@ namespace Proyecto_TPVS._0
         List<Panel> panelesMesas;
         string tagMesaAux = "";
         string tabla = "";
-        List<string> datos = new List<string>();
+        Hashtable mesasList = new Hashtable();//SIN USAR
+        List<string> datosMesasList = new List<string>();//SIN USAR
+        Hashtable comensales = new Hashtable();
 
         public FormIniciarSesion()
         {
@@ -48,6 +49,7 @@ namespace Proyecto_TPVS._0
             {
                 Console.WriteLine(user);
             }
+            flowLayoutPanelDatos.Height = this.Height * 4 / 10;
             pantallaCompleta(this);
         }
 
@@ -290,8 +292,8 @@ namespace Proyecto_TPVS._0
                     }
                 }
                 flag = true;
-
-                int x = 150, y = 110;
+                int x = this.Width * 1 / 10;
+                int y = this.Height * 3 / 2 / 10;
                 int numMesas = Convert.ToInt32(txtCantMesas.Text.Trim());
                 mesas = new List<Label>();
                 panelesMesas = new List<Panel>(numMesas);
@@ -301,8 +303,8 @@ namespace Proyecto_TPVS._0
                     cont++;
                     mesa = new Label();
                     mesa.Image = Properties.Resources.mesa2p;
-                    mesa.Width = 162;
-                    mesa.Height = 162;
+                    mesa.Width = 120;
+                    mesa.Height = 120;
                     mesa.Cursor = Cursors.Hand;
                     mesa.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                     mesa.Text = cont.ToString();
@@ -314,12 +316,12 @@ namespace Proyecto_TPVS._0
                     mesas.Add(mesa);
                     if (cont % 5 == 0)
                     {
-                        y += 175;
-                        x = 150;
+                        y += this.Height * 3 / 2 / 10;
+                        x = this.Width * 1 / 10;
                     }
                     else
                     {
-                        x += 350;
+                        x += this.Width * 7 / 2 / 2 / 10;
                     }
                 }
                 txtCantMesas.Text = "";
@@ -341,6 +343,7 @@ namespace Proyecto_TPVS._0
                     panelMesa.Dock = DockStyle.Fill;
                     cambioDePanel(panel, panelComedor);
                     Console.WriteLine("Panel abierto: " + panel.Tag);
+                    txtCantPersonas.Text = "Comensales: " + comensales[((Label)sender).Tag.ToString().Trim()];
                     return;
                 }
                 else
@@ -363,9 +366,11 @@ namespace Proyecto_TPVS._0
                 panelesMesas.Add(panel);
                 Console.WriteLine("Panel creado: " + panel.Tag);
                 flag = false;
+                txtCantPersonas.Text = "Comensales: ";
             }
             Console.WriteLine("Click: " + ((Label)sender).Tag.ToString());
             tagMesaAux = ((Label)sender).Tag.ToString().Trim();
+            lblMesa.Text = tagMesaAux;
         }
 
         private void lblAtrasMesa_Click(object sender, EventArgs e)
@@ -386,21 +391,43 @@ namespace Proyecto_TPVS._0
             txtUsuario.Text = "";
             txtContraseña.Text = "";
             txtCantMesas.Text = "";
-            for (int i = mesas.Count - 1; i >= 0; i--)
+            try
             {
-                mesas.RemoveAt(i);
-            }
-            for (int i = panelesMesas.Count - 1; i >= 0; i--)
-            {
-                panelesMesas.RemoveAt(i);
-            }
-            for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
-            {
-                if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
+                for (int i = mesas.Count - 1; i >= 0; i--)
                 {
-                    panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                    mesas.RemoveAt(i);
                 }
             }
+            catch (NullReferenceException)
+            {
+
+            }
+            try
+            {
+                for (int i = panelesMesas.Count - 1; i >= 0; i--)
+                {
+                    panelesMesas.RemoveAt(i);
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+            }
+            try
+            {
+                for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
+                {
+                    if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
+                    {
+                        panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+            }
+            comensales.Clear();
             cambioDePanel(panelIniciarSesion, panelConfiguracion);
         }
 
@@ -472,20 +499,42 @@ namespace Proyecto_TPVS._0
             {
                 if (txtNombre.Text.Trim() == "" || txtCantidad.Text.Trim() == "" || txtPrecio.Text.Trim() == "")
                 {
-                    MessageBox.Show("Completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Completa todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    try
+                    if (Convert.ToInt32(txtCantidad.Text.Trim()) == 0)
                     {
-                        connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
-                        listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
-                        txtNombre.Text = "";
-                        txtCantidad.Text = "";
-                        txtPrecio.Text = "";
-                    } catch(OverflowException)
+                        MessageBox.Show("La cantidad no puede ser cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
                     {
-                        MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (Convert.ToInt32(txtCantidad.Text.Trim()) < 0 || Convert.ToInt32(txtPrecio.Text.Trim()) < 0)
+                        {
+                            MessageBox.Show("Los valores no pueden ser negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (txtNombre.Text.Trim().Length > 20 || txtCantidad.Text.Trim().Length > 5 || txtPrecio.Text.Trim().Length > 6)
+                            {
+                                MessageBox.Show("Alguno de los valores introducidos\nes demasiado grande.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
+                                    listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
+                                    txtNombre.Text = "";
+                                    txtCantidad.Text = "";
+                                    txtPrecio.Text = "";
+                                }
+                                catch (OverflowException)
+                                {
+                                    MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -526,16 +575,16 @@ namespace Proyecto_TPVS._0
         {
             //TODO QUE SE GUARDE POR SEPARADO CADA PEDIDO DE CADA MESA
             //UTILIZAR CLASE FACTURA?
-            datos.Add(connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString()));
-            listBoxNota.DataSource = datos;
+            //string dato = connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString());
+            Console.WriteLine("-----TAG MESA: "+tagMesaAux);
+            Console.WriteLine("-----DATO: " + connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString()));
         }
 
         private void btnAceptarComensales_Click(object sender, EventArgs e)
         {
-            //TODO QUE SE GUARDE EL NÚMERO REAL DE COMENSALES DE CADA MESA
-            int cant = Convert.ToInt32(txtCantComensales.Text.Trim());
-            if (txtCantComensales.Text.Trim() != "" && cant > 0)
+            if (txtCantComensales.Text.Trim() != "" && Convert.ToInt32(txtCantComensales.Text.Trim()) > 0)
             {
+                int cant = Convert.ToInt32(txtCantComensales.Text.Trim());
                 for (int i = 0; i < panelComedor.Controls.Count; i++)
                 {
                     if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Trim() == tagMesaAux)
@@ -558,6 +607,16 @@ namespace Proyecto_TPVS._0
                             image = Properties.Resources.mesa8p;
                         }
                         ((Label)panelComedor.Controls[i]).Image = image;
+                        try
+                        {
+                            comensales.Add(((Label)panelComedor.Controls[i]).Tag.ToString().Trim(), cant);
+                        }
+                        catch (ArgumentException)
+                        {
+                            comensales[((Label)panelComedor.Controls[i]).Tag.ToString().Trim()] = cant;
+                        }
+                        Console.WriteLine("hashtable.value = " + comensales[((Label)panelComedor.Controls[i]).Tag.ToString().Trim()]);
+                        Console.WriteLine("hashtable.key = " + ((Label)panelComedor.Controls[i]).Tag.ToString().Trim());
                     }
                 }
                 txtCantPersonas.Text = "Comensales: " + cant;

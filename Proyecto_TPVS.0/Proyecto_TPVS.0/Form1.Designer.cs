@@ -88,12 +88,18 @@
             this.listBoxUsuarios = new System.Windows.Forms.ListBox();
             this.lblAtrasBorrarUsuario = new System.Windows.Forms.Label();
             this.panelMesa = new System.Windows.Forms.Panel();
+            this.lblMesa = new System.Windows.Forms.Label();
+            this.txtCantPersonas = new System.Windows.Forms.TextBox();
+            this.btnAceptarComensales = new System.Windows.Forms.Button();
+            this.txtCantComensales = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.lblAtrasMesa = new System.Windows.Forms.Label();
             this.listBoxNota = new System.Windows.Forms.ListBox();
             this.flowLayoutPanelCalc = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelDatos = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl7 = new System.Windows.Forms.Label();
             this.lbl8 = new System.Windows.Forms.Label();
             this.lbl9 = new System.Windows.Forms.Label();
@@ -108,14 +114,10 @@
             this.lblSumar = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.lblComa = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblFactura = new System.Windows.Forms.Label();
             this.lblRestar = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCantComensales = new System.Windows.Forms.TextBox();
-            this.btnAceptarComensales = new System.Windows.Forms.Button();
-            this.txtCantPersonas = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanelDatos = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,6 +131,7 @@
             this.panelBorrarUsuario.SuspendLayout();
             this.panelMesa.SuspendLayout();
             this.flowLayoutPanelCalc.SuspendLayout();
+            this.flowLayoutPanelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -226,7 +229,7 @@
             this.panelRegistrarUsuario.Controls.Add(this.lblAtras);
             this.panelRegistrarUsuario.Controls.Add(this.groupBox2);
             this.panelRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegistrarUsuario.Location = new System.Drawing.Point(203, 12);
+            this.panelRegistrarUsuario.Location = new System.Drawing.Point(779, 134);
             this.panelRegistrarUsuario.Name = "panelRegistrarUsuario";
             this.panelRegistrarUsuario.Size = new System.Drawing.Size(185, 112);
             this.panelRegistrarUsuario.TabIndex = 8;
@@ -356,7 +359,7 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(394, 12);
+            this.panelMenu.Location = new System.Drawing.Point(970, 134);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(182, 116);
             this.panelMenu.TabIndex = 8;
@@ -463,7 +466,7 @@
             this.panelIniciarSesion.Controls.Add(this.lblSalir);
             this.panelIniciarSesion.Controls.Add(this.groupBox1);
             this.panelIniciarSesion.Controls.Add(this.lblRegistrarse);
-            this.panelIniciarSesion.Location = new System.Drawing.Point(12, 12);
+            this.panelIniciarSesion.Location = new System.Drawing.Point(588, 134);
             this.panelIniciarSesion.Name = "panelIniciarSesion";
             this.panelIniciarSesion.Size = new System.Drawing.Size(185, 116);
             this.panelIniciarSesion.TabIndex = 9;
@@ -487,9 +490,9 @@
             this.panelComedor.Controls.Add(this.lblCantMesas);
             this.panelComedor.Controls.Add(this.txtCantMesas);
             this.panelComedor.Controls.Add(this.lblAtrasComedor);
-            this.panelComedor.Location = new System.Drawing.Point(12, 260);
+            this.panelComedor.Location = new System.Drawing.Point(186, 131);
             this.panelComedor.Name = "panelComedor";
-            this.panelComedor.Size = new System.Drawing.Size(185, 130);
+            this.panelComedor.Size = new System.Drawing.Size(185, 103);
             this.panelComedor.TabIndex = 10;
             this.panelComedor.Visible = false;
             // 
@@ -546,7 +549,7 @@
             // panelReservas
             // 
             this.panelReservas.Controls.Add(this.lblAtrasReservas);
-            this.panelReservas.Location = new System.Drawing.Point(12, 408);
+            this.panelReservas.Location = new System.Drawing.Point(396, 134);
             this.panelReservas.Name = "panelReservas";
             this.panelReservas.Size = new System.Drawing.Size(185, 100);
             this.panelReservas.TabIndex = 11;
@@ -570,7 +573,7 @@
             this.panelConfiguracion.Controls.Add(this.lblBorrarUsuario);
             this.panelConfiguracion.Controls.Add(this.lblCerrarSesion);
             this.panelConfiguracion.Controls.Add(this.lblAtrasConfiguracion);
-            this.panelConfiguracion.Location = new System.Drawing.Point(602, 12);
+            this.panelConfiguracion.Location = new System.Drawing.Point(1178, 134);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(165, 116);
             this.panelConfiguracion.TabIndex = 12;
@@ -636,9 +639,9 @@
             this.panelAlmacen.Controls.Add(this.label2);
             this.panelAlmacen.Controls.Add(this.listBoxTablas);
             this.panelAlmacen.Controls.Add(this.lblAtrasAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(1011, 18);
+            this.panelAlmacen.Location = new System.Drawing.Point(1005, 18);
             this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(153, 108);
+            this.panelAlmacen.Size = new System.Drawing.Size(146, 99);
             this.panelAlmacen.TabIndex = 13;
             this.panelAlmacen.Visible = false;
             // 
@@ -776,7 +779,7 @@
             // panelFacturas
             // 
             this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(12, 156);
+            this.panelFacturas.Location = new System.Drawing.Point(-5, 134);
             this.panelFacturas.Name = "panelFacturas";
             this.panelFacturas.Size = new System.Drawing.Size(185, 100);
             this.panelFacturas.TabIndex = 14;
@@ -801,7 +804,7 @@
             this.panelBorrarUsuario.Controls.Add(this.label1);
             this.panelBorrarUsuario.Controls.Add(this.listBoxUsuarios);
             this.panelBorrarUsuario.Controls.Add(this.lblAtrasBorrarUsuario);
-            this.panelBorrarUsuario.Location = new System.Drawing.Point(773, 12);
+            this.panelBorrarUsuario.Location = new System.Drawing.Point(756, 5);
             this.panelBorrarUsuario.Name = "panelBorrarUsuario";
             this.panelBorrarUsuario.Size = new System.Drawing.Size(204, 116);
             this.panelBorrarUsuario.TabIndex = 15;
@@ -852,6 +855,8 @@
             // 
             // panelMesa
             // 
+            this.panelMesa.Controls.Add(this.flowLayoutPanelContainer);
+            this.panelMesa.Controls.Add(this.lblMesa);
             this.panelMesa.Controls.Add(this.txtCantPersonas);
             this.panelMesa.Controls.Add(this.btnAceptarComensales);
             this.panelMesa.Controls.Add(this.txtCantComensales);
@@ -862,12 +867,83 @@
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.lblAtrasMesa);
             this.panelMesa.Controls.Add(this.listBoxNota);
-            this.panelMesa.Controls.Add(this.flowLayoutPanelCalc);
-            this.panelMesa.Controls.Add(this.flowLayoutPanelDatos);
-            this.panelMesa.Location = new System.Drawing.Point(12, 514);
+            this.panelMesa.Location = new System.Drawing.Point(-4, 8);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(1297, 228);
+            this.panelMesa.Size = new System.Drawing.Size(1313, 799);
             this.panelMesa.TabIndex = 16;
+            // 
+            // lblMesa
+            // 
+            this.lblMesa.AutoSize = true;
+            this.lblMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesa.Location = new System.Drawing.Point(43, 80);
+            this.lblMesa.Name = "lblMesa";
+            this.lblMesa.Size = new System.Drawing.Size(69, 25);
+            this.lblMesa.TabIndex = 21;
+            this.lblMesa.Text = "Mesa";
+            // 
+            // txtCantPersonas
+            // 
+            this.txtCantPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantPersonas.Location = new System.Drawing.Point(45, 687);
+            this.txtCantPersonas.Multiline = true;
+            this.txtCantPersonas.Name = "txtCantPersonas";
+            this.txtCantPersonas.ReadOnly = true;
+            this.txtCantPersonas.Size = new System.Drawing.Size(155, 25);
+            this.txtCantPersonas.TabIndex = 20;
+            this.txtCantPersonas.Text = "Comensales: ";
+            // 
+            // btnAceptarComensales
+            // 
+            this.btnAceptarComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarComensales.Location = new System.Drawing.Point(288, 37);
+            this.btnAceptarComensales.Name = "btnAceptarComensales";
+            this.btnAceptarComensales.Size = new System.Drawing.Size(75, 27);
+            this.btnAceptarComensales.TabIndex = 19;
+            this.btnAceptarComensales.Text = "Aceptar";
+            this.btnAceptarComensales.UseVisualStyleBackColor = true;
+            this.btnAceptarComensales.Click += new System.EventHandler(this.btnAceptarComensales_Click);
+            // 
+            // txtCantComensales
+            // 
+            this.txtCantComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantComensales.Location = new System.Drawing.Point(239, 39);
+            this.txtCantComensales.MaxLength = 2;
+            this.txtCantComensales.Name = "txtCantComensales";
+            this.txtCantComensales.Size = new System.Drawing.Size(43, 24);
+            this.txtCantComensales.TabIndex = 18;
+            this.txtCantComensales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMesas_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 18);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Comensales:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(309, 699);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "TOTAL:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(384, 687);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTotal.Size = new System.Drawing.Size(265, 39);
+            this.txtTotal.TabIndex = 15;
             // 
             // lblTapas
             // 
@@ -944,22 +1020,12 @@
             this.flowLayoutPanelCalc.Controls.Add(this.lblSumar);
             this.flowLayoutPanelCalc.Controls.Add(this.lbl0);
             this.flowLayoutPanelCalc.Controls.Add(this.lblComa);
-            this.flowLayoutPanelCalc.Controls.Add(this.label20);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblFactura);
             this.flowLayoutPanelCalc.Controls.Add(this.lblRestar);
-            this.flowLayoutPanelCalc.Location = new System.Drawing.Point(723, -320);
+            this.flowLayoutPanelCalc.Location = new System.Drawing.Point(3, 527);
             this.flowLayoutPanelCalc.Name = "flowLayoutPanelCalc";
             this.flowLayoutPanelCalc.Size = new System.Drawing.Size(566, 540);
             this.flowLayoutPanelCalc.TabIndex = 14;
-            // 
-            // flowLayoutPanelDatos
-            // 
-            this.flowLayoutPanelDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelDatos.AutoScroll = true;
-            this.flowLayoutPanelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelDatos.Location = new System.Drawing.Point(227, 10);
-            this.flowLayoutPanelDatos.Name = "flowLayoutPanelDatos";
-            this.flowLayoutPanelDatos.Size = new System.Drawing.Size(1059, 496);
-            this.flowLayoutPanelDatos.TabIndex = 13;
             // 
             // lbl7
             // 
@@ -1185,18 +1251,21 @@
             this.lblComa.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblComa.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // label20
+            // lblFactura
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(285, 402);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(135, 134);
-            this.label20.TabIndex = 23;
-            this.label20.Tag = "";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFactura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFactura.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFactura.Location = new System.Drawing.Point(285, 402);
+            this.lblFactura.Name = "lblFactura";
+            this.lblFactura.Size = new System.Drawing.Size(135, 134);
+            this.lblFactura.TabIndex = 23;
+            this.lblFactura.Tag = "factura";
+            this.lblFactura.Text = "FACTURA";
+            this.lblFactura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFactura.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblFactura.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
             // lblRestar
             // 
@@ -1214,74 +1283,31 @@
             this.lblRestar.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblRestar.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // txtTotal
+            // flowLayoutPanelDatos
             // 
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(384, 686);
-            this.txtTotal.Multiline = true;
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTotal.Size = new System.Drawing.Size(265, 39);
-            this.txtTotal.TabIndex = 15;
+            this.flowLayoutPanelDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelDatos.AutoScroll = true;
+            this.flowLayoutPanelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanelDatos.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanelDatos.Name = "flowLayoutPanelDatos";
+            this.flowLayoutPanelDatos.Size = new System.Drawing.Size(566, 518);
+            this.flowLayoutPanelDatos.TabIndex = 13;
             // 
-            // label6
+            // flowLayoutPanelContainer
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(309, 699);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "TOTAL:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(137, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 18);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Comensales:";
-            // 
-            // txtCantComensales
-            // 
-            this.txtCantComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantComensales.Location = new System.Drawing.Point(239, 39);
-            this.txtCantComensales.MaxLength = 2;
-            this.txtCantComensales.Name = "txtCantComensales";
-            this.txtCantComensales.Size = new System.Drawing.Size(43, 24);
-            this.txtCantComensales.TabIndex = 18;
-            this.txtCantComensales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMesas_KeyPress);
-            // 
-            // btnAceptarComensales
-            // 
-            this.btnAceptarComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarComensales.Location = new System.Drawing.Point(288, 37);
-            this.btnAceptarComensales.Name = "btnAceptarComensales";
-            this.btnAceptarComensales.Size = new System.Drawing.Size(75, 27);
-            this.btnAceptarComensales.TabIndex = 19;
-            this.btnAceptarComensales.Text = "Aceptar";
-            this.btnAceptarComensales.UseVisualStyleBackColor = true;
-            this.btnAceptarComensales.Click += new System.EventHandler(this.btnAceptarComensales_Click);
-            // 
-            // txtCantPersonas
-            // 
-            this.txtCantPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantPersonas.Location = new System.Drawing.Point(45, 82);
-            this.txtCantPersonas.Multiline = true;
-            this.txtCantPersonas.Name = "txtCantPersonas";
-            this.txtCantPersonas.ReadOnly = true;
-            this.txtCantPersonas.Size = new System.Drawing.Size(155, 25);
-            this.txtCantPersonas.TabIndex = 20;
-            this.txtCantPersonas.Text = "Comensales: ";
+            this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelDatos);
+            this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelCalc);
+            this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(744, 0);
+            this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 799);
+            this.flowLayoutPanelContainer.TabIndex = 22;
             // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 775);
+            this.ClientSize = new System.Drawing.Size(1321, 819);
             this.Controls.Add(this.panelIniciarSesion);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Controls.Add(this.panelMenu);
@@ -1320,6 +1346,7 @@
             this.panelMesa.ResumeLayout(false);
             this.panelMesa.PerformLayout();
             this.flowLayoutPanelCalc.ResumeLayout(false);
+            this.flowLayoutPanelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1405,7 +1432,7 @@
         public System.Windows.Forms.Label lblSumar;
         public System.Windows.Forms.Label lbl0;
         public System.Windows.Forms.Label lblComa;
-        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label lblFactura;
         public System.Windows.Forms.Label lblRestar;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtTotal;
@@ -1413,6 +1440,8 @@
         private System.Windows.Forms.TextBox txtCantComensales;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCantPersonas;
+        private System.Windows.Forms.Label lblMesa;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelContainer;
     }
 }
 

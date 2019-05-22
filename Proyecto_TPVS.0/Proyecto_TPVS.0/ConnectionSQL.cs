@@ -331,7 +331,7 @@ namespace Proyecto_TPVS._0
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    datos= string.Format("{0, -20}{1, -20}{2, -20}", Convert.ToString(reader["nombre"]).Trim(), Convert.ToString(reader["precio"]).Trim() + "€", Convert.ToString(reader["cantidad"]).Trim() + "Uds.");
+                    datos= string.Format("{0, -30}{1, 20}", Convert.ToString(reader["nombre"]).Trim(), Convert.ToString(reader["precio"]).Trim() + "€");
                 }
             }
             cerrarConexion();
