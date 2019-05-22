@@ -18,6 +18,7 @@ using System.Reflection;
 
 namespace Proyecto_TPVS._0
 {
+    //TODO SOLUCIONAR ERRORES EN ALAMCÉN AL INTRODUCIR LOS DATOS (VALORES NEGATIVOS, DEMASIADO GRANDES, PRECIO Y CANT = 0)
     public partial class FormIniciarSesion : Form
     {
         //KunLibertad_DesktopControl desktopControl;
@@ -475,11 +476,17 @@ namespace Proyecto_TPVS._0
                 }
                 else
                 {
-                    connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
-                    listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
-                    txtNombre.Text = "";
-                    txtCantidad.Text = "";
-                    txtPrecio.Text = "";
+                    try
+                    {
+                        connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
+                        listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
+                        txtNombre.Text = "";
+                        txtCantidad.Text = "";
+                        txtPrecio.Text = "";
+                    } catch(OverflowException)
+                    {
+                        MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (FormatException)
