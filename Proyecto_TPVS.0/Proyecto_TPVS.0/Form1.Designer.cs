@@ -91,9 +91,31 @@
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.lblAtrasMesa = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxNota = new System.Windows.Forms.ListBox();
             this.flowLayoutPanelCalc = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelDatos = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.lbl8 = new System.Windows.Forms.Label();
+            this.lbl9 = new System.Windows.Forms.Label();
+            this.lblBorrar = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lblMultiplicar = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lblSumar = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.lblComa = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblRestar = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCantComensales = new System.Windows.Forms.TextBox();
+            this.btnAceptarComensales = new System.Windows.Forms.Button();
+            this.txtCantPersonas = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,6 +128,7 @@
             this.panelFacturas.SuspendLayout();
             this.panelBorrarUsuario.SuspendLayout();
             this.panelMesa.SuspendLayout();
+            this.flowLayoutPanelCalc.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -472,9 +495,10 @@
             // 
             // btnAceptarCantMesas
             // 
-            this.btnAceptarCantMesas.Location = new System.Drawing.Point(375, 39);
+            this.btnAceptarCantMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarCantMesas.Location = new System.Drawing.Point(375, 37);
             this.btnAceptarCantMesas.Name = "btnAceptarCantMesas";
-            this.btnAceptarCantMesas.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarCantMesas.Size = new System.Drawing.Size(75, 28);
             this.btnAceptarCantMesas.TabIndex = 12;
             this.btnAceptarCantMesas.Tag = "btn";
             this.btnAceptarCantMesas.Text = "Aceptar";
@@ -828,15 +852,21 @@
             // 
             // panelMesa
             // 
+            this.panelMesa.Controls.Add(this.txtCantPersonas);
+            this.panelMesa.Controls.Add(this.btnAceptarComensales);
+            this.panelMesa.Controls.Add(this.txtCantComensales);
+            this.panelMesa.Controls.Add(this.label7);
+            this.panelMesa.Controls.Add(this.label6);
+            this.panelMesa.Controls.Add(this.txtTotal);
             this.panelMesa.Controls.Add(this.lblTapas);
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.lblAtrasMesa);
-            this.panelMesa.Controls.Add(this.listBox1);
+            this.panelMesa.Controls.Add(this.listBoxNota);
             this.panelMesa.Controls.Add(this.flowLayoutPanelCalc);
             this.panelMesa.Controls.Add(this.flowLayoutPanelDatos);
-            this.panelMesa.Location = new System.Drawing.Point(3, 2);
+            this.panelMesa.Location = new System.Drawing.Point(12, 514);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(1464, 797);
+            this.panelMesa.Size = new System.Drawing.Size(1297, 228);
             this.panelMesa.TabIndex = 16;
             // 
             // lblTapas
@@ -844,7 +874,7 @@
             this.lblTapas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTapas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTapas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTapas.Location = new System.Drawing.Point(385, 757);
+            this.lblTapas.Location = new System.Drawing.Point(348, 775);
             this.lblTapas.Name = "lblTapas";
             this.lblTapas.Size = new System.Drawing.Size(264, 131);
             this.lblTapas.TabIndex = 12;
@@ -860,7 +890,7 @@
             this.lblBebidas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBebidas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBebidas.Location = new System.Drawing.Point(45, 757);
+            this.lblBebidas.Location = new System.Drawing.Point(82, 775);
             this.lblBebidas.Name = "lblBebidas";
             this.lblBebidas.Size = new System.Drawing.Size(264, 131);
             this.lblBebidas.TabIndex = 11;
@@ -884,25 +914,41 @@
             this.lblAtrasMesa.MouseEnter += new System.EventHandler(this.lblAtras_MouseEnter);
             this.lblAtrasMesa.MouseLeave += new System.EventHandler(this.lblAtras_MouseLeave);
             // 
-            // listBox1
+            // listBoxNota
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(45, 107);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(604, 579);
-            this.listBox1.TabIndex = 0;
+            this.listBoxNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxNota.FormattingEnabled = true;
+            this.listBoxNota.ItemHeight = 25;
+            this.listBoxNota.Location = new System.Drawing.Point(45, 107);
+            this.listBoxNota.Name = "listBoxNota";
+            this.listBoxNota.ScrollAlwaysVisible = true;
+            this.listBoxNota.Size = new System.Drawing.Size(604, 579);
+            this.listBoxNota.TabIndex = 0;
             // 
             // flowLayoutPanelCalc
             // 
             this.flowLayoutPanelCalc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelCalc.AutoScroll = true;
             this.flowLayoutPanelCalc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelCalc.Location = new System.Drawing.Point(665, 257);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl7);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl8);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl9);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblBorrar);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl4);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl5);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl6);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblMultiplicar);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl1);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl2);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl3);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblSumar);
+            this.flowLayoutPanelCalc.Controls.Add(this.lbl0);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblComa);
+            this.flowLayoutPanelCalc.Controls.Add(this.label20);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblRestar);
+            this.flowLayoutPanelCalc.Location = new System.Drawing.Point(723, -320);
             this.flowLayoutPanelCalc.Name = "flowLayoutPanelCalc";
-            this.flowLayoutPanelCalc.Size = new System.Drawing.Size(800, 540);
+            this.flowLayoutPanelCalc.Size = new System.Drawing.Size(566, 540);
             this.flowLayoutPanelCalc.TabIndex = 14;
             // 
             // flowLayoutPanelDatos
@@ -910,16 +956,332 @@
             this.flowLayoutPanelDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelDatos.AutoScroll = true;
             this.flowLayoutPanelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelDatos.Location = new System.Drawing.Point(665, -1);
+            this.flowLayoutPanelDatos.Location = new System.Drawing.Point(227, 10);
             this.flowLayoutPanelDatos.Name = "flowLayoutPanelDatos";
-            this.flowLayoutPanelDatos.Size = new System.Drawing.Size(800, 540);
+            this.flowLayoutPanelDatos.Size = new System.Drawing.Size(1059, 496);
             this.flowLayoutPanelDatos.TabIndex = 13;
+            // 
+            // lbl7
+            // 
+            this.lbl7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7.Location = new System.Drawing.Point(3, 0);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(135, 134);
+            this.lbl7.TabIndex = 9;
+            this.lbl7.Tag = "7";
+            this.lbl7.Text = "7";
+            this.lbl7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl7.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl7.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl8
+            // 
+            this.lbl8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl8.Location = new System.Drawing.Point(144, 0);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(135, 134);
+            this.lbl8.TabIndex = 10;
+            this.lbl8.Tag = "8";
+            this.lbl8.Text = "8";
+            this.lbl8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl8.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl8.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl9
+            // 
+            this.lbl9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl9.Location = new System.Drawing.Point(285, 0);
+            this.lbl9.Name = "lbl9";
+            this.lbl9.Size = new System.Drawing.Size(135, 134);
+            this.lbl9.TabIndex = 11;
+            this.lbl9.Tag = "9";
+            this.lbl9.Text = "9";
+            this.lbl9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl9.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl9.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblBorrar
+            // 
+            this.lblBorrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBorrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrar.Location = new System.Drawing.Point(426, 0);
+            this.lblBorrar.Name = "lblBorrar";
+            this.lblBorrar.Size = new System.Drawing.Size(135, 134);
+            this.lblBorrar.TabIndex = 12;
+            this.lblBorrar.Tag = "C";
+            this.lblBorrar.Text = "C";
+            this.lblBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBorrar.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblBorrar.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl4
+            // 
+            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.Location = new System.Drawing.Point(3, 134);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(135, 134);
+            this.lbl4.TabIndex = 13;
+            this.lbl4.Tag = "4";
+            this.lbl4.Text = "4";
+            this.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl4.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl4.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl5
+            // 
+            this.lbl5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.Location = new System.Drawing.Point(144, 134);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(135, 134);
+            this.lbl5.TabIndex = 14;
+            this.lbl5.Tag = "5";
+            this.lbl5.Text = "5";
+            this.lbl5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl5.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl5.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl6
+            // 
+            this.lbl6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.Location = new System.Drawing.Point(285, 134);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(135, 134);
+            this.lbl6.TabIndex = 15;
+            this.lbl6.Tag = "6";
+            this.lbl6.Text = "6";
+            this.lbl6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl6.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl6.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblMultiplicar
+            // 
+            this.lblMultiplicar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMultiplicar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMultiplicar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMultiplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMultiplicar.Location = new System.Drawing.Point(426, 134);
+            this.lblMultiplicar.Name = "lblMultiplicar";
+            this.lblMultiplicar.Size = new System.Drawing.Size(135, 134);
+            this.lblMultiplicar.TabIndex = 16;
+            this.lblMultiplicar.Tag = "X";
+            this.lblMultiplicar.Text = "X";
+            this.lblMultiplicar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMultiplicar.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblMultiplicar.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl1
+            // 
+            this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(3, 268);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(135, 134);
+            this.lbl1.TabIndex = 17;
+            this.lbl1.Tag = "1";
+            this.lbl1.Text = "1";
+            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl1.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl1.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl2
+            // 
+            this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Location = new System.Drawing.Point(144, 268);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(135, 134);
+            this.lbl2.TabIndex = 18;
+            this.lbl2.Tag = "2";
+            this.lbl2.Text = "2";
+            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl2.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl2.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl3
+            // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Location = new System.Drawing.Point(285, 268);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(135, 134);
+            this.lbl3.TabIndex = 19;
+            this.lbl3.Tag = "3";
+            this.lbl3.Text = "3";
+            this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl3.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl3.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblSumar
+            // 
+            this.lblSumar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSumar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSumar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSumar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSumar.Location = new System.Drawing.Point(426, 268);
+            this.lblSumar.Name = "lblSumar";
+            this.lblSumar.Size = new System.Drawing.Size(135, 134);
+            this.lblSumar.TabIndex = 20;
+            this.lblSumar.Tag = "+";
+            this.lblSumar.Text = "+";
+            this.lblSumar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSumar.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblSumar.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl0
+            // 
+            this.lbl0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl0.Location = new System.Drawing.Point(3, 402);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(135, 134);
+            this.lbl0.TabIndex = 21;
+            this.lbl0.Tag = "0";
+            this.lbl0.Text = "0";
+            this.lbl0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl0.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl0.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblComa
+            // 
+            this.lblComa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblComa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblComa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblComa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComa.Location = new System.Drawing.Point(144, 402);
+            this.lblComa.Name = "lblComa";
+            this.lblComa.Size = new System.Drawing.Size(135, 134);
+            this.lblComa.TabIndex = 22;
+            this.lblComa.Tag = ".";
+            this.lblComa.Text = ",";
+            this.lblComa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComa.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblComa.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(285, 402);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(135, 134);
+            this.label20.TabIndex = 23;
+            this.label20.Tag = "";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRestar
+            // 
+            this.lblRestar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRestar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRestar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestar.Location = new System.Drawing.Point(426, 402);
+            this.lblRestar.Name = "lblRestar";
+            this.lblRestar.Size = new System.Drawing.Size(135, 134);
+            this.lblRestar.TabIndex = 24;
+            this.lblRestar.Tag = "-";
+            this.lblRestar.Text = "-";
+            this.lblRestar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRestar.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblRestar.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(384, 686);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTotal.Size = new System.Drawing.Size(265, 39);
+            this.txtTotal.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(309, 699);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "TOTAL:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 18);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Comensales:";
+            // 
+            // txtCantComensales
+            // 
+            this.txtCantComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantComensales.Location = new System.Drawing.Point(239, 39);
+            this.txtCantComensales.MaxLength = 2;
+            this.txtCantComensales.Name = "txtCantComensales";
+            this.txtCantComensales.Size = new System.Drawing.Size(43, 24);
+            this.txtCantComensales.TabIndex = 18;
+            this.txtCantComensales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMesas_KeyPress);
+            // 
+            // btnAceptarComensales
+            // 
+            this.btnAceptarComensales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarComensales.Location = new System.Drawing.Point(288, 37);
+            this.btnAceptarComensales.Name = "btnAceptarComensales";
+            this.btnAceptarComensales.Size = new System.Drawing.Size(75, 27);
+            this.btnAceptarComensales.TabIndex = 19;
+            this.btnAceptarComensales.Text = "Aceptar";
+            this.btnAceptarComensales.UseVisualStyleBackColor = true;
+            this.btnAceptarComensales.Click += new System.EventHandler(this.btnAceptarComensales_Click);
+            // 
+            // txtCantPersonas
+            // 
+            this.txtCantPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantPersonas.Location = new System.Drawing.Point(45, 82);
+            this.txtCantPersonas.Multiline = true;
+            this.txtCantPersonas.Name = "txtCantPersonas";
+            this.txtCantPersonas.ReadOnly = true;
+            this.txtCantPersonas.Size = new System.Drawing.Size(155, 25);
+            this.txtCantPersonas.TabIndex = 20;
+            this.txtCantPersonas.Text = "Comensales: ";
             // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1479, 838);
+            this.ClientSize = new System.Drawing.Size(1321, 775);
             this.Controls.Add(this.panelIniciarSesion);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Controls.Add(this.panelMenu);
@@ -956,6 +1318,8 @@
             this.panelBorrarUsuario.ResumeLayout(false);
             this.panelBorrarUsuario.PerformLayout();
             this.panelMesa.ResumeLayout(false);
+            this.panelMesa.PerformLayout();
+            this.flowLayoutPanelCalc.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1021,12 +1385,34 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Panel panelMesa;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxNota;
         public System.Windows.Forms.Label lblAtrasMesa;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDatos;
         public System.Windows.Forms.Label lblTapas;
         public System.Windows.Forms.Label lblBebidas;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCalc;
+        public System.Windows.Forms.Label lbl7;
+        public System.Windows.Forms.Label lbl8;
+        public System.Windows.Forms.Label lbl9;
+        public System.Windows.Forms.Label lblBorrar;
+        public System.Windows.Forms.Label lbl4;
+        public System.Windows.Forms.Label lbl5;
+        public System.Windows.Forms.Label lbl6;
+        public System.Windows.Forms.Label lblMultiplicar;
+        public System.Windows.Forms.Label lbl1;
+        public System.Windows.Forms.Label lbl2;
+        public System.Windows.Forms.Label lbl3;
+        public System.Windows.Forms.Label lblSumar;
+        public System.Windows.Forms.Label lbl0;
+        public System.Windows.Forms.Label lblComa;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label lblRestar;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button btnAceptarComensales;
+        private System.Windows.Forms.TextBox txtCantComensales;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCantPersonas;
     }
 }
 

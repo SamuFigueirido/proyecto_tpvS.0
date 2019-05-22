@@ -29,6 +29,9 @@ namespace Proyecto_TPVS._0
         Panel panel;
         bool flag = true;
         List<Panel> panelesMesas;
+        string tagMesaAux = "";
+        string tabla = "";
+        List<string> datos = new List<string>();
 
         public FormIniciarSesion()
         {
@@ -300,8 +303,10 @@ namespace Proyecto_TPVS._0
                     mesa.Width = 162;
                     mesa.Height = 162;
                     mesa.Cursor = Cursors.Hand;
-                    mesa.Text = "";
+                    mesa.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                    mesa.Text = cont.ToString();
                     mesa.Tag = "Mesa " + cont;
+                    mesa.TextAlign = ContentAlignment.MiddleCenter;
                     mesa.Location = new Point(x, y);
                     mesa.Click += new EventHandler(mesa_Click);
                     panelComedor.Controls.Add(mesa);
@@ -358,6 +363,8 @@ namespace Proyecto_TPVS._0
                 Console.WriteLine("Panel creado: " + panel.Tag);
                 flag = false;
             }
+            Console.WriteLine("Click: " + ((Label)sender).Tag.ToString());
+            tagMesaAux = ((Label)sender).Tag.ToString().Trim();
         }
 
         private void lblAtrasMesa_Click(object sender, EventArgs e)
@@ -388,7 +395,7 @@ namespace Proyecto_TPVS._0
             }
             for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
             {
-                if(panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
+                if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
                 {
                     panelComedor.Controls.Remove(panelComedor.Controls[i]);
                 }
@@ -483,12 +490,13 @@ namespace Proyecto_TPVS._0
 
         private void lblBebidasTapas_Click(object sender, EventArgs e)
         {
-            for (int i = flowLayoutPanelDatos.Controls.Count-1; i >= 0; i--)
+            for (int i = flowLayoutPanelDatos.Controls.Count - 1; i >= 0; i--)
             {
                 flowLayoutPanelDatos.Controls.RemoveAt(i);
             }
             Label lblOpcion;
             List<string> datos = connectionSQL.datosAlmacenNombres(((Label)sender).Tag.ToString());
+            tabla = ((Label)sender).Tag.ToString();
             for (int i = 0; i < datos.Count; i++)
             {
                 lblOpcion = new Label();
@@ -502,9 +510,56 @@ namespace Proyecto_TPVS._0
                 lblOpcion.TextAlign = ContentAlignment.MiddleCenter;
                 lblOpcion.MouseEnter += new EventHandler(this.lbl_MouseEnter);
                 lblOpcion.MouseLeave += new EventHandler(this.lbl_MouseLeave);
-                //TODO evento click
+                lblOpcion.Click += new EventHandler(this.lblDatos_Click);
                 flowLayoutPanelDatos.Controls.Add(lblOpcion);
             }
+        }
+
+        private void lblDatos_Click(object sender, EventArgs e)
+        {
+            //TODO QUE SE GUARDE POR SEPARADO CADA PEDIDO DE CADA MESA
+            //UTILIZAR CLASE FACTURA?
+            datos.Add(connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString()));
+            listBoxNota.DataSource = datos;
+        }
+
+        private void btnAceptarComensales_Click(object sender, EventArgs e)
+        {
+            //TODO QUE SE GUARDE EL NÚMERO REAL DE COMENSALES DE CADA MESA
+            int cant = Convert.ToInt32(txtCantComensales.Text.Trim());
+            if (txtCantComensales.Text.Trim() != "" && cant > 0)
+            {
+                for (int i = 0; i < panelComedor.Controls.Count; i++)
+                {
+                    if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Trim() == tagMesaAux)
+                    {
+                        Image image = Properties.Resources.mesa2p;
+                        if (cant <= 2)
+                        {
+                            image = Properties.Resources.mesa2p;
+                        }
+                        else if (cant <= 4)
+                        {
+                            image = Properties.Resources.mesa4p;
+                        }
+                        else if (cant <= 6)
+                        {
+                            image = Properties.Resources.mesa6p;
+                        }
+                        else
+                        {
+                            image = Properties.Resources.mesa8p;
+                        }
+                        ((Label)panelComedor.Controls[i]).Image = image;
+                    }
+                }
+                txtCantPersonas.Text = "Comensales: " + cant;
+            }
+            else
+            {
+                MessageBox.Show("Cantidad errónea.\nIntroduce de nuevo un valor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            txtCantComensales.Text = "";
         }
     }
 }

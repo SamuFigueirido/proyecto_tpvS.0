@@ -319,5 +319,41 @@ namespace Proyecto_TPVS._0
             executeQuery("DELETE FROM [" + tabla + "] where nombre='" + nombre + "'");
             cerrarConexion();
         }
+
+        public string getDatos(string tabla, string nombre)
+        {
+            string datos = "";
+            abrirConexion();
+            string query = "select * from [" + tabla + "] where nombre='"+nombre+"'";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    datos= string.Format("{0, -20}{1, -20}{2, -20}", Convert.ToString(reader["nombre"]).Trim(), Convert.ToString(reader["precio"]).Trim() + "€", Convert.ToString(reader["cantidad"]).Trim() + "Uds.");
+                }
+            }
+            cerrarConexion();
+            return datos;
+        }
+
+        public double getPrecio(string tabla, string nombre)
+        {
+            double precio = 0;
+            abrirConexion();
+            string query = "select * from [" + tabla + "] where nombre='" + nombre + "'";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    precio = Convert.ToDouble(reader["precio"]);
+                }
+            }
+            cerrarConexion();
+            return precio;
+        }
     }
 }
