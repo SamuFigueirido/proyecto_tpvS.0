@@ -950,7 +950,7 @@
             this.lblTapas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTapas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTapas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTapas.Location = new System.Drawing.Point(348, 775);
+            this.lblTapas.Location = new System.Drawing.Point(348, 744);
             this.lblTapas.Name = "lblTapas";
             this.lblTapas.Size = new System.Drawing.Size(264, 131);
             this.lblTapas.TabIndex = 12;
@@ -966,7 +966,7 @@
             this.lblBebidas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBebidas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBebidas.Location = new System.Drawing.Point(82, 775);
+            this.lblBebidas.Location = new System.Drawing.Point(82, 744);
             this.lblBebidas.Name = "lblBebidas";
             this.lblBebidas.Size = new System.Drawing.Size(264, 131);
             this.lblBebidas.TabIndex = 11;

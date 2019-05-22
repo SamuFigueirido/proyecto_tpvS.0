@@ -371,11 +371,25 @@ namespace Proyecto_TPVS._0
             Console.WriteLine("Click: " + ((Label)sender).Tag.ToString());
             tagMesaAux = ((Label)sender).Tag.ToString().Trim();
             lblMesa.Text = tagMesaAux;
+            listBoxNota.DataSource = mesasList[tagMesaAux];
         }
 
         private void lblAtrasMesa_Click(object sender, EventArgs e)
         {
             cambioDePanel(panelComedor, panel);
+            try
+            {
+                mesasList.Add(tagMesaAux, datosMesasList);
+            }
+            catch (ArgumentException)
+            {
+                mesasList[tagMesaAux] = mesasList[tagMesaAux].ToString() + datosMesasList;
+            }
+            datosMesasList = new List<string>();
+            for (int i = listBoxNota.Items.Count - 1; i >= 0; i--)
+            {
+                listBoxNota.Items.RemoveAt(i);
+            }
         }
 
         private void lblCerrarSesion_Click(object sender, EventArgs e)
@@ -575,9 +589,12 @@ namespace Proyecto_TPVS._0
         {
             //TODO QUE SE GUARDE POR SEPARADO CADA PEDIDO DE CADA MESA
             //UTILIZAR CLASE FACTURA?
-            //string dato = connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString());
-            Console.WriteLine("-----TAG MESA: "+tagMesaAux);
-            Console.WriteLine("-----DATO: " + connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString()));
+            string dato = connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString());
+            Console.WriteLine("-----TAG MESA: " + tagMesaAux);
+            Console.WriteLine("-----DATO: " + dato);
+            datosMesasList.Add(dato);
+            listBoxNota.Items.Add(dato);
+            //listBoxNota.DataSource = datosMesasList;
         }
 
         private void btnAceptarComensales_Click(object sender, EventArgs e)
