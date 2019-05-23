@@ -671,6 +671,8 @@ namespace Proyecto_TPVS._0
                 Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
                 //connectionSQL.saveReserva(nombreReserva, fechaReserva, horaReserva);
                 //listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 10}", nombreReserva, fechaReserva, horaReserva));
+                /*TODO para que haya los mismos datos en la tabla y en el listbox, primero se borra en la tabla el dato que queremos
+                 borrar y luego borramos enteramente los datos del listbox, y después pasamos los datos de la tabla al listbox*/
             }
         }
     }
