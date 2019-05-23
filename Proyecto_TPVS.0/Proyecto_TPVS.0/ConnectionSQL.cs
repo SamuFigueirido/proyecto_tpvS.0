@@ -20,6 +20,7 @@ namespace Proyecto_TPVS._0
         List<string> tablasAlmacenList;
         List<string> datosAlmacenList;
         List<string> datosNombres;
+        List<string> reservas;
 
         public void abrirConexion()
         {
@@ -27,7 +28,7 @@ namespace Proyecto_TPVS._0
             try
             {
                 conn.Open();
-                Console.WriteLine("Conexión abierta");
+                //Console.WriteLine("Conexión abierta");
             }
             catch (SqlException)
             {
@@ -40,7 +41,7 @@ namespace Proyecto_TPVS._0
             if (conn != null)
             {
                 conn.Close();
-                Console.WriteLine("Conexión cerrada");
+                //Console.WriteLine("Conexión cerrada");
             }
         }
 
@@ -74,14 +75,15 @@ namespace Proyecto_TPVS._0
             string facturas = @"CREATE TABLE IF NOT EXISTS
                             [facturas](
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [platos] VARCHAR(50) NULL,
+                            [platos] VARCHAR(123456789) NULL,
                             [total] float NOT NULL
                             )";
             string reservas = @"CREATE TABLE IF NOT EXISTS
                             [reservas](
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NULL,
-                            [fecha] datetimeoffset NULL
+                            [nombre] VARCHAR(50) NOT NULL,
+                            [fecha] VARCHAR(50) NULL,
+                            [hora] VARCHAR(50) NULL
                             )";
             abrirConexion();
             executeQuery(empleados);
@@ -89,6 +91,8 @@ namespace Proyecto_TPVS._0
             executeQuery(tapas);
             executeQuery(facturas);
             executeQuery(reservas);
+            //executeQuery("DROP TABLE [facturas]");
+            //executeQuery("DROP TABLE [reservas]");
             //executeQuery("INSERT INTO [empleados] (nombre, contraseña) values('admin', '" + encryptDecrypt.encrypt("0000") + "')");
             //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('Fanta', 20, 2.5)");
             //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Calamares', 10, 8.5)");
@@ -320,9 +324,9 @@ namespace Proyecto_TPVS._0
             cerrarConexion();
         }
 
-        public string getDatos(string tabla, string nombre)
+        public string getNombreProducto(string tabla, string nombre)
         {
-            string datos = "";
+            string nombreProducto = "";
             abrirConexion();
             string query = "select * from [" + tabla + "] where nombre='"+nombre+"'";
             using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -331,14 +335,14 @@ namespace Proyecto_TPVS._0
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    datos= string.Format("{0, -30}{1, 20}", Convert.ToString(reader["nombre"]).Trim(), Convert.ToString(reader["precio"]).Trim() + "€");
+                    nombreProducto = Convert.ToString(reader["nombre"]).Trim();
                 }
             }
             cerrarConexion();
-            return datos;
+            return nombreProducto;
         }
 
-        public double getPrecio(string tabla, string nombre)
+        public double getPrecioProducto(string tabla, string nombre)
         {
             double precio = 0;
             abrirConexion();
@@ -354,6 +358,19 @@ namespace Proyecto_TPVS._0
             }
             cerrarConexion();
             return precio;
+        }
+
+        public void saveReserva(string nombre, string fecha, string hora)
+        {
+            abrirConexion();
+            executeQuery("INSERT INTO [reservas] (nombre, fecha, hora) values('" + nombre + "', " + fecha + ", '" + hora + "')");
+            cerrarConexion();
+        }
+
+        public List<string> getReservas()
+        {
+
+            return reservas;
         }
     }
 }

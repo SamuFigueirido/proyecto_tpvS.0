@@ -272,7 +272,7 @@ namespace Proyecto_TPVS._0
             panelConfiguracion.Visible = true;
         }
 
-        private void txtCantMesas_KeyPress(object sender, KeyPressEventArgs e)
+        private void numConfirm_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
@@ -589,11 +589,13 @@ namespace Proyecto_TPVS._0
         {
             //TODO QUE SE GUARDE POR SEPARADO CADA PEDIDO DE CADA MESA
             //UTILIZAR CLASE FACTURA?
-            string dato = connectionSQL.getDatos(tabla, ((Label)sender).Tag.ToString());
+            //TODO OBJETO MESA
+            string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
+            string precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString()).ToString() + "€";
             Console.WriteLine("-----TAG MESA: " + tagMesaAux);
-            Console.WriteLine("-----DATO: " + dato);
-            datosMesasList.Add(dato);
-            listBoxNota.Items.Add(dato);
+            Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: "+precioProducto);
+            datosMesasList.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
+            listBoxNota.Items.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
             //listBoxNota.DataSource = datosMesasList;
         }
 
@@ -643,6 +645,33 @@ namespace Proyecto_TPVS._0
                 MessageBox.Show("Cantidad errónea.\nIntroduce de nuevo un valor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             txtCantComensales.Text = "";
+        }
+
+        private void btnAñadirFecha_Click(object sender, EventArgs e)
+        {
+            string nombreReserva = txtNombreReserva.Text.Trim();
+            if (nombreReserva == "")
+            {
+                MessageBox.Show("Nombre introducido no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int hora = Convert.ToInt32(txtHoraReserva.Text.Trim());
+                if (hora >= 24)
+                {
+                    hora = 0;
+                }
+                int minutos = Convert.ToInt32(txtMinutosReserva.Text.Trim());
+                if (minutos >= 60)
+                {
+                    minutos = 0;
+                }
+                string horaReserva = String.Format("{0,0:D2}:{1,0:D2}", hora, minutos);
+                string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
+                Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
+                //connectionSQL.saveReserva(nombreReserva, fechaReserva, horaReserva);
+                //listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 10}", nombreReserva, fechaReserva, horaReserva));
+            }
         }
     }
 }
