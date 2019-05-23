@@ -30,10 +30,10 @@ namespace Proyecto_TPVS._0
         List<Panel> panelesMesas;
         string tagMesaAux = "";
         string tabla = "";
+
         Hashtable mesasList = new Hashtable();//SIN USAR
         List<string> datosMesasList = new List<string>();//SIN USAR
         Hashtable comensales = new Hashtable();
-
 
         List<string> datosMesa;
         Hashtable mesasHash = new Hashtable();
@@ -687,13 +687,11 @@ namespace Proyecto_TPVS._0
                 string horaReserva = String.Format("{0,0:D2}:{1,0:D2}", hora, minutos);
                 string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
                 Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
-                //connectionSQL.saveReserva(String.Format("{0, -20}{1, 10}{2, 20}", nombreReserva, fechaReserva, horaReserva));
+
                 listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 20}", nombreReserva, fechaReserva, horaReserva));
                 txtHoraReserva.Text = "";
                 txtMinutosReserva.Text = "";
                 txtNombreReserva.Text = "";
-                /*TODO para que haya los mismos datos en la tabla y en el listbox, primero se borra en la tabla el dato que queremos
-                 borrar y luego borramos enteramente los datos del listbox, y después pasamos los datos de la tabla al listbox*/
             }
         }
 
@@ -720,6 +718,16 @@ namespace Proyecto_TPVS._0
             {
                 list.Items.Add(connectionSQL.getReservas()[i]);
             }
+        }
+
+        private void btnBorrarFactura_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFactura_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
