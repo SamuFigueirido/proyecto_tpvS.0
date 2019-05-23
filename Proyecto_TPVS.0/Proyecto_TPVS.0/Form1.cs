@@ -20,7 +20,6 @@ namespace Proyecto_TPVS._0
 {
     public partial class FormIniciarSesion : Form
     {
-        //KunLibertad_DesktopControl desktopControl;
         ConnectionSQL connectionSQL;
         Pass encryptDecrypt = new Pass();
         List<string> datosNombres;
@@ -35,6 +34,12 @@ namespace Proyecto_TPVS._0
         List<string> datosMesasList = new List<string>();//SIN USAR
         Hashtable comensales = new Hashtable();
 
+
+        List<string> datosMesa;
+        Hashtable mesasHash = new Hashtable();
+
+        Mesa mesaAux = new Mesa();
+
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -45,22 +50,16 @@ namespace Proyecto_TPVS._0
             ajustarPaneles();
             connectionSQL = new ConnectionSQL();
             connectionSQL.createBD();
-            foreach (string user in connectionSQL.empleados())
-            {
-                Console.WriteLine(user);
-            }
             flowLayoutPanelDatos.Height = this.Height * 4 / 10;
             pantallaCompleta(this);
+            getReservaFromDB(listBoxReservas);
         }
 
         public void pantallaCompleta(Form f)
         {
-            //desktopControl = new KunLibertad_DesktopControl();
-            //desktopControl.TaskBar(true);
             f.Size = Screen.PrimaryScreen.WorkingArea.Size;
             f.Location = Screen.PrimaryScreen.WorkingArea.Location;
             f.WindowState = FormWindowState.Maximized;
-            //f.TopMost = true;
             f.FormBorderStyle = FormBorderStyle.None;
         }
 
@@ -72,21 +71,10 @@ namespace Proyecto_TPVS._0
             }
             else
             {
+                saveReserva(listBoxReservas);
+                cerrarSesion();
                 connectionSQL.cerrarConexion();
             }
-        }
-
-        private void FormIniciarSesion_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
-            {
-                //desktopControl.TaskBar(false);
-            }
-        }
-
-        private void FormIniciarSesion_Click(object sender, EventArgs e)
-        {
-            //desktopControl.TaskBar(true);
         }
 
         private void lblSalir_Click(object sender, EventArgs e)
@@ -282,51 +270,72 @@ namespace Proyecto_TPVS._0
 
         private void btnAceptarCantMesas_Click(object sender, EventArgs e)
         {
-            if (txtCantMesas.Text.Trim() == "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 25)
+            try
             {
-                for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
+                if (txtCantMesas.Text.Trim() != "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 25)
                 {
-                    if (panelComedor.Controls[i] is Label && panelComedor.Controls[i].Tag != null && panelComedor.Controls[i].Tag.ToString().Contains("Mesa"))
+                    for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
                     {
-                        panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                        if (panelComedor.Controls[i] is Label && panelComedor.Controls[i].Tag != null && panelComedor.Controls[i].Tag.ToString().Contains("Mesa"))
+                        {
+                            panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                        }
                     }
+                    flag = true;
+                    int x = this.Width * 1 / 10;
+                    int y = this.Height * 3 / 2 / 10;
+                    int numMesas = Convert.ToInt32(txtCantMesas.Text.Trim());
+                    mesas = new List<Label>();
+                    panelesMesas = new List<Panel>(numMesas);
+                    int cont = 0;
+                    for (int i = 0; i < numMesas; i++)
+                    {
+                        cont++;
+                        mesa = new Label();
+                        mesa.Image = Properties.Resources.mesa2p;
+                        mesa.Width = 120;
+                        mesa.Height = 120;
+                        mesa.Cursor = Cursors.Hand;
+                        mesa.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                        mesa.Text = cont.ToString();
+                        mesa.Tag = "Mesa " + cont;
+                        mesa.TextAlign = ContentAlignment.MiddleCenter;
+                        mesa.Location = new Point(x, y);
+                        mesa.Click += new EventHandler(mesa_Click);
+                        panelComedor.Controls.Add(mesa);
+                        mesas.Add(mesa);
+
+                        datosMesa = new List<string>();
+                        Mesa mesaConTodosLosDatos = new Mesa();
+                        mesaConTodosLosDatos.Nombre = mesa.Tag.ToString().Trim();
+                        mesaConTodosLosDatos.Productos = datosMesa;
+                        try
+                        {
+                            mesasHash.Add(mesa.Tag.ToString().Trim(), mesaConTodosLosDatos);
+                        }
+                        catch (ArgumentException)
+                        {
+
+                        }
+
+                        if (cont % 5 == 0)
+                        {
+                            y += this.Height * 3 / 2 / 10;
+                            x = this.Width * 1 / 10;
+                        }
+                        else
+                        {
+                            x += this.Width * 7 / 2 / 2 / 10;
+                        }
+                    }
+                    txtCantMesas.Text = "";
                 }
-                flag = true;
-                int x = this.Width * 1 / 10;
-                int y = this.Height * 3 / 2 / 10;
-                int numMesas = Convert.ToInt32(txtCantMesas.Text.Trim());
-                mesas = new List<Label>();
-                panelesMesas = new List<Panel>(numMesas);
-                int cont = 0;
-                for (int i = 0; i < numMesas; i++)
+                else
                 {
-                    cont++;
-                    mesa = new Label();
-                    mesa.Image = Properties.Resources.mesa2p;
-                    mesa.Width = 120;
-                    mesa.Height = 120;
-                    mesa.Cursor = Cursors.Hand;
-                    mesa.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-                    mesa.Text = cont.ToString();
-                    mesa.Tag = "Mesa " + cont;
-                    mesa.TextAlign = ContentAlignment.MiddleCenter;
-                    mesa.Location = new Point(x, y);
-                    mesa.Click += new EventHandler(mesa_Click);
-                    panelComedor.Controls.Add(mesa);
-                    mesas.Add(mesa);
-                    if (cont % 5 == 0)
-                    {
-                        y += this.Height * 3 / 2 / 10;
-                        x = this.Width * 1 / 10;
-                    }
-                    else
-                    {
-                        x += this.Width * 7 / 2 / 2 / 10;
-                    }
+                    MessageBox.Show("Introduce un número del 1-25", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                txtCantMesas.Text = "";
             }
-            else
+            catch (FormatException)
             {
                 MessageBox.Show("Introduce un número del 1-25", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -344,11 +353,19 @@ namespace Proyecto_TPVS._0
                     cambioDePanel(panel, panelComedor);
                     Console.WriteLine("Panel abierto: " + panel.Tag);
                     txtCantPersonas.Text = "Comensales: " + comensales[((Label)sender).Tag.ToString().Trim()];
-                    return;
+
+                    for (int j = 0; j < ((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos.Count; j++)
+                    {
+                        listBoxNota.Items.Add(((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos[i]);
+                        Console.WriteLine(((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos[i]);
+                    }
+                    flag = false;
+                    break;
                 }
                 else
                 {
                     flag = true;
+                    break;
                 }
             }
 
@@ -371,12 +388,14 @@ namespace Proyecto_TPVS._0
             Console.WriteLine("Click: " + ((Label)sender).Tag.ToString());
             tagMesaAux = ((Label)sender).Tag.ToString().Trim();
             lblMesa.Text = tagMesaAux;
-            listBoxNota.DataSource = mesasList[tagMesaAux];
+            //listBoxNota.DataSource = mesasList[tagMesaAux];
+            //listBoxNota.DataSource = ((Mesa)(mesasHash)[tagMesaAux]).Productos;
         }
 
         private void lblAtrasMesa_Click(object sender, EventArgs e)
         {
             cambioDePanel(panelComedor, panel);
+
             try
             {
                 mesasList.Add(tagMesaAux, datosMesasList);
@@ -587,16 +606,14 @@ namespace Proyecto_TPVS._0
 
         private void lblDatos_Click(object sender, EventArgs e)
         {
-            //TODO QUE SE GUARDE POR SEPARADO CADA PEDIDO DE CADA MESA
-            //UTILIZAR CLASE FACTURA?
-            //TODO OBJETO MESA
             string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
             string precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString()).ToString() + "€";
             Console.WriteLine("-----TAG MESA: " + tagMesaAux);
-            Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: "+precioProducto);
-            datosMesasList.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
+            Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
+
             listBoxNota.Items.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
-            //listBoxNota.DataSource = datosMesasList;
+
+            ((Mesa)(mesasHash[tagMesaAux])).Productos.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
         }
 
         private void btnAceptarComensales_Click(object sender, EventArgs e)
@@ -626,6 +643,7 @@ namespace Proyecto_TPVS._0
                             image = Properties.Resources.mesa8p;
                         }
                         ((Label)panelComedor.Controls[i]).Image = image;
+
                         try
                         {
                             comensales.Add(((Label)panelComedor.Controls[i]).Tag.ToString().Trim(), cant);
@@ -669,10 +687,38 @@ namespace Proyecto_TPVS._0
                 string horaReserva = String.Format("{0,0:D2}:{1,0:D2}", hora, minutos);
                 string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
                 Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
-                //connectionSQL.saveReserva(nombreReserva, fechaReserva, horaReserva);
-                //listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 10}", nombreReserva, fechaReserva, horaReserva));
+                //connectionSQL.saveReserva(String.Format("{0, -20}{1, 10}{2, 20}", nombreReserva, fechaReserva, horaReserva));
+                listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 20}", nombreReserva, fechaReserva, horaReserva));
+                txtHoraReserva.Text = "";
+                txtMinutosReserva.Text = "";
+                txtNombreReserva.Text = "";
                 /*TODO para que haya los mismos datos en la tabla y en el listbox, primero se borra en la tabla el dato que queremos
                  borrar y luego borramos enteramente los datos del listbox, y después pasamos los datos de la tabla al listbox*/
+            }
+        }
+
+        private void btnEliminarFecha_Click(object sender, EventArgs e)
+        {
+            for (int i = listBoxReservas.SelectedItems.Count - 1; i >= 0; i--)
+            {
+                listBoxReservas.Items.Remove(listBoxReservas.SelectedItems[i]);
+            }
+        }
+
+        public void saveReserva(ListBox list)
+        {
+            connectionSQL.vaciarTabla("reservas");
+            for (int i = 0; i < list.Items.Count; i++)
+            {
+                connectionSQL.saveReserva(list.Items[i].ToString());
+            }
+        }
+
+        public void getReservaFromDB(ListBox list)
+        {
+            for (int i = 0; i < connectionSQL.getReservas().Count; i++)
+            {
+                list.Items.Add(connectionSQL.getReservas()[i]);
             }
         }
     }

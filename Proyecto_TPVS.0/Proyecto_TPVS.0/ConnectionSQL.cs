@@ -81,9 +81,7 @@ namespace Proyecto_TPVS._0
             string reservas = @"CREATE TABLE IF NOT EXISTS
                             [reservas](
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            [nombre] VARCHAR(50) NOT NULL,
-                            [fecha] VARCHAR(50) NULL,
-                            [hora] VARCHAR(50) NULL
+                            [reserva] VARCHAR(50) NOT NULL
                             )";
             abrirConexion();
             executeQuery(empleados);
@@ -360,17 +358,36 @@ namespace Proyecto_TPVS._0
             return precio;
         }
 
-        public void saveReserva(string nombre, string fecha, string hora)
+        public void saveReserva(string reserva)
         {
             abrirConexion();
-            executeQuery("INSERT INTO [reservas] (nombre, fecha, hora) values('" + nombre + "', " + fecha + ", '" + hora + "')");
+            executeQuery("INSERT INTO [reservas] (reserva) values('" + reserva + "')");
             cerrarConexion();
         }
 
         public List<string> getReservas()
         {
-
+            reservas = new List<string>();
+            abrirConexion();
+            string query = "select * from [reservas]";
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    reservas.Add(Convert.ToString(reader["reserva"]).Trim());
+                }
+            }
+            cerrarConexion();
             return reservas;
+        }
+
+        public void vaciarTabla(string tabla)
+        {
+            abrirConexion();
+            executeQuery("DELETE FROM " + tabla);
+            cerrarConexion();
         }
     }
 }

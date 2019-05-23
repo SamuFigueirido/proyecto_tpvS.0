@@ -571,9 +571,9 @@
             this.panelReservas.Controls.Add(this.listBoxReservas);
             this.panelReservas.Controls.Add(this.btnAñadirFecha);
             this.panelReservas.Controls.Add(this.lblAtrasReservas);
-            this.panelReservas.Location = new System.Drawing.Point(12, 134);
+            this.panelReservas.Location = new System.Drawing.Point(12, 111);
             this.panelReservas.Name = "panelReservas";
-            this.panelReservas.Size = new System.Drawing.Size(734, 511);
+            this.panelReservas.Size = new System.Drawing.Size(143, 91);
             this.panelReservas.TabIndex = 11;
             this.panelReservas.Visible = false;
             // 
@@ -581,38 +581,42 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(88, 115);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(-163, -100);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(49, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Fecha:";
             // 
             // dateTPReserva
             // 
             this.dateTPReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTPReserva.Location = new System.Drawing.Point(134, 109);
+            this.dateTPReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTPReserva.Location = new System.Drawing.Point(-108, -105);
             this.dateTPReserva.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTPReserva.MinDate = new System.DateTime(2019, 5, 1, 0, 0, 0, 0);
             this.dateTPReserva.Name = "dateTPReserva";
-            this.dateTPReserva.Size = new System.Drawing.Size(200, 20);
+            this.dateTPReserva.Size = new System.Drawing.Size(249, 22);
             this.dateTPReserva.TabIndex = 20;
             // 
             // txtNombreReserva
             // 
             this.txtNombreReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreReserva.Location = new System.Drawing.Point(200, 55);
+            this.txtNombreReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreReserva.Location = new System.Drawing.Point(-15, -163);
             this.txtNombreReserva.MaxLength = 20;
             this.txtNombreReserva.Name = "txtNombreReserva";
-            this.txtNombreReserva.Size = new System.Drawing.Size(134, 20);
+            this.txtNombreReserva.Size = new System.Drawing.Size(156, 22);
             this.txtNombreReserva.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(88, 58);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(-163, -160);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 13);
+            this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 18;
             this.label10.Text = "Nombre de la reserva:";
             // 
@@ -620,9 +624,10 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(213, 86);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(2, -132);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.Size = new System.Drawing.Size(57, 16);
             this.label9.TabIndex = 17;
             this.label9.Text = "Minutos:";
             // 
@@ -630,19 +635,21 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(88, 86);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(-163, -129);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 16;
             this.label8.Text = "Hora:";
             // 
             // txtMinutosReserva
             // 
             this.txtMinutosReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMinutosReserva.Location = new System.Drawing.Point(266, 83);
+            this.txtMinutosReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinutosReserva.Location = new System.Drawing.Point(66, -135);
             this.txtMinutosReserva.MaxLength = 2;
             this.txtMinutosReserva.Name = "txtMinutosReserva";
-            this.txtMinutosReserva.Size = new System.Drawing.Size(68, 20);
+            this.txtMinutosReserva.Size = new System.Drawing.Size(75, 22);
             this.txtMinutosReserva.TabIndex = 15;
             this.txtMinutosReserva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMinutosReserva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numConfirm_KeyPress);
@@ -650,10 +657,11 @@
             // txtHoraReserva
             // 
             this.txtHoraReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtHoraReserva.Location = new System.Drawing.Point(134, 83);
+            this.txtHoraReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraReserva.Location = new System.Drawing.Point(-108, -134);
             this.txtHoraReserva.MaxLength = 2;
             this.txtHoraReserva.Name = "txtHoraReserva";
-            this.txtHoraReserva.Size = new System.Drawing.Size(65, 20);
+            this.txtHoraReserva.Size = new System.Drawing.Size(76, 22);
             this.txtHoraReserva.TabIndex = 14;
             this.txtHoraReserva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHoraReserva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numConfirm_KeyPress);
@@ -661,26 +669,32 @@
             // btnEliminarFecha
             // 
             this.btnEliminarFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEliminarFecha.Location = new System.Drawing.Point(360, 100);
+            this.btnEliminarFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarFecha.Location = new System.Drawing.Point(173, -120);
             this.btnEliminarFecha.Name = "btnEliminarFecha";
             this.btnEliminarFecha.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarFecha.TabIndex = 13;
             this.btnEliminarFecha.Text = "Eliminar";
             this.btnEliminarFecha.UseVisualStyleBackColor = true;
+            this.btnEliminarFecha.Click += new System.EventHandler(this.btnEliminarFecha_Click);
             // 
             // listBoxReservas
             // 
             this.listBoxReservas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listBoxReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxReservas.FormattingEnabled = true;
-            this.listBoxReservas.Location = new System.Drawing.Point(91, 147);
+            this.listBoxReservas.ItemHeight = 16;
+            this.listBoxReservas.Location = new System.Drawing.Point(-160, -68);
             this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(344, 342);
+            this.listBoxReservas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxReservas.Size = new System.Drawing.Size(438, 340);
             this.listBoxReservas.TabIndex = 12;
             // 
             // btnAñadirFecha
             // 
             this.btnAñadirFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAñadirFecha.Location = new System.Drawing.Point(360, 72);
+            this.btnAñadirFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirFecha.Location = new System.Drawing.Point(173, -148);
             this.btnAñadirFecha.Name = "btnAñadirFecha";
             this.btnAñadirFecha.Size = new System.Drawing.Size(75, 23);
             this.btnAñadirFecha.TabIndex = 11;
@@ -1000,9 +1014,9 @@
             this.panelMesa.Controls.Add(this.lblTapas);
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.listBoxNota);
-            this.panelMesa.Location = new System.Drawing.Point(602, 12);
+            this.panelMesa.Location = new System.Drawing.Point(604, 12);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(148, 108);
+            this.panelMesa.Size = new System.Drawing.Size(137, 114);
             this.panelMesa.TabIndex = 16;
             // 
             // lblAtrasMesa
@@ -1023,9 +1037,9 @@
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelDatos);
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelCalc);
             this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(-421, 0);
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(-432, 0);
             this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
-            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 108);
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 114);
             this.flowLayoutPanelContainer.TabIndex = 22;
             // 
             // flowLayoutPanelDatos
@@ -1458,8 +1472,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIniciarSesion_FormClosing);
             this.Load += new System.EventHandler(this.FormIniciarSesion_Load);
-            this.Click += new System.EventHandler(this.FormIniciarSesion_Click);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormIniciarSesion_KeyUp);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelRegistrarUsuario.ResumeLayout(false);
