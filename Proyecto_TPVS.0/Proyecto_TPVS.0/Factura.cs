@@ -52,7 +52,7 @@ namespace Proyecto_TPVS._0
 
         public string ToString2()
         {
-            return "\r\n" + Nombre + "\r\nPlatos:\r\n" + Platos + "\r\nTOTAL: " + Total;
+            return "\r\n" + Nombre + "\r\nPlatos:\r\n" + Platos + "\r\n\r\nTOTAL: " + Total;
         }
     }
 }

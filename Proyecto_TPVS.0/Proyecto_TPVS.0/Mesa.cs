@@ -32,5 +32,18 @@ namespace Proyecto_TPVS._0
                 return productos;
             }
         }
+        private double precioTotal;
+        public double PrecioTotal
+        {
+            set
+            {
+                precioTotal = value;
+            }
+
+            get
+            {
+                return precioTotal;
+            }
+        }
     }
 }

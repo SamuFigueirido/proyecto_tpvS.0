@@ -32,18 +32,13 @@ namespace Proyecto_TPVS._0
         string tagMesaAux = "";
         string tabla = "";
 
-        Hashtable mesasList = new Hashtable();//SIN USAR
-        List<string> datosMesasList = new List<string>();//SIN USAR
-        Hashtable comensales = new Hashtable();
-
-        List<string> datosMesa;
-        Hashtable mesasHash = new Hashtable();
         double total = 0;
         Factura factura;
 
-        Mesa mesaAux = new Mesa();
+        Hashtable comensales = new Hashtable();
 
-        double total = 0;
+        //PARA GESTIONAR LA NOTA DE CADA MESA
+        Hashtable mesasHash = new Hashtable(); //CONJUNTO DE MESAS (KEY: NOMBRE DE LA MESA, VALUE: OBJETO MESA)
 
         public FormIniciarSesion()
         {
@@ -278,7 +273,7 @@ namespace Proyecto_TPVS._0
         {
             try
             {
-                if (txtCantMesas.Text.Trim() != "" || Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 25)
+                if (txtCantMesas.Text.Trim() != "" && Convert.ToInt32(txtCantMesas.Text) > 0 && Convert.ToInt32(txtCantMesas.Text) <= 25)
                 {
                     for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
                     {
@@ -311,18 +306,8 @@ namespace Proyecto_TPVS._0
                         panelComedor.Controls.Add(mesa);
                         mesas.Add(mesa);
 
-                        datosMesa = new List<string>();
-                        Mesa mesaConTodosLosDatos = new Mesa();
-                        mesaConTodosLosDatos.Nombre = mesa.Tag.ToString().Trim();
-                        mesaConTodosLosDatos.Productos = datosMesa;
-                        try
-                        {
-                            mesasHash.Add(mesa.Tag.ToString().Trim(), mesaConTodosLosDatos);
-                        }
-                        catch (ArgumentException)
-                        {
-
-                        }
+                        //CREACION DE LOS OBJETOS MESA  
+                        crearObjetosMesa(mesa.Tag.ToString().Trim(), total);
 
                         if (cont % 5 == 0)
                         {
@@ -359,19 +344,12 @@ namespace Proyecto_TPVS._0
                     cambioDePanel(panel, panelComedor);
                     Console.WriteLine("Panel abierto: " + panel.Tag);
                     txtCantPersonas.Text = "Comensales: " + comensales[((Label)sender).Tag.ToString().Trim()];
-
-                    for (int j = 0; j < ((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos.Count; j++)
-                    {
-                        listBoxNota.Items.Add(((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos[i]);
-                        Console.WriteLine(((Mesa)(mesasHash[((Label)sender).Tag.ToString().Trim()])).Productos[i]);
-                    }
                     flag = false;
                     break;
                 }
                 else
                 {
                     flag = true;
-                    break;
                 }
             }
 
@@ -394,23 +372,21 @@ namespace Proyecto_TPVS._0
             Console.WriteLine("Click: " + ((Label)sender).Tag.ToString());
             tagMesaAux = ((Label)sender).Tag.ToString().Trim();
             lblMesa.Text = tagMesaAux;
-            //listBoxNota.DataSource = mesasList[tagMesaAux];
-            //listBoxNota.DataSource = ((Mesa)(mesasHash)[tagMesaAux]).Productos;
+
+            //ABRIR EL OBJETO MESA Y RECORRERLO
+            añadirMesaAlListBox(listBoxNota, tagMesaAux);
+            Console.WriteLine("MESA_CLICK");
+            recorrerHashtable();
         }
 
         private void lblAtrasMesa_Click(object sender, EventArgs e)
         {
-            cambioDePanel(panelComedor, panel);
+            //AÑADIR DATOS AL OBJETO MESA
+            añadirDatosAlObjetoMesa(listBoxNota, tagMesaAux);
+            Console.WriteLine("LBLATRASMESA_CLICK");
+            recorrerHashtable();
 
-            try
-            {
-                mesasList.Add(tagMesaAux, datosMesasList);
-            }
-            catch (ArgumentException)
-            {
-                mesasList[tagMesaAux] = mesasList[tagMesaAux].ToString() + datosMesasList;
-            }
-            datosMesasList = new List<string>();
+            cambioDePanel(panelComedor, panel);
             for (int i = listBoxNota.Items.Count - 1; i >= 0; i--)
             {
                 listBoxNota.Items.RemoveAt(i);
@@ -695,7 +671,7 @@ namespace Proyecto_TPVS._0
                 string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
                 Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
 
-                listBoxReservas.Items.Add(String.Format("{0, -20}{1, 10}{2, 20}", nombreReserva, fechaReserva, horaReserva));
+                listBoxReservas.Items.Add(String.Format("{0, -20}{1, 9}{2, 15}", nombreReserva, fechaReserva, horaReserva));
                 txtHoraReserva.Text = "";
                 txtMinutosReserva.Text = "";
                 txtNombreReserva.Text = "";
@@ -758,6 +734,9 @@ namespace Proyecto_TPVS._0
                 listBoxNota.Items.RemoveAt(i);
             }
             txtTotal.Text = "";
+
+            //REINICIAR OBJETO MESA UNA VEZ COBRADO
+            reiniciarObjetoMesa(tagMesaAux);
         }
 
         private void saveFactura(ListBox list)
@@ -795,6 +774,73 @@ namespace Proyecto_TPVS._0
             catch (NullReferenceException)
             {
                 txtFactura.Text = "";
+            }
+        }
+
+        private void crearObjetosMesa(string nombre, double precioTotal)
+        {
+            Mesa mesa = new Mesa();
+            mesa.Nombre = nombre;
+            mesa.Productos = new List<string>();
+            mesa.PrecioTotal = precioTotal;
+            try
+            {
+                mesasHash.Add(nombre, mesa);
+            }
+            catch (ArgumentException)
+            {
+                mesasHash[nombre] = mesa;
+            }
+        }
+
+        public void añadirMesaAlListBox(ListBox list, string nombre)
+        {
+            for (int i = list.Items.Count - 1; i >= 0; i--)
+            {
+                list.Items.RemoveAt(i);
+            }
+            Mesa mesa = (Mesa)mesasHash[nombre];
+            for (int i = 0; i < mesa.Productos.Count; i++)
+            {
+                //Console.WriteLine(mesa.Productos[i].ToString());
+                list.Items.Add(mesa.Productos[i].ToString());
+            }
+            total = mesa.PrecioTotal;
+        }
+
+        public void añadirDatosAlObjetoMesa(ListBox list, string nombre)
+        {
+            Mesa mesa = (Mesa)mesasHash[nombre];
+            for (int i = mesa.Productos.Count - 1; i >= 0; i--)
+            {
+                mesa.Productos.RemoveAt(i);
+            }
+            for (int i = 0; i < list.Items.Count; i++)
+            {
+                mesa.Productos.Add(list.Items[i].ToString());
+            }
+            mesa.PrecioTotal = total;
+        }
+
+        public void reiniciarObjetoMesa(string nombre)
+        {
+            Mesa mesa = (Mesa)mesasHash[nombre];
+            mesa.Productos.Clear();
+            mesa.PrecioTotal = 0;
+            mesa.Nombre = nombre;
+        }
+
+        private void recorrerHashtable()
+        {
+            foreach (DictionaryEntry item in mesasHash)
+            {
+                Console.WriteLine("----" + item.Key);
+                //Console.WriteLine("----"+item.Value);
+                Mesa mesa = (Mesa)item.Value;
+                for (int i = 0; i < mesa.Productos.Count; i++)
+                {
+                    Console.WriteLine(mesa.Productos[i].ToString());
+                }
             }
         }
     }
