@@ -40,6 +40,8 @@ namespace Proyecto_TPVS._0
         //PARA GESTIONAR LA NOTA DE CADA MESA
         Hashtable mesasHash = new Hashtable(); //CONJUNTO DE MESAS (KEY: NOMBRE DE LA MESA, VALUE: OBJETO MESA)
 
+        int cantProd = 0;
+
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -391,6 +393,7 @@ namespace Proyecto_TPVS._0
             {
                 listBoxNota.Items.RemoveAt(i);
             }
+            txtTotal.Text = "";
         }
 
         private void lblCerrarSesion_Click(object sender, EventArgs e)
@@ -589,14 +592,25 @@ namespace Proyecto_TPVS._0
 
         private void lblDatos_Click(object sender, EventArgs e)
         {
-            string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
-            string precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString()).ToString() + "€";
-            total += connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString());
-            Console.WriteLine("-----TAG MESA: " + tagMesaAux);
-            Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
+            if (txtCalc.Text.Trim() != "")
+            {
+                if(txtCalc.Text.Trim() == "0")
+                {
+                    txtCalc.Text = "1";
+                }
+                cantProd = Convert.ToInt32(txtCalc.Text.Trim());
 
-            listBoxNota.Items.Add(String.Format(format, 1, nombreProducto, precioProducto));
-            txtTotal.Text = total.ToString();
+                string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
+                double precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString());
+                precioProducto *= cantProd;
+                total += precioProducto;
+                Console.WriteLine("-----TAG MESA: " + tagMesaAux);
+                Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
+
+                listBoxNota.Items.Add(String.Format(format, cantProd, nombreProducto, precioProducto + "€"));
+                txtTotal.Text = total.ToString();
+                txtCalc.Text = "0";
+            }
         }
 
         private void btnAceptarComensales_Click(object sender, EventArgs e)
@@ -802,7 +816,6 @@ namespace Proyecto_TPVS._0
             Mesa mesa = (Mesa)mesasHash[nombre];
             for (int i = 0; i < mesa.Productos.Count; i++)
             {
-                //Console.WriteLine(mesa.Productos[i].ToString());
                 list.Items.Add(mesa.Productos[i].ToString());
             }
             total = mesa.PrecioTotal;
@@ -841,6 +854,23 @@ namespace Proyecto_TPVS._0
                 {
                     Console.WriteLine(mesa.Productos[i].ToString());
                 }
+            }
+        }
+
+        private void lblBorrarTxt_Click(object sender, EventArgs e)
+        {
+            txtCalc.Text = "0";
+        }
+
+        private void lblCalc_Click(object sender, EventArgs e)
+        {
+            if (txtCalc.Text == "0")
+            {
+                txtCalc.Text = ((Label)sender).Tag.ToString();
+            }
+            else
+            {
+                txtCalc.Text += ((Label)sender).Tag.ToString();
             }
         }
     }

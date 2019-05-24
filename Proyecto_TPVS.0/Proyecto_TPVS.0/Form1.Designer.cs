@@ -61,6 +61,10 @@
             this.txtCantMesas = new System.Windows.Forms.TextBox();
             this.lblAtrasComedor = new System.Windows.Forms.Label();
             this.panelReservas = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTPReserva = new System.Windows.Forms.DateTimePicker();
             this.txtNombreReserva = new System.Windows.Forms.TextBox();
@@ -102,6 +106,8 @@
             this.listBoxUsuarios = new System.Windows.Forms.ListBox();
             this.lblAtrasBorrarUsuario = new System.Windows.Forms.Label();
             this.panelMesa = new System.Windows.Forms.Panel();
+            this.txtCalc = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -121,7 +127,7 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.lblEspacio1 = new System.Windows.Forms.Label();
+            this.lblBorrarTxt = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.lblEspacio3 = new System.Windows.Forms.Label();
             this.lblEspacio2 = new System.Windows.Forms.Label();
@@ -135,12 +141,6 @@
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.listBoxNota = new System.Windows.Forms.ListBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtCalc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -148,6 +148,7 @@
             this.panelIniciarSesion.SuspendLayout();
             this.panelComedor.SuspendLayout();
             this.panelReservas.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.panelAlmacen.SuspendLayout();
             this.panelFacturas.SuspendLayout();
@@ -156,7 +157,6 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanelContainer.SuspendLayout();
             this.flowLayoutPanelCalc.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -591,6 +591,53 @@
             this.panelReservas.Size = new System.Drawing.Size(167, 96);
             this.panelReservas.TabIndex = 11;
             this.panelReservas.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Location = new System.Drawing.Point(-148, -120);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(438, 33);
+            this.panel2.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(290, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(148, 33);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "HORA";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(149, 33);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "NOMBRE";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(145, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(145, 33);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "FECHA";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -1077,6 +1124,28 @@
             this.panelMesa.Size = new System.Drawing.Size(1396, 635);
             this.panelMesa.TabIndex = 16;
             // 
+            // txtCalc
+            // 
+            this.txtCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalc.Location = new System.Drawing.Point(468, 34);
+            this.txtCalc.MaxLength = 7;
+            this.txtCalc.Name = "txtCalc";
+            this.txtCalc.ReadOnly = true;
+            this.txtCalc.Size = new System.Drawing.Size(224, 31);
+            this.txtCalc.TabIndex = 26;
+            this.txtCalc.Text = "0";
+            this.txtCalc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(664, 690);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(25, 25);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "€";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1170,7 +1239,7 @@
             this.flowLayoutPanelCalc.Controls.Add(this.lbl1);
             this.flowLayoutPanelCalc.Controls.Add(this.lbl2);
             this.flowLayoutPanelCalc.Controls.Add(this.lbl3);
-            this.flowLayoutPanelCalc.Controls.Add(this.lblEspacio1);
+            this.flowLayoutPanelCalc.Controls.Add(this.lblBorrarTxt);
             this.flowLayoutPanelCalc.Controls.Add(this.lbl0);
             this.flowLayoutPanelCalc.Controls.Add(this.lblEspacio3);
             this.flowLayoutPanelCalc.Controls.Add(this.lblEspacio2);
@@ -1192,6 +1261,7 @@
             this.lbl7.Tag = "7";
             this.lbl7.Text = "7";
             this.lbl7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl7.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl7.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl7.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1208,6 +1278,7 @@
             this.lbl8.Tag = "8";
             this.lbl8.Text = "8";
             this.lbl8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl8.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl8.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl8.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1224,6 +1295,7 @@
             this.lbl9.Tag = "9";
             this.lbl9.Text = "9";
             this.lbl9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl9.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl9.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl9.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1257,6 +1329,7 @@
             this.lbl4.Tag = "4";
             this.lbl4.Text = "4";
             this.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl4.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl4.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl4.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1273,6 +1346,7 @@
             this.lbl5.Tag = "5";
             this.lbl5.Text = "5";
             this.lbl5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl5.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl5.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl5.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1289,6 +1363,7 @@
             this.lbl6.Tag = "6";
             this.lbl6.Text = "6";
             this.lbl6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl6.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl6.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl6.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1322,6 +1397,7 @@
             this.lbl1.Tag = "1";
             this.lbl1.Text = "1";
             this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl1.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl1.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl1.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1338,6 +1414,7 @@
             this.lbl2.Tag = "2";
             this.lbl2.Text = "2";
             this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl2.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl2.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl2.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1354,21 +1431,26 @@
             this.lbl3.Tag = "3";
             this.lbl3.Text = "3";
             this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl3.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl3.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl3.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
-            // lblEspacio1
+            // lblBorrarTxt
             // 
-            this.lblEspacio1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEspacio1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEspacio1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEspacio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspacio1.Location = new System.Drawing.Point(426, 268);
-            this.lblEspacio1.Name = "lblEspacio1";
-            this.lblEspacio1.Size = new System.Drawing.Size(135, 134);
-            this.lblEspacio1.TabIndex = 27;
-            this.lblEspacio1.Tag = "";
-            this.lblEspacio1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBorrarTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBorrarTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBorrarTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBorrarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrarTxt.Location = new System.Drawing.Point(426, 268);
+            this.lblBorrarTxt.Name = "lblBorrarTxt";
+            this.lblBorrarTxt.Size = new System.Drawing.Size(135, 134);
+            this.lblBorrarTxt.TabIndex = 27;
+            this.lblBorrarTxt.Tag = "CE";
+            this.lblBorrarTxt.Text = "CE";
+            this.lblBorrarTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBorrarTxt.Click += new System.EventHandler(this.lblBorrarTxt_Click);
+            this.lblBorrarTxt.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblBorrarTxt.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
             // lbl0
             // 
@@ -1383,6 +1465,7 @@
             this.lbl0.Tag = "0";
             this.lbl0.Text = "0";
             this.lbl0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl0.Click += new System.EventHandler(this.lblCalc_Click);
             this.lbl0.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lbl0.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
@@ -1528,72 +1611,6 @@
             this.listBoxNota.Size = new System.Drawing.Size(610, 529);
             this.listBoxNota.TabIndex = 0;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(664, 690);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 25);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "€";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Location = new System.Drawing.Point(-148, -120);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(438, 33);
-            this.panel2.TabIndex = 22;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(149, 33);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "NOMBRE";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(145, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(145, 33);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "FECHA";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(290, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(148, 33);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "HORA";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtCalc
-            // 
-            this.txtCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCalc.Location = new System.Drawing.Point(451, 34);
-            this.txtCalc.Name = "txtCalc";
-            this.txtCalc.ReadOnly = true;
-            this.txtCalc.Size = new System.Drawing.Size(241, 31);
-            this.txtCalc.TabIndex = 26;
-            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1627,6 +1644,7 @@
             this.panelComedor.PerformLayout();
             this.panelReservas.ResumeLayout(false);
             this.panelReservas.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panelConfiguracion.ResumeLayout(false);
             this.panelAlmacen.ResumeLayout(false);
             this.panelAlmacen.PerformLayout();
@@ -1639,7 +1657,6 @@
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanelContainer.ResumeLayout(false);
             this.flowLayoutPanelCalc.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1744,7 +1761,7 @@
         public System.Windows.Forms.Label lbl1;
         public System.Windows.Forms.Label lbl2;
         public System.Windows.Forms.Label lbl3;
-        public System.Windows.Forms.Label lblEspacio1;
+        public System.Windows.Forms.Label lblBorrarTxt;
         public System.Windows.Forms.Label lbl0;
         public System.Windows.Forms.Label lblEspacio3;
         public System.Windows.Forms.Label lblEspacio2;
