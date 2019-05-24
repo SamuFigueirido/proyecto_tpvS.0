@@ -20,6 +20,7 @@ namespace Proyecto_TPVS._0
 {
     public partial class FormIniciarSesion : Form
     {
+        string format = "{0,-15}{1,-20}{2,-20:#.00}";
         ConnectionSQL connectionSQL;
         Pass encryptDecrypt = new Pass();
         List<string> datosNombres;
@@ -37,6 +38,8 @@ namespace Proyecto_TPVS._0
 
         List<string> datosMesa;
         Hashtable mesasHash = new Hashtable();
+        double total = 0;
+        Factura factura;
 
         Mesa mesaAux = new Mesa();
 
@@ -54,6 +57,7 @@ namespace Proyecto_TPVS._0
             connectionSQL.createBD();
             flowLayoutPanelDatos.Height = this.Height * 4 / 10;
             pantallaCompleta(this);
+            getFacuraFromDB(listBoxFacturas);
             getReservaFromDB(listBoxReservas);
         }
 
@@ -463,6 +467,7 @@ namespace Proyecto_TPVS._0
 
             }
             comensales.Clear();
+            saveFactura(listBoxFacturas);
             cambioDePanel(panelIniciarSesion, panelConfiguracion);
         }
 
@@ -544,7 +549,7 @@ namespace Proyecto_TPVS._0
                     }
                     else
                     {
-                        if (Convert.ToInt32(txtCantidad.Text.Trim()) < 0 || Convert.ToInt32(txtPrecio.Text.Trim()) < 0)
+                        if (Convert.ToInt32(txtCantidad.Text.Trim()) < 0 || Convert.ToDecimal(txtPrecio.Text.Trim()) < 0)
                         {
                             MessageBox.Show("Los valores no pueden ser negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -610,12 +615,12 @@ namespace Proyecto_TPVS._0
         {
             string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
             string precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString()).ToString() + "€";
+            total += connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString());
             Console.WriteLine("-----TAG MESA: " + tagMesaAux);
             Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
 
-            listBoxNota.Items.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
-
-            ((Mesa)(mesasHash[tagMesaAux])).Productos.Add(String.Format("{0, -20}{1, 10}", nombreProducto, precioProducto));
+            listBoxNota.Items.Add(String.Format(format, 1, nombreProducto, precioProducto));
+            txtTotal.Text = total.ToString();
         }
 
         private void btnAceptarComensales_Click(object sender, EventArgs e)
@@ -733,14 +738,26 @@ namespace Proyecto_TPVS._0
         private void lblFactura_Click(object sender, EventArgs e)
         {
             string platos = "";
-            for (int i = 0; i < listBoxNota.Items.Count; i++)
+            if (listBoxNota.Items.Count > 0)
             {
-                platos += listBoxNota.Items[i]+"\n";
+                for (int i = 0; i < listBoxNota.Items.Count; i++)
+                {
+                    platos += listBoxNota.Items[i] + "\r\n";
+                }
+                Console.WriteLine(platos);
+                Console.WriteLine(tagMesaAux);
+                factura = new Factura();
+                factura.Nombre = tagMesaAux;
+                factura.Platos = platos;
+                factura.Total = total;
+                listBoxFacturas.Items.Add(factura);
+                MessageBox.Show(factura.ToString2() + "\n(Factura añadida a facturas)", "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Factura factura = new Factura();
-            factura.Nombre = tagMesaAux;
-            factura.Platos = platos;
-            factura.Total = total;
+            for (int i = listBoxNota.Items.Count - 1; i >= 0; i--)
+            {
+                listBoxNota.Items.RemoveAt(i);
+            }
+            txtTotal.Text = "";
         }
 
         private void saveFactura(ListBox list)
@@ -758,6 +775,26 @@ namespace Proyecto_TPVS._0
             for (int i = 0; i < connectionSQL.getFacturas().Count; i++)
             {
                 list.Items.Add(connectionSQL.getFacturas()[i]);
+            }
+        }
+
+        private void lblBorrar_Click(object sender, EventArgs e)
+        {
+            for (int i = listBoxNota.SelectedItems.Count - 1; i >= 0; i--)
+            {
+                listBoxNota.Items.Remove(listBoxNota.SelectedItems[i]);
+            }
+        }
+
+        private void listBoxFacturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtFactura.Text = ((Factura)listBoxFacturas.SelectedItem).ToString2();
+            }
+            catch (NullReferenceException)
+            {
+                txtFactura.Text = "";
             }
         }
     }

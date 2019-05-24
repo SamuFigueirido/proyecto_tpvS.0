@@ -47,8 +47,12 @@ namespace Proyecto_TPVS._0
 
         public override string ToString()
         {
-            string[] lines = Platos.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-            return "\n\r"+Nombre+"\nPlatos:\n" + lines.ToString() + "\n\r\nTOTAL: " + total;
+            return Nombre;
+        }
+
+        public string ToString2()
+        {
+            return "\r\n" + Nombre + "\r\nPlatos:\r\n" + Platos + "\r\nTOTAL: " + Total;
         }
     }
 }
