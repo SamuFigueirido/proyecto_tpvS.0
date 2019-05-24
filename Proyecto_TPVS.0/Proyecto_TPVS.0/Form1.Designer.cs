@@ -114,6 +114,13 @@
             this.lbl5 = new System.Windows.Forms.Label();
             this.lbl6 = new System.Windows.Forms.Label();
             this.lblFactura = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lblEspacio1 = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.lblComa = new System.Windows.Forms.Label();
+            this.lblEspacio2 = new System.Windows.Forms.Label();
             this.lblMesa = new System.Windows.Forms.Label();
             this.txtCantPersonas = new System.Windows.Forms.TextBox();
             this.btnAceptarComensales = new System.Windows.Forms.Button();
@@ -124,13 +131,6 @@
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.listBoxNota = new System.Windows.Forms.ListBox();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.lblEspacio1 = new System.Windows.Forms.Label();
-            this.lbl0 = new System.Windows.Forms.Label();
-            this.lblComa = new System.Windows.Forms.Label();
-            this.lblEspacio2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -931,9 +931,9 @@
             this.panelFacturas.Controls.Add(this.btnBorrarFactura);
             this.panelFacturas.Controls.Add(this.listBoxFacturas);
             this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(946, 289);
+            this.panelFacturas.Location = new System.Drawing.Point(807, 286);
             this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(206, 120);
+            this.panelFacturas.Size = new System.Drawing.Size(282, 116);
             this.panelFacturas.TabIndex = 14;
             this.panelFacturas.Visible = false;
             // 
@@ -941,7 +941,7 @@
             // 
             this.txtFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFactura.Location = new System.Drawing.Point(40, -225);
+            this.txtFactura.Location = new System.Drawing.Point(78, -227);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.ReadOnly = true;
@@ -953,7 +953,7 @@
             // 
             this.btnBorrarFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBorrarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarFactura.Location = new System.Drawing.Point(-325, 227);
+            this.btnBorrarFactura.Location = new System.Drawing.Point(-287, 225);
             this.btnBorrarFactura.Name = "btnBorrarFactura";
             this.btnBorrarFactura.Size = new System.Drawing.Size(252, 48);
             this.btnBorrarFactura.TabIndex = 12;
@@ -967,8 +967,9 @@
             this.listBoxFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxFacturas.FormattingEnabled = true;
             this.listBoxFacturas.ItemHeight = 16;
-            this.listBoxFacturas.Location = new System.Drawing.Point(-325, -225);
+            this.listBoxFacturas.Location = new System.Drawing.Point(-287, -227);
             this.listBoxFacturas.Name = "listBoxFacturas";
+            this.listBoxFacturas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxFacturas.Size = new System.Drawing.Size(252, 404);
             this.listBoxFacturas.TabIndex = 11;
             // 
@@ -1246,6 +1247,112 @@
             this.lblFactura.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
             this.lblFactura.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
             // 
+            // lbl1
+            // 
+            this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(3, 268);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(135, 134);
+            this.lbl1.TabIndex = 24;
+            this.lbl1.Tag = "1";
+            this.lbl1.Text = "1";
+            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl1.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl1.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl2
+            // 
+            this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Location = new System.Drawing.Point(144, 268);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(135, 134);
+            this.lbl2.TabIndex = 25;
+            this.lbl2.Tag = "2";
+            this.lbl2.Text = "2";
+            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl2.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl2.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lbl3
+            // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Location = new System.Drawing.Point(285, 268);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(135, 134);
+            this.lbl3.TabIndex = 26;
+            this.lbl3.Tag = "3";
+            this.lbl3.Text = "3";
+            this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl3.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl3.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblEspacio1
+            // 
+            this.lblEspacio1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEspacio1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEspacio1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblEspacio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspacio1.Location = new System.Drawing.Point(426, 268);
+            this.lblEspacio1.Name = "lblEspacio1";
+            this.lblEspacio1.Size = new System.Drawing.Size(135, 134);
+            this.lblEspacio1.TabIndex = 27;
+            this.lblEspacio1.Tag = "";
+            this.lblEspacio1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl0
+            // 
+            this.lbl0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl0.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl0.Location = new System.Drawing.Point(3, 402);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(276, 134);
+            this.lbl0.TabIndex = 28;
+            this.lbl0.Tag = "0";
+            this.lbl0.Text = "0";
+            this.lbl0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl0.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lbl0.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblComa
+            // 
+            this.lblComa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblComa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblComa.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblComa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComa.Location = new System.Drawing.Point(285, 402);
+            this.lblComa.Name = "lblComa";
+            this.lblComa.Size = new System.Drawing.Size(135, 134);
+            this.lblComa.TabIndex = 29;
+            this.lblComa.Tag = ",";
+            this.lblComa.Text = ",";
+            this.lblComa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComa.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblComa.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
+            // 
+            // lblEspacio2
+            // 
+            this.lblEspacio2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEspacio2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEspacio2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblEspacio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspacio2.Location = new System.Drawing.Point(426, 402);
+            this.lblEspacio2.Name = "lblEspacio2";
+            this.lblEspacio2.Size = new System.Drawing.Size(135, 134);
+            this.lblEspacio2.TabIndex = 30;
+            this.lblEspacio2.Tag = "";
+            this.lblEspacio2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblMesa
             // 
             this.lblMesa.AutoSize = true;
@@ -1361,112 +1468,6 @@
             this.listBoxNota.ScrollAlwaysVisible = true;
             this.listBoxNota.Size = new System.Drawing.Size(604, 579);
             this.listBoxNota.TabIndex = 0;
-            // 
-            // lbl1
-            // 
-            this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(3, 268);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(135, 134);
-            this.lbl1.TabIndex = 24;
-            this.lbl1.Tag = "1";
-            this.lbl1.Text = "1";
-            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl1.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lbl1.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
-            // 
-            // lbl2
-            // 
-            this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(144, 268);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(135, 134);
-            this.lbl2.TabIndex = 25;
-            this.lbl2.Tag = "2";
-            this.lbl2.Text = "2";
-            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl2.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lbl2.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
-            // 
-            // lbl3
-            // 
-            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(285, 268);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(135, 134);
-            this.lbl3.TabIndex = 26;
-            this.lbl3.Tag = "3";
-            this.lbl3.Text = "3";
-            this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl3.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lbl3.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
-            // 
-            // lblEspacio1
-            // 
-            this.lblEspacio1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEspacio1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEspacio1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEspacio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspacio1.Location = new System.Drawing.Point(426, 268);
-            this.lblEspacio1.Name = "lblEspacio1";
-            this.lblEspacio1.Size = new System.Drawing.Size(135, 134);
-            this.lblEspacio1.TabIndex = 27;
-            this.lblEspacio1.Tag = "";
-            this.lblEspacio1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl0
-            // 
-            this.lbl0.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl0.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl0.Location = new System.Drawing.Point(3, 402);
-            this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(276, 134);
-            this.lbl0.TabIndex = 28;
-            this.lbl0.Tag = "0";
-            this.lbl0.Text = "0";
-            this.lbl0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl0.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lbl0.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
-            // 
-            // lblComa
-            // 
-            this.lblComa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblComa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblComa.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblComa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComa.Location = new System.Drawing.Point(285, 402);
-            this.lblComa.Name = "lblComa";
-            this.lblComa.Size = new System.Drawing.Size(135, 134);
-            this.lblComa.TabIndex = 29;
-            this.lblComa.Tag = ",";
-            this.lblComa.Text = ",";
-            this.lblComa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblComa.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
-            this.lblComa.MouseLeave += new System.EventHandler(this.lbl_MouseLeave);
-            // 
-            // lblEspacio2
-            // 
-            this.lblEspacio2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEspacio2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEspacio2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEspacio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspacio2.Location = new System.Drawing.Point(426, 402);
-            this.lblEspacio2.Name = "lblEspacio2";
-            this.lblEspacio2.Size = new System.Drawing.Size(135, 134);
-            this.lblEspacio2.TabIndex = 30;
-            this.lblEspacio2.Tag = "";
-            this.lblEspacio2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormIniciarSesion
             // 

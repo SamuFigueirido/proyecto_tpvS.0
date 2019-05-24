@@ -8,16 +8,16 @@ namespace Proyecto_TPVS._0
 {
     class Factura
     {
-        private int id;
-        public int Id
+        private string nombre;
+        public string Nombre
         {
             set
             {
-                id = value;
+                nombre = value;
             }
             get
             {
-                return id;
+                return nombre;
             }
         }
         private string platos;
@@ -48,7 +48,7 @@ namespace Proyecto_TPVS._0
         public override string ToString()
         {
             string[] lines = Platos.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-            return "\nFactura nº "+Id+"\nPlatos:\n" + lines.ToString() + "\n\r\nTOTAL: " + total;
+            return "\n\r"+Nombre+"\nPlatos:\n" + lines.ToString() + "\n\r\nTOTAL: " + total;
         }
     }
 }

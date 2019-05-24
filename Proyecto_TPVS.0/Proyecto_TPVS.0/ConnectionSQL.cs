@@ -75,6 +75,7 @@ namespace Proyecto_TPVS._0
             string facturas = @"CREATE TABLE IF NOT EXISTS
                             [facturas](
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            [nombre] VARCHAR(50) NOT NULL,
                             [platos] VARCHAR(123456789) NULL,
                             [total] float NOT NULL
                             )";
@@ -108,10 +109,16 @@ namespace Proyecto_TPVS._0
 
         public void executeQuery(string query)
         {
-            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            try
             {
-                cmd.CommandText = query;
-                cmd.ExecuteNonQuery();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = query;
+                    cmd.ExecuteNonQuery();
+                }
+            }catch (SQLiteException e)
+            {
+                Console.WriteLine("Error: "+ e.ErrorCode);
             }
         }
 
@@ -203,29 +210,6 @@ namespace Proyecto_TPVS._0
             }
             cerrarConexion();
             return empleadosList;
-        }
-
-        public List<string> facturas()
-        {
-            abrirConexion();
-            facturasList = new List<string>();
-            string query = "select * from [facturas]";
-            Factura factura;
-            using (SQLiteCommand cmd = new SQLiteCommand(conn))
-            {
-                cmd.CommandText = query;
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    factura = new Factura();
-                    factura.Id = Convert.ToInt32(reader["id"]);
-                    factura.Platos = Convert.ToString(reader["platos"]).Trim();
-                    factura.Total = Convert.ToDouble(reader["total"]);
-                    facturasList.Add(factura.ToString());
-                }
-            }
-            cerrarConexion();
-            return facturasList;
         }
 
         public List<string> tablas()
@@ -361,7 +345,7 @@ namespace Proyecto_TPVS._0
         public void saveReserva(string reserva)
         {
             abrirConexion();
-            executeQuery("INSERT INTO [reservas] (reserva) values('" + reserva + "')");
+            executeQuery("INSERT INTO [reservas] (reserva) values ('" + reserva + "')");
             cerrarConexion();
         }
 
@@ -388,6 +372,35 @@ namespace Proyecto_TPVS._0
             abrirConexion();
             executeQuery("DELETE FROM " + tabla);
             cerrarConexion();
+        }
+
+        public void saveFactura(string nombre, string platos, double total)
+        {
+            abrirConexion();
+            executeQuery("INSERT INTO [facturas] (nombre, platos, total) values ('" + nombre + "', '"+platos+"',"+total+" )");
+            cerrarConexion();
+        }
+        public List<string> getFacturas()
+        {
+            abrirConexion();
+            facturasList = new List<string>();
+            string query = "select * from [facturas]";
+            Factura factura;
+            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            {
+                cmd.CommandText = query;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    factura = new Factura();
+                    factura.Nombre = Convert.ToString(reader["nombre"]).Trim();
+                    factura.Platos = Convert.ToString(reader["platos"]).Trim();
+                    factura.Total = Convert.ToDouble(reader["total"]);
+                    facturasList.Add(factura.ToString());
+                }
+            }
+            cerrarConexion();
+            return facturasList;
         }
     }
 }

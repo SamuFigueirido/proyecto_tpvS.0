@@ -40,6 +40,8 @@ namespace Proyecto_TPVS._0
 
         Mesa mesaAux = new Mesa();
 
+        double total = 0;
+
         public FormIniciarSesion()
         {
             InitializeComponent();
@@ -703,7 +705,7 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        public void saveReserva(ListBox list)
+        private void saveReserva(ListBox list)
         {
             connectionSQL.vaciarTabla("reservas");
             for (int i = 0; i < list.Items.Count; i++)
@@ -712,7 +714,7 @@ namespace Proyecto_TPVS._0
             }
         }
 
-        public void getReservaFromDB(ListBox list)
+        private void getReservaFromDB(ListBox list)
         {
             for (int i = 0; i < connectionSQL.getReservas().Count; i++)
             {
@@ -722,12 +724,41 @@ namespace Proyecto_TPVS._0
 
         private void btnBorrarFactura_Click(object sender, EventArgs e)
         {
-
+            for (int i = listBoxFacturas.SelectedItems.Count - 1; i >= 0; i--)
+            {
+                listBoxFacturas.Items.Remove(listBoxFacturas.SelectedItems[i]);
+            }
         }
 
         private void lblFactura_Click(object sender, EventArgs e)
         {
+            string platos = "";
+            for (int i = 0; i < listBoxNota.Items.Count; i++)
+            {
+                platos += listBoxNota.Items[i]+"\n";
+            }
+            Factura factura = new Factura();
+            factura.Nombre = tagMesaAux;
+            factura.Platos = platos;
+            factura.Total = total;
+        }
 
+        private void saveFactura(ListBox list)
+        {
+            connectionSQL.vaciarTabla("facturas");
+            for (int i = 0; i < list.Items.Count; i++)
+            {
+                Factura f = ((Factura)(list.Items[i]));
+                connectionSQL.saveFactura(f.Nombre, f.Platos, f.Total);
+            }
+        }
+
+        private void getFacuraFromDB(ListBox list)
+        {
+            for (int i = 0; i < connectionSQL.getFacturas().Count; i++)
+            {
+                list.Items.Add(connectionSQL.getFacturas()[i]);
+            }
         }
     }
 }
