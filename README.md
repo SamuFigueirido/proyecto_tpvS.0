@@ -14,4 +14,5 @@ Proyecto de fin de ciclo de Desarrollo de Aplicaciones Multiplataforma. Aplicaci
 - Panel "Almacén" en el que se pueden añadir productos.
 - Panel "Reservas" que se guardan en la base de datos.
 - Panel "Mesa" en el que aparece la cuenta de la mesa, el total, una pequeña calculadora y los productos para añadir.
-- panel "Factura" donde se encuentran todas las facturas generadas en el panel "Mesa" y que se guardan en la base de datos.
+- Panel "Factura" donde se encuentran todas las facturas generadas en el panel "Mesa" y que se guardan en la base de datos.
+- Opción "Cerrar sesión" en el panel "Configuración".
