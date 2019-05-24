@@ -15,7 +15,7 @@ namespace Proyecto_TPVS._0
         Pass encryptDecrypt = new Pass();
         SQLiteConnection conn = new SQLiteConnection("Data Source=database.db");
         List<string> empleadosList;
-        List<string> facturasList;
+        List<Factura> facturasList;
         List<string> tablasList;
         List<string> tablasAlmacenList;
         List<string> datosAlmacenList;
@@ -63,14 +63,14 @@ namespace Proyecto_TPVS._0
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                             [nombre] VARCHAR(50) NULL,
                             [cantidad] VARCHAR(50) NULL,
-                            [precio] float NOT NULL
+                            [precio] DECIMAL NOT NULL
                             )";
             string tapas = @"CREATE TABLE IF NOT EXISTS
                             [tapas](
                             [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                             [nombre] VARCHAR(50) NULL,
                             [cantidad] VARCHAR(50) NULL,
-                            [precio] float NOT NULL
+                            [precio] DECIMAL NOT NULL
                             )";
             string facturas = @"CREATE TABLE IF NOT EXISTS
                             [facturas](
@@ -92,6 +92,8 @@ namespace Proyecto_TPVS._0
             executeQuery(reservas);
             //executeQuery("DROP TABLE [facturas]");
             //executeQuery("DROP TABLE [reservas]");
+            //executeQuery("DROP TABLE [tapas]");
+            //executeQuery("DROP TABLE [bebidas]");
             //executeQuery("INSERT INTO [empleados] (nombre, contraseña) values('admin', '" + encryptDecrypt.encrypt("0000") + "')");
             //executeQuery("INSERT INTO [bebidas] (nombre, cantidad, precio) values('Fanta', 20, 2.5)");
             //executeQuery("INSERT INTO [tapas] (nombre, cantidad, precio) values('Calamares', 10, 8.5)");
@@ -380,10 +382,11 @@ namespace Proyecto_TPVS._0
             executeQuery("INSERT INTO [facturas] (nombre, platos, total) values ('" + nombre + "', '"+platos+"',"+total+" )");
             cerrarConexion();
         }
-        public List<string> getFacturas()
+
+        public List<Factura> getFacturas()
         {
             abrirConexion();
-            facturasList = new List<string>();
+            facturasList = new List<Factura>();
             string query = "select * from [facturas]";
             Factura factura;
             using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -396,7 +399,7 @@ namespace Proyecto_TPVS._0
                     factura.Nombre = Convert.ToString(reader["nombre"]).Trim();
                     factura.Platos = Convert.ToString(reader["platos"]).Trim();
                     factura.Total = Convert.ToDouble(reader["total"]);
-                    facturasList.Add(factura.ToString());
+                    facturasList.Add(factura);
                 }
             }
             cerrarConexion();
