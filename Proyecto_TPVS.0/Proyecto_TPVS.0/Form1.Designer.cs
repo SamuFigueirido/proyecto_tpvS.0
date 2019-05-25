@@ -141,6 +141,10 @@
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.listBoxNota = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +161,7 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanelContainer.SuspendLayout();
             this.flowLayoutPanelCalc.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -835,6 +840,7 @@
             // 
             // panelAlmacen
             // 
+            this.panelAlmacen.Controls.Add(this.panel3);
             this.panelAlmacen.Controls.Add(this.txtPrecio);
             this.panelAlmacen.Controls.Add(this.txtCantidad);
             this.panelAlmacen.Controls.Add(this.label5);
@@ -848,16 +854,16 @@
             this.panelAlmacen.Controls.Add(this.label2);
             this.panelAlmacen.Controls.Add(this.listBoxTablas);
             this.panelAlmacen.Controls.Add(this.lblAtrasAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(602, 21);
+            this.panelAlmacen.Location = new System.Drawing.Point(20, 99);
             this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(160, 110);
+            this.panelAlmacen.Size = new System.Drawing.Size(1332, 756);
             this.panelAlmacen.TabIndex = 13;
             this.panelAlmacen.Visible = false;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(959, 321);
+            this.txtPrecio.Location = new System.Drawing.Point(1047, 257);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(211, 24);
             this.txtPrecio.TabIndex = 24;
@@ -865,7 +871,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(959, 263);
+            this.txtCantidad.Location = new System.Drawing.Point(1047, 309);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(211, 24);
             this.txtCantidad.TabIndex = 23;
@@ -875,7 +881,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(956, 300);
+            this.label5.Location = new System.Drawing.Point(1044, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 18);
             this.label5.TabIndex = 22;
@@ -885,7 +891,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(956, 242);
+            this.label4.Location = new System.Drawing.Point(1044, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 21;
@@ -895,7 +901,7 @@
             // 
             this.lblTablaSeleccionada.AutoSize = true;
             this.lblTablaSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTablaSeleccionada.Location = new System.Drawing.Point(956, 145);
+            this.lblTablaSeleccionada.Location = new System.Drawing.Point(1044, 145);
             this.lblTablaSeleccionada.Name = "lblTablaSeleccionada";
             this.lblTablaSeleccionada.Size = new System.Drawing.Size(163, 18);
             this.lblTablaSeleccionada.TabIndex = 20;
@@ -905,7 +911,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(956, 184);
+            this.label3.Location = new System.Drawing.Point(1044, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 18);
             this.label3.TabIndex = 19;
@@ -914,16 +920,17 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(959, 205);
+            this.txtNombre.Location = new System.Drawing.Point(1047, 205);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(211, 24);
             this.txtNombre.TabIndex = 18;
             // 
             // btnEliminarDato
             // 
-            this.btnEliminarDato.Location = new System.Drawing.Point(684, 661);
+            this.btnEliminarDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDato.Location = new System.Drawing.Point(254, 368);
             this.btnEliminarDato.Name = "btnEliminarDato";
-            this.btnEliminarDato.Size = new System.Drawing.Size(134, 23);
+            this.btnEliminarDato.Size = new System.Drawing.Size(195, 33);
             this.btnEliminarDato.TabIndex = 17;
             this.btnEliminarDato.Text = "Borrar dato seleccionado";
             this.btnEliminarDato.UseVisualStyleBackColor = true;
@@ -931,7 +938,7 @@
             // 
             // btnInsertarDato
             // 
-            this.btnInsertarDato.Location = new System.Drawing.Point(1009, 368);
+            this.btnInsertarDato.Location = new System.Drawing.Point(1097, 368);
             this.btnInsertarDato.Name = "btnInsertarDato";
             this.btnInsertarDato.Size = new System.Drawing.Size(110, 23);
             this.btnInsertarDato.TabIndex = 16;
@@ -947,7 +954,7 @@
             this.listBoxDatos.Location = new System.Drawing.Point(468, 147);
             this.listBoxDatos.Name = "listBoxDatos";
             this.listBoxDatos.ScrollAlwaysVisible = true;
-            this.listBoxDatos.Size = new System.Drawing.Size(350, 499);
+            this.listBoxDatos.Size = new System.Drawing.Size(489, 499);
             this.listBoxDatos.TabIndex = 15;
             this.listBoxDatos.Visible = false;
             // 
@@ -969,7 +976,7 @@
             this.listBoxTablas.Location = new System.Drawing.Point(99, 147);
             this.listBoxTablas.Name = "listBoxTablas";
             this.listBoxTablas.ScrollAlwaysVisible = true;
-            this.listBoxTablas.Size = new System.Drawing.Size(350, 508);
+            this.listBoxTablas.Size = new System.Drawing.Size(350, 202);
             this.listBoxTablas.TabIndex = 13;
             this.listBoxTablas.SelectedIndexChanged += new System.EventHandler(this.listBoxTablas_SelectedIndexChanged);
             // 
@@ -1119,9 +1126,9 @@
             this.panelMesa.Controls.Add(this.lblTapas);
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.listBoxNota);
-            this.panelMesa.Location = new System.Drawing.Point(220, 156);
+            this.panelMesa.Location = new System.Drawing.Point(9, 273);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(1396, 635);
+            this.panelMesa.Size = new System.Drawing.Size(150, 93);
             this.panelMesa.TabIndex = 16;
             // 
             // txtCalc
@@ -1208,9 +1215,9 @@
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelDatos);
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelCalc);
             this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(827, 0);
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(-419, 0);
             this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
-            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 635);
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 93);
             this.flowLayoutPanelContainer.TabIndex = 22;
             // 
             // flowLayoutPanelDatos
@@ -1611,6 +1618,49 @@
             this.listBoxNota.Size = new System.Drawing.Size(610, 529);
             this.listBoxNota.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Location = new System.Drawing.Point(468, 104);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(489, 41);
+            this.panel3.TabIndex = 25;
+            // 
+            // label19
+            // 
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(163, 41);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "NOMBRE";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(161, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(174, 41);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "PRECIO";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(331, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(158, 41);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "CANT.";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1657,6 +1707,7 @@
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanelContainer.ResumeLayout(false);
             this.flowLayoutPanelCalc.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1775,6 +1826,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtCalc;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }
 
