@@ -21,7 +21,7 @@ namespace Proyecto_TPVS._0
 {
     public partial class FormIniciarSesion : Form
     {
-        string format = "{0,-15}{1,-20}{2,-20:#.00}";
+        string format = "{0,-15}{1,-20}{2,-10:#.00}";
         ConnectionSQL connectionSQL;
         Pass encryptDecrypt = new Pass();
         List<string> datosNombres;
@@ -601,24 +601,30 @@ namespace Proyecto_TPVS._0
 
         private void lblDatos_Click(object sender, EventArgs e)
         {
-            if (txtCalc.Text.Trim() != "")
+            try
             {
-                if (txtCalc.Text.Trim() == "0")
+                if (txtCalc.Text.Trim() != "")
                 {
-                    txtCalc.Text = "1";
+                    if (txtCalc.Text.Trim() == "0")
+                    {
+                        txtCalc.Text = "1";
+                    }
+                    cantProd = Convert.ToInt32(txtCalc.Text.Trim());
+
+                    string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
+                    double precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString());
+                    precioProducto *= cantProd;
+                    total += precioProducto;
+                    Console.WriteLine("-----TAG MESA: " + tagMesaAux);
+                    Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
+
+                    listBoxNota.Items.Add(String.Format(format, cantProd, nombreProducto, precioProducto + "€"));
+                    txtTotal.Text = total.ToString();
+                    txtCalc.Text = "0";
                 }
-                cantProd = Convert.ToInt32(txtCalc.Text.Trim());
-
-                string nombreProducto = connectionSQL.getNombreProducto(tabla, ((Label)sender).Tag.ToString());
-                double precioProducto = connectionSQL.getPrecioProducto(tabla, ((Label)sender).Tag.ToString());
-                precioProducto *= cantProd;
-                total += precioProducto;
-                Console.WriteLine("-----TAG MESA: " + tagMesaAux);
-                Console.WriteLine("-----DATO: " + nombreProducto + "-----PRECIO: " + precioProducto);
-
-                listBoxNota.Items.Add(String.Format(format, cantProd, nombreProducto, precioProducto + "€"));
-                txtTotal.Text = total.ToString();
-                txtCalc.Text = "0";
+            }catch (OverflowException)
+            {
+                MessageBox.Show("Valor demasiado grande.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -785,6 +791,8 @@ namespace Proyecto_TPVS._0
             for (int i = listBoxNota.SelectedItems.Count - 1; i >= 0; i--)
             {
                 listBoxNota.Items.Remove(listBoxNota.SelectedItems[i]);
+                //string precio = listBoxNota.SelectedItems[i].ToString()/*.Substring(listBoxNota.Items[i].ToString().Length - 15, listBoxNota.Items[i].ToString().Length)*/;
+                //Console.WriteLine("PRECIOOOOOOOOOOOOOO:" + precio);
             }
         }
 
@@ -873,13 +881,16 @@ namespace Proyecto_TPVS._0
 
         private void lblCalc_Click(object sender, EventArgs e)
         {
-            if (txtCalc.Text == "0")
+            if (txtCalc.Text.Length < 3)
             {
-                txtCalc.Text = ((Label)sender).Tag.ToString();
-            }
-            else
-            {
-                txtCalc.Text += ((Label)sender).Tag.ToString();
+                if (txtCalc.Text == "0")
+                {
+                    txtCalc.Text = ((Label)sender).Tag.ToString();
+                }
+                else
+                {
+                    txtCalc.Text += ((Label)sender).Tag.ToString();
+                }
             }
         }
     }

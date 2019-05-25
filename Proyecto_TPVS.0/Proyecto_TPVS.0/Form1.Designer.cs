@@ -1042,9 +1042,9 @@
             this.panelFacturas.Controls.Add(this.btnBorrarFactura);
             this.panelFacturas.Controls.Add(this.listBoxFacturas);
             this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(20, 12);
+            this.panelFacturas.Location = new System.Drawing.Point(1226, 3);
             this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(1357, 763);
+            this.panelFacturas.Size = new System.Drawing.Size(226, 125);
             this.panelFacturas.TabIndex = 14;
             this.panelFacturas.Visible = false;
             // 
@@ -1052,7 +1052,7 @@
             // 
             this.txtFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFactura.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFactura.Location = new System.Drawing.Point(615, 96);
+            this.txtFactura.Location = new System.Drawing.Point(50, -223);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.ReadOnly = true;
@@ -1064,7 +1064,7 @@
             // 
             this.btnBorrarFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBorrarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarFactura.Location = new System.Drawing.Point(250, 548);
+            this.btnBorrarFactura.Location = new System.Drawing.Point(-315, 229);
             this.btnBorrarFactura.Name = "btnBorrarFactura";
             this.btnBorrarFactura.Size = new System.Drawing.Size(252, 48);
             this.btnBorrarFactura.TabIndex = 12;
@@ -1078,7 +1078,7 @@
             this.listBoxFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxFacturas.FormattingEnabled = true;
             this.listBoxFacturas.ItemHeight = 16;
-            this.listBoxFacturas.Location = new System.Drawing.Point(250, 96);
+            this.listBoxFacturas.Location = new System.Drawing.Point(-315, -223);
             this.listBoxFacturas.Name = "listBoxFacturas";
             this.listBoxFacturas.Size = new System.Drawing.Size(252, 404);
             this.listBoxFacturas.TabIndex = 11;
@@ -1169,16 +1169,16 @@
             this.panelMesa.Controls.Add(this.lblTapas);
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.listBoxNota);
-            this.panelMesa.Location = new System.Drawing.Point(9, 273);
+            this.panelMesa.Location = new System.Drawing.Point(29, 262);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(150, 93);
+            this.panelMesa.Size = new System.Drawing.Size(1331, 623);
             this.panelMesa.TabIndex = 16;
             // 
             // txtCalc
             // 
             this.txtCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCalc.Location = new System.Drawing.Point(468, 34);
-            this.txtCalc.MaxLength = 7;
+            this.txtCalc.MaxLength = 3;
             this.txtCalc.Name = "txtCalc";
             this.txtCalc.ReadOnly = true;
             this.txtCalc.Size = new System.Drawing.Size(224, 31);
@@ -1258,9 +1258,9 @@
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelDatos);
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelCalc);
             this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(-419, 0);
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(762, 0);
             this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
-            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 93);
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 623);
             this.flowLayoutPanelContainer.TabIndex = 22;
             // 
             // flowLayoutPanelDatos
