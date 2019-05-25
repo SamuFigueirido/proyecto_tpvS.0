@@ -16,3 +16,5 @@ Proyecto de fin de ciclo de Desarrollo de Aplicaciones Multiplataforma. Aplicaci
 - Panel "Mesa" en el que aparece la cuenta de la mesa, el total, una pequeña calculadora y los productos para añadir.
 - Panel "Factura" donde se encuentran todas las facturas generadas en el panel "Mesa" y que se guardan en la base de datos.
 - Opción "Cerrar sesión" en el panel "Configuración".
+- Gestión de cada mesa por separado.
+- Posibilidad de aumentar la cantidad que se va a añadir de productos.
