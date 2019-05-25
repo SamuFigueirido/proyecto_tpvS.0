@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SQLite;
 using System.Reflection;
+using System.IO;
 
 namespace Proyecto_TPVS._0
 {
@@ -49,13 +50,21 @@ namespace Proyecto_TPVS._0
 
         private void FormIniciarSesion_Load(object sender, EventArgs e)
         {
-            ajustarPaneles();
-            connectionSQL = new ConnectionSQL();
-            connectionSQL.createBD();
-            flowLayoutPanelDatos.Height = this.Height * 4 / 10;
-            pantallaCompleta(this);
-            getFacuraFromDB(listBoxFacturas);
-            getReservaFromDB(listBoxReservas);
+            try
+            {
+                ajustarPaneles();
+                connectionSQL = new ConnectionSQL();
+                connectionSQL.createBD();
+                flowLayoutPanelDatos.Height = this.Height * 4 / 10;
+                pantallaCompleta(this);
+                getFacuraFromDB(listBoxFacturas);
+                getReservaFromDB(listBoxReservas);
+            }
+            catch (FileNotFoundException)
+            {
+                SQLiteConnection.CreateFile("database.db");
+                connectionSQL.createBD();
+            }
         }
 
         public void pantallaCompleta(Form f)
@@ -594,7 +603,7 @@ namespace Proyecto_TPVS._0
         {
             if (txtCalc.Text.Trim() != "")
             {
-                if(txtCalc.Text.Trim() == "0")
+                if (txtCalc.Text.Trim() == "0")
                 {
                     txtCalc.Text = "1";
                 }
