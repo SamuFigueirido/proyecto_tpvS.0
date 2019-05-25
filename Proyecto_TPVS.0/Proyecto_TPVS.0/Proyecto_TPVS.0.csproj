@@ -8,7 +8,7 @@
     <ProjectGuid>{515095C0-6FFB-45F1-9261-CC1E0BD26561}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Proyecto_TPVS._0</RootNamespace>
-    <AssemblyName>Proyecto_TPVS.0</AssemblyName>
+    <AssemblyName>TPVS.0</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
