@@ -82,6 +82,10 @@
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.lblAtrasConfiguracion = new System.Windows.Forms.Label();
             this.panelAlmacen = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -141,10 +145,6 @@
             this.lblTapas = new System.Windows.Forms.Label();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.listBoxNota = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panelRegistrarUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,13 +155,13 @@
             this.panel2.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.panelAlmacen.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panelFacturas.SuspendLayout();
             this.panelBorrarUsuario.SuspendLayout();
             this.panelMesa.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanelContainer.SuspendLayout();
             this.flowLayoutPanelCalc.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -854,11 +854,54 @@
             this.panelAlmacen.Controls.Add(this.label2);
             this.panelAlmacen.Controls.Add(this.listBoxTablas);
             this.panelAlmacen.Controls.Add(this.lblAtrasAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(20, 99);
+            this.panelAlmacen.Location = new System.Drawing.Point(589, 5);
             this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(1332, 756);
+            this.panelAlmacen.Size = new System.Drawing.Size(161, 110);
             this.panelAlmacen.TabIndex = 13;
             this.panelAlmacen.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Location = new System.Drawing.Point(468, 104);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(489, 41);
+            this.panel3.TabIndex = 25;
+            // 
+            // label21
+            // 
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(331, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(158, 41);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "CANT.";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(163, 41);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "NOMBRE";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(161, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(174, 41);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "PRECIO";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPrecio
             // 
@@ -999,9 +1042,9 @@
             this.panelFacturas.Controls.Add(this.btnBorrarFactura);
             this.panelFacturas.Controls.Add(this.listBoxFacturas);
             this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(1199, 12);
+            this.panelFacturas.Location = new System.Drawing.Point(20, 12);
             this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(178, 122);
+            this.panelFacturas.Size = new System.Drawing.Size(1357, 763);
             this.panelFacturas.TabIndex = 14;
             this.panelFacturas.Visible = false;
             // 
@@ -1009,19 +1052,19 @@
             // 
             this.txtFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFactura.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFactura.Location = new System.Drawing.Point(26, -224);
+            this.txtFactura.Location = new System.Drawing.Point(615, 96);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.ReadOnly = true;
             this.txtFactura.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFactura.Size = new System.Drawing.Size(421, 571);
+            this.txtFactura.Size = new System.Drawing.Size(476, 571);
             this.txtFactura.TabIndex = 13;
             // 
             // btnBorrarFactura
             // 
             this.btnBorrarFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBorrarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarFactura.Location = new System.Drawing.Point(-339, 228);
+            this.btnBorrarFactura.Location = new System.Drawing.Point(250, 548);
             this.btnBorrarFactura.Name = "btnBorrarFactura";
             this.btnBorrarFactura.Size = new System.Drawing.Size(252, 48);
             this.btnBorrarFactura.TabIndex = 12;
@@ -1035,7 +1078,7 @@
             this.listBoxFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxFacturas.FormattingEnabled = true;
             this.listBoxFacturas.ItemHeight = 16;
-            this.listBoxFacturas.Location = new System.Drawing.Point(-339, -224);
+            this.listBoxFacturas.Location = new System.Drawing.Point(250, 96);
             this.listBoxFacturas.Name = "listBoxFacturas";
             this.listBoxFacturas.Size = new System.Drawing.Size(252, 404);
             this.listBoxFacturas.TabIndex = 11;
@@ -1618,49 +1661,6 @@
             this.listBoxNota.Size = new System.Drawing.Size(610, 529);
             this.listBoxNota.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Location = new System.Drawing.Point(468, 104);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(489, 41);
-            this.panel3.TabIndex = 25;
-            // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(163, 41);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "NOMBRE";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(161, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(174, 41);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "PRECIO";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(331, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(158, 41);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "CANT.";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1698,6 +1698,7 @@
             this.panelConfiguracion.ResumeLayout(false);
             this.panelAlmacen.ResumeLayout(false);
             this.panelAlmacen.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panelFacturas.ResumeLayout(false);
             this.panelFacturas.PerformLayout();
             this.panelBorrarUsuario.ResumeLayout(false);
@@ -1707,7 +1708,6 @@
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanelContainer.ResumeLayout(false);
             this.flowLayoutPanelCalc.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
