@@ -790,10 +790,14 @@ namespace Proyecto_TPVS._0
         {
             for (int i = listBoxNota.SelectedItems.Count - 1; i >= 0; i--)
             {
+                string precio = listBoxNota.SelectedItems[i].ToString().Substring(listBoxNota.SelectedItems[i].ToString().Length - 15).Trim();
+                precio = precio.Replace("€", "").Trim();
+                double precioARestar = Convert.ToDouble(precio);
                 listBoxNota.Items.Remove(listBoxNota.SelectedItems[i]);
-                //string precio = listBoxNota.SelectedItems[i].ToString()/*.Substring(listBoxNota.Items[i].ToString().Length - 15, listBoxNota.Items[i].ToString().Length)*/;
-                //Console.WriteLine("PRECIOOOOOOOOOOOOOO:" + precio);
+                Console.WriteLine("PRECIOOOOOOOOOOOOOO:" + precioARestar);
+                total -= precioARestar;
             }
+            txtTotal.Text = total.ToString();
         }
 
         private void listBoxFacturas_SelectedIndexChanged(object sender, EventArgs e)
