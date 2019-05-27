@@ -119,6 +119,8 @@ namespace Proyecto_TPVS._0
         private void lblRegistrarse_Click(object sender, EventArgs e)
         {
             cambioDePanel(panelRegistrarUsuario, panelIniciarSesion);
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
         }
 
         private void lblIniciarSesion_Click(object sender, EventArgs e)
@@ -136,6 +138,8 @@ namespace Proyecto_TPVS._0
                     cambioDePanel(panelMenu, panelIniciarSesion);
                 }
             }
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
         }
 
         private void cambioDePanel(Panel panelVisible, Panel panelNoVisible)
@@ -185,6 +189,9 @@ namespace Proyecto_TPVS._0
                 if (connectionSQL.addEmpleado(newName, password))
                 {
                     cambioDePanel(panelMenu, panelRegistrarUsuario);
+                    txtContraseñaRegistro.Text = "";
+                    txtConfirmarContraseña.Text = "";
+                    txtUsuarioRegistro.Text = "";
                 }
             }
             else
@@ -763,7 +770,7 @@ namespace Proyecto_TPVS._0
                 listBoxNota.Items.RemoveAt(i);
             }
             txtTotal.Text = "";
-
+            total = 0;
             //REINICIAR OBJETO MESA UNA VEZ COBRADO
             reiniciarObjetoMesa(tagMesaAux);
         }
