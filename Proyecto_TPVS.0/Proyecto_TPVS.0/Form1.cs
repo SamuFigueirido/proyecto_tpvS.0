@@ -121,6 +121,9 @@ namespace Proyecto_TPVS._0
             cambioDePanel(panelRegistrarUsuario, panelIniciarSesion);
             txtUsuario.Text = "";
             txtContraseña.Text = "";
+            txtUsuarioRegistro.Text = "";
+            txtContraseñaRegistro.Text = "";
+            txtConfirmarContraseña.Text = "";
         }
 
         private void lblIniciarSesion_Click(object sender, EventArgs e)

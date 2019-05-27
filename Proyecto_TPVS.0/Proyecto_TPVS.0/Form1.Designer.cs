@@ -227,7 +227,7 @@
             this.lblRegistrarse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrarse.Location = new System.Drawing.Point(-96, 30);
+            this.lblRegistrarse.Location = new System.Drawing.Point(719, 30);
             this.lblRegistrarse.Name = "lblRegistrarse";
             this.lblRegistrarse.Size = new System.Drawing.Size(139, 46);
             this.lblRegistrarse.TabIndex = 4;
@@ -247,7 +247,7 @@
             this.groupBox1.Controls.Add(this.lblContraseña);
             this.groupBox1.Controls.Add(this.lblIniciarSesion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(-93, -81);
+            this.groupBox1.Location = new System.Drawing.Point(315, 200);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 329);
             this.groupBox1.TabIndex = 7;
@@ -258,10 +258,11 @@
             // 
             this.panelRegistrarUsuario.Controls.Add(this.lblAtras);
             this.panelRegistrarUsuario.Controls.Add(this.groupBox2);
+            this.panelRegistrarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegistrarUsuario.Location = new System.Drawing.Point(12, 118);
+            this.panelRegistrarUsuario.Location = new System.Drawing.Point(0, 0);
             this.panelRegistrarUsuario.Name = "panelRegistrarUsuario";
-            this.panelRegistrarUsuario.Size = new System.Drawing.Size(197, 119);
+            this.panelRegistrarUsuario.Size = new System.Drawing.Size(966, 658);
             this.panelRegistrarUsuario.TabIndex = 8;
             this.panelRegistrarUsuario.Visible = false;
             // 
@@ -287,7 +288,7 @@
             this.groupBox2.Controls.Add(this.txtContraseñaRegistro);
             this.groupBox2.Controls.Add(this.lblConfirmarContraseña);
             this.groupBox2.Controls.Add(this.txtUsuarioRegistro);
-            this.groupBox2.Location = new System.Drawing.Point(-61, -137);
+            this.groupBox2.Location = new System.Drawing.Point(324, 133);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(322, 402);
             this.groupBox2.TabIndex = 7;
@@ -389,9 +390,10 @@
             this.panelMenu.Controls.Add(this.lblAlmacen);
             this.panelMenu.Controls.Add(this.lblReservas);
             this.panelMenu.Controls.Add(this.lblComedor);
-            this.panelMenu.Location = new System.Drawing.Point(968, 12);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(175, 119);
+            this.panelMenu.Size = new System.Drawing.Size(966, 658);
             this.panelMenu.TabIndex = 8;
             // 
             // lblSalirMenu
@@ -399,7 +401,7 @@
             this.lblSalirMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalirMenu.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalirMenu.Location = new System.Drawing.Point(87, 19);
+            this.lblSalirMenu.Location = new System.Drawing.Point(878, 19);
             this.lblSalirMenu.Name = "lblSalirMenu";
             this.lblSalirMenu.Size = new System.Drawing.Size(72, 69);
             this.lblSalirMenu.TabIndex = 6;
@@ -413,7 +415,7 @@
             this.lblFacturas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.Location = new System.Drawing.Point(-255, 34);
+            this.lblFacturas.Location = new System.Drawing.Point(141, 304);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(264, 131);
             this.lblFacturas.TabIndex = 11;
@@ -430,7 +432,7 @@
             this.lblConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfiguracion.Image = global::Proyecto_TPVS._0.Properties.Resources.ajustes;
-            this.lblConfiguracion.Location = new System.Drawing.Point(85, 27);
+            this.lblConfiguracion.Location = new System.Drawing.Point(876, 566);
             this.lblConfiguracion.Name = "lblConfiguracion";
             this.lblConfiguracion.Size = new System.Drawing.Size(69, 69);
             this.lblConfiguracion.TabIndex = 10;
@@ -446,7 +448,7 @@
             this.lblAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlmacen.Location = new System.Drawing.Point(15, -110);
+            this.lblAlmacen.Location = new System.Drawing.Point(411, 160);
             this.lblAlmacen.Name = "lblAlmacen";
             this.lblAlmacen.Size = new System.Drawing.Size(264, 131);
             this.lblAlmacen.TabIndex = 9;
@@ -463,7 +465,7 @@
             this.lblReservas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblReservas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(15, 34);
+            this.lblReservas.Location = new System.Drawing.Point(411, 304);
             this.lblReservas.Name = "lblReservas";
             this.lblReservas.Size = new System.Drawing.Size(264, 131);
             this.lblReservas.TabIndex = 8;
@@ -480,7 +482,7 @@
             this.lblComedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblComedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComedor.Location = new System.Drawing.Point(-255, -110);
+            this.lblComedor.Location = new System.Drawing.Point(141, 160);
             this.lblComedor.Name = "lblComedor";
             this.lblComedor.Size = new System.Drawing.Size(264, 131);
             this.lblComedor.TabIndex = 7;
@@ -496,9 +498,10 @@
             this.panelIniciarSesion.Controls.Add(this.lblSalir);
             this.panelIniciarSesion.Controls.Add(this.groupBox1);
             this.panelIniciarSesion.Controls.Add(this.lblRegistrarse);
-            this.panelIniciarSesion.Location = new System.Drawing.Point(401, 5);
+            this.panelIniciarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelIniciarSesion.Location = new System.Drawing.Point(0, 0);
             this.panelIniciarSesion.Name = "panelIniciarSesion";
-            this.panelIniciarSesion.Size = new System.Drawing.Size(151, 96);
+            this.panelIniciarSesion.Size = new System.Drawing.Size(966, 658);
             this.panelIniciarSesion.TabIndex = 9;
             // 
             // lblSalir
@@ -506,7 +509,7 @@
             this.lblSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSalir.Image = global::Proyecto_TPVS._0.Properties.Resources.apagar;
-            this.lblSalir.Location = new System.Drawing.Point(63, 19);
+            this.lblSalir.Location = new System.Drawing.Point(878, 19);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(72, 69);
             this.lblSalir.TabIndex = 5;
@@ -520,9 +523,10 @@
             this.panelComedor.Controls.Add(this.lblCantMesas);
             this.panelComedor.Controls.Add(this.txtCantMesas);
             this.panelComedor.Controls.Add(this.lblAtrasComedor);
-            this.panelComedor.Location = new System.Drawing.Point(193, 2);
+            this.panelComedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelComedor.Location = new System.Drawing.Point(0, 0);
             this.panelComedor.Name = "panelComedor";
-            this.panelComedor.Size = new System.Drawing.Size(147, 91);
+            this.panelComedor.Size = new System.Drawing.Size(966, 658);
             this.panelComedor.TabIndex = 10;
             this.panelComedor.Visible = false;
             // 
@@ -591,9 +595,10 @@
             this.panelReservas.Controls.Add(this.listBoxReservas);
             this.panelReservas.Controls.Add(this.btnAñadirFecha);
             this.panelReservas.Controls.Add(this.lblAtrasReservas);
-            this.panelReservas.Location = new System.Drawing.Point(12, 11);
+            this.panelReservas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelReservas.Location = new System.Drawing.Point(0, 0);
             this.panelReservas.Name = "panelReservas";
-            this.panelReservas.Size = new System.Drawing.Size(167, 96);
+            this.panelReservas.Size = new System.Drawing.Size(966, 658);
             this.panelReservas.TabIndex = 11;
             this.panelReservas.Visible = false;
             // 
@@ -603,7 +608,7 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Location = new System.Drawing.Point(-148, -120);
+            this.panel2.Location = new System.Drawing.Point(252, 161);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(438, 33);
             this.panel2.TabIndex = 22;
@@ -649,7 +654,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(-151, -208);
+            this.label11.Location = new System.Drawing.Point(249, 73);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 16);
             this.label11.TabIndex = 21;
@@ -659,7 +664,7 @@
             // 
             this.dateTPReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTPReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTPReserva.Location = new System.Drawing.Point(-96, -213);
+            this.dateTPReserva.Location = new System.Drawing.Point(304, 68);
             this.dateTPReserva.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTPReserva.MinDate = new System.DateTime(2019, 5, 1, 0, 0, 0, 0);
             this.dateTPReserva.Name = "dateTPReserva";
@@ -670,7 +675,7 @@
             // 
             this.txtNombreReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreReserva.Location = new System.Drawing.Point(-3, -300);
+            this.txtNombreReserva.Location = new System.Drawing.Point(397, -19);
             this.txtNombreReserva.MaxLength = 20;
             this.txtNombreReserva.Name = "txtNombreReserva";
             this.txtNombreReserva.Size = new System.Drawing.Size(156, 22);
@@ -681,7 +686,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(-151, -297);
+            this.label10.Location = new System.Drawing.Point(249, -16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 18;
@@ -692,7 +697,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, -254);
+            this.label9.Location = new System.Drawing.Point(414, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 16);
             this.label9.TabIndex = 17;
@@ -703,7 +708,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(-151, -251);
+            this.label8.Location = new System.Drawing.Point(249, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 16;
@@ -713,7 +718,7 @@
             // 
             this.txtMinutosReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMinutosReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinutosReserva.Location = new System.Drawing.Point(78, -257);
+            this.txtMinutosReserva.Location = new System.Drawing.Point(478, 24);
             this.txtMinutosReserva.MaxLength = 2;
             this.txtMinutosReserva.Name = "txtMinutosReserva";
             this.txtMinutosReserva.Size = new System.Drawing.Size(75, 22);
@@ -725,7 +730,7 @@
             // 
             this.txtHoraReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtHoraReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraReserva.Location = new System.Drawing.Point(-96, -256);
+            this.txtHoraReserva.Location = new System.Drawing.Point(304, 25);
             this.txtHoraReserva.MaxLength = 2;
             this.txtHoraReserva.Name = "txtHoraReserva";
             this.txtHoraReserva.Size = new System.Drawing.Size(76, 22);
@@ -737,7 +742,7 @@
             // 
             this.btnEliminarFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminarFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFecha.Location = new System.Drawing.Point(195, -233);
+            this.btnEliminarFecha.Location = new System.Drawing.Point(595, 48);
             this.btnEliminarFecha.Name = "btnEliminarFecha";
             this.btnEliminarFecha.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarFecha.TabIndex = 6;
@@ -751,7 +756,7 @@
             this.listBoxReservas.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxReservas.FormattingEnabled = true;
             this.listBoxReservas.ItemHeight = 15;
-            this.listBoxReservas.Location = new System.Drawing.Point(-148, -84);
+            this.listBoxReservas.Location = new System.Drawing.Point(252, 197);
             this.listBoxReservas.Name = "listBoxReservas";
             this.listBoxReservas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxReservas.Size = new System.Drawing.Size(438, 394);
@@ -761,7 +766,7 @@
             // 
             this.btnAñadirFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAñadirFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadirFecha.Location = new System.Drawing.Point(195, -275);
+            this.btnAñadirFecha.Location = new System.Drawing.Point(595, 6);
             this.btnAñadirFecha.Name = "btnAñadirFecha";
             this.btnAñadirFecha.Size = new System.Drawing.Size(75, 23);
             this.btnAñadirFecha.TabIndex = 5;
@@ -787,9 +792,10 @@
             this.panelConfiguracion.Controls.Add(this.lblBorrarUsuario);
             this.panelConfiguracion.Controls.Add(this.lblCerrarSesion);
             this.panelConfiguracion.Controls.Add(this.lblAtrasConfiguracion);
-            this.panelConfiguracion.Location = new System.Drawing.Point(1199, 134);
+            this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(144, 107);
+            this.panelConfiguracion.Size = new System.Drawing.Size(966, 658);
             this.panelConfiguracion.TabIndex = 12;
             this.panelConfiguracion.Visible = false;
             // 
@@ -799,7 +805,7 @@
             this.lblBorrarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBorrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBorrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrarUsuario.Location = new System.Drawing.Point(0, -116);
+            this.lblBorrarUsuario.Location = new System.Drawing.Point(411, 160);
             this.lblBorrarUsuario.Name = "lblBorrarUsuario";
             this.lblBorrarUsuario.Size = new System.Drawing.Size(264, 131);
             this.lblBorrarUsuario.TabIndex = 11;
@@ -815,7 +821,7 @@
             this.lblCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.Location = new System.Drawing.Point(-270, -116);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(141, 160);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
             this.lblCerrarSesion.Size = new System.Drawing.Size(264, 131);
             this.lblCerrarSesion.TabIndex = 10;
@@ -854,9 +860,10 @@
             this.panelAlmacen.Controls.Add(this.label2);
             this.panelAlmacen.Controls.Add(this.listBoxTablas);
             this.panelAlmacen.Controls.Add(this.lblAtrasAlmacen);
-            this.panelAlmacen.Location = new System.Drawing.Point(589, 5);
+            this.panelAlmacen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAlmacen.Location = new System.Drawing.Point(0, 0);
             this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(161, 110);
+            this.panelAlmacen.Size = new System.Drawing.Size(966, 658);
             this.panelAlmacen.TabIndex = 13;
             this.panelAlmacen.Visible = false;
             // 
@@ -1042,9 +1049,10 @@
             this.panelFacturas.Controls.Add(this.btnBorrarFactura);
             this.panelFacturas.Controls.Add(this.listBoxFacturas);
             this.panelFacturas.Controls.Add(this.lblAtrasFacturas);
-            this.panelFacturas.Location = new System.Drawing.Point(1226, 3);
+            this.panelFacturas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFacturas.Location = new System.Drawing.Point(0, 0);
             this.panelFacturas.Name = "panelFacturas";
-            this.panelFacturas.Size = new System.Drawing.Size(226, 125);
+            this.panelFacturas.Size = new System.Drawing.Size(966, 658);
             this.panelFacturas.TabIndex = 14;
             this.panelFacturas.Visible = false;
             // 
@@ -1052,7 +1060,7 @@
             // 
             this.txtFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFactura.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFactura.Location = new System.Drawing.Point(50, -223);
+            this.txtFactura.Location = new System.Drawing.Point(420, 44);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.ReadOnly = true;
@@ -1064,7 +1072,7 @@
             // 
             this.btnBorrarFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBorrarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarFactura.Location = new System.Drawing.Point(-315, 229);
+            this.btnBorrarFactura.Location = new System.Drawing.Point(55, 496);
             this.btnBorrarFactura.Name = "btnBorrarFactura";
             this.btnBorrarFactura.Size = new System.Drawing.Size(252, 48);
             this.btnBorrarFactura.TabIndex = 12;
@@ -1078,7 +1086,7 @@
             this.listBoxFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxFacturas.FormattingEnabled = true;
             this.listBoxFacturas.ItemHeight = 16;
-            this.listBoxFacturas.Location = new System.Drawing.Point(-315, -223);
+            this.listBoxFacturas.Location = new System.Drawing.Point(55, 44);
             this.listBoxFacturas.Name = "listBoxFacturas";
             this.listBoxFacturas.Size = new System.Drawing.Size(252, 404);
             this.listBoxFacturas.TabIndex = 11;
@@ -1103,9 +1111,10 @@
             this.panelBorrarUsuario.Controls.Add(this.label1);
             this.panelBorrarUsuario.Controls.Add(this.listBoxUsuarios);
             this.panelBorrarUsuario.Controls.Add(this.lblAtrasBorrarUsuario);
-            this.panelBorrarUsuario.Location = new System.Drawing.Point(791, 5);
+            this.panelBorrarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBorrarUsuario.Location = new System.Drawing.Point(0, 0);
             this.panelBorrarUsuario.Name = "panelBorrarUsuario";
-            this.panelBorrarUsuario.Size = new System.Drawing.Size(149, 109);
+            this.panelBorrarUsuario.Size = new System.Drawing.Size(966, 658);
             this.panelBorrarUsuario.TabIndex = 15;
             // 
             // btnBorrarUsuario
@@ -1169,9 +1178,10 @@
             this.panelMesa.Controls.Add(this.lblTapas);
             this.panelMesa.Controls.Add(this.lblBebidas);
             this.panelMesa.Controls.Add(this.listBoxNota);
-            this.panelMesa.Location = new System.Drawing.Point(29, 262);
+            this.panelMesa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMesa.Location = new System.Drawing.Point(0, 0);
             this.panelMesa.Name = "panelMesa";
-            this.panelMesa.Size = new System.Drawing.Size(1331, 623);
+            this.panelMesa.Size = new System.Drawing.Size(966, 658);
             this.panelMesa.TabIndex = 16;
             // 
             // txtCalc
@@ -1258,9 +1268,9 @@
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelDatos);
             this.flowLayoutPanelContainer.Controls.Add(this.flowLayoutPanelCalc);
             this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(762, 0);
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(397, 0);
             this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
-            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 623);
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(569, 658);
             this.flowLayoutPanelContainer.TabIndex = 22;
             // 
             // flowLayoutPanelDatos
@@ -1665,7 +1675,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 813);
+            this.ClientSize = new System.Drawing.Size(966, 658);
             this.Controls.Add(this.panelIniciarSesion);
             this.Controls.Add(this.panelRegistrarUsuario);
             this.Controls.Add(this.panelMenu);
