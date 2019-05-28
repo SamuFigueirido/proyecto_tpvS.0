@@ -428,41 +428,39 @@ namespace Proyecto_TPVS._0
             txtUsuario.Text = "";
             txtContraseña.Text = "";
             txtCantMesas.Text = "";
-            try
+
+            if (mesas != null)
             {
                 for (int i = mesas.Count - 1; i >= 0; i--)
                 {
-                    mesas.RemoveAt(i);
+                    if (mesas[i] != null)
+                    {
+                        mesas.RemoveAt(i);
+                    }
                 }
             }
-            catch (NullReferenceException)
-            {
-
-            }
-            try
+            if (panelesMesas != null)
             {
                 for (int i = panelesMesas.Count - 1; i >= 0; i--)
                 {
-                    panelesMesas.RemoveAt(i);
+                    if (panelesMesas[i] != null)
+                    {
+                        panelesMesas.RemoveAt(i);
+                    }
                 }
             }
-            catch (NullReferenceException)
-            {
-
-            }
-            try
+            if (panelComedor.Controls != null)
             {
                 for (int i = panelComedor.Controls.Count - 1; i >= 0; i--)
                 {
                     if (panelComedor.Controls[i] is Label && ((Label)panelComedor.Controls[i]).Tag.ToString().Contains("Mesa"))
                     {
-                        panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                        if (panelComedor.Controls[i] != null)
+                        {
+                            panelComedor.Controls.Remove(panelComedor.Controls[i]);
+                        }
                     }
                 }
-            }
-            catch (NullReferenceException)
-            {
-
             }
             comensales.Clear();
             saveFactura(listBoxFacturas);
@@ -632,7 +630,8 @@ namespace Proyecto_TPVS._0
                     txtTotal.Text = total.ToString();
                     txtCalc.Text = "0";
                 }
-            }catch (OverflowException)
+            }
+            catch (OverflowException)
             {
                 MessageBox.Show("Valor demasiado grande.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -812,13 +811,13 @@ namespace Proyecto_TPVS._0
 
         private void listBoxFacturas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                txtFactura.Text = ((Factura)listBoxFacturas.SelectedItem).ToString2();
-            }
-            catch (NullReferenceException)
+            if (listBoxFacturas.SelectedItem == null)
             {
                 txtFactura.Text = "";
+            }
+            else
+            {
+                txtFactura.Text = ((Factura)listBoxFacturas.SelectedItem).ToString2();
             }
         }
 
