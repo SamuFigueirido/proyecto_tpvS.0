@@ -539,38 +539,42 @@ namespace Proyecto_TPVS._0
                 }
                 else
                 {
-                    if (Convert.ToInt32(txtCantidad.Text.Trim()) == 0)
+                    try
                     {
-                        MessageBox.Show("La cantidad no puede ser cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        if (Convert.ToInt32(txtCantidad.Text.Trim()) < 0 || Convert.ToDecimal(txtPrecio.Text.Trim()) < 0)
+                        if (Convert.ToInt32(txtCantidad.Text.Trim()) == 0)
                         {
-                            MessageBox.Show("Los valores no pueden ser negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("La cantidad no puede ser cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            if (txtNombre.Text.Trim().Length > 20 || txtCantidad.Text.Trim().Length > 5 || txtPrecio.Text.Trim().Length > 6)
+                            if (Convert.ToInt32(txtCantidad.Text.Trim()) < 0 || Convert.ToDecimal(txtPrecio.Text.Trim()) < 0)
                             {
-                                MessageBox.Show("Alguno de los valores introducidos\nes demasiado grande.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Los valores no pueden ser negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
-                                try
+                                if (txtNombre.Text.Trim().Length > 20 || txtCantidad.Text.Trim().Length > 5 || txtPrecio.Text.Trim().Length > 6)
+                                {
+                                    MessageBox.Show("Alguno de los valores introducidos\nes demasiado grande.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
                                 {
                                     connectionSQL.insertDatos(listBoxTablas.SelectedValue.ToString(), txtNombre.Text.Trim(), Convert.ToInt32(txtCantidad.Text.Trim()), Convert.ToDouble(txtPrecio.Text));
                                     listBoxDatos.DataSource = connectionSQL.datosAlmacen(listBoxTablas.SelectedValue.ToString());
                                     txtNombre.Text = "";
                                     txtCantidad.Text = "";
                                     txtPrecio.Text = "";
-                                }
-                                catch (OverflowException)
-                                {
-                                    MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                                 }
                             }
                         }
+                    }
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Error al introducir los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtNombre.Text = "";
+                        txtCantidad.Text = "";
+                        txtPrecio.Text = "";
                     }
                 }
             }
@@ -696,7 +700,7 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                int hora=0, minutos=0;
+                int hora = 0, minutos = 0;
                 try
                 {
                     hora = Convert.ToInt32(txtHoraReserva.Text.Trim());
