@@ -688,6 +688,7 @@ namespace Proyecto_TPVS._0
 
         private void btnAñadirFecha_Click(object sender, EventArgs e)
         {
+            bool flag = true;
             string nombreReserva = txtNombreReserva.Text.Trim();
             if (nombreReserva == "")
             {
@@ -707,6 +708,7 @@ namespace Proyecto_TPVS._0
                 catch (FormatException)
                 {
                     MessageBox.Show("Hora introducida no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = false;
                 }
                 try
                 {
@@ -719,12 +721,16 @@ namespace Proyecto_TPVS._0
                 catch (FormatException)
                 {
                     MessageBox.Show("Minutos introducidos no válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = false;
                 }
                 string horaReserva = String.Format("{0,0:D2}:{1,0:D2}", hora, minutos);
                 string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
                 Console.WriteLine("Nombre: " + nombreReserva + "\nFecha: " + fechaReserva + "\nHora: " + horaReserva);
 
-                listBoxReservas.Items.Add(String.Format("{0, -20}{1, 9}{2, 15}", nombreReserva, fechaReserva, horaReserva));
+                if (flag)
+                {
+                    listBoxReservas.Items.Add(String.Format("{0, -20}{1, 9}{2, 15}", nombreReserva, fechaReserva, horaReserva));
+                }
                 txtHoraReserva.Text = "";
                 txtMinutosReserva.Text = "";
                 txtNombreReserva.Text = "";
