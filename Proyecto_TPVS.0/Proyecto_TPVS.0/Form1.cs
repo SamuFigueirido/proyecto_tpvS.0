@@ -695,15 +695,30 @@ namespace Proyecto_TPVS._0
             }
             else
             {
-                int hora = Convert.ToInt32(txtHoraReserva.Text.Trim());
-                if (hora >= 24)
+                int hora=0, minutos=0;
+                try
                 {
-                    hora = 0;
+                    hora = Convert.ToInt32(txtHoraReserva.Text.Trim());
+                    if (hora >= 24)
+                    {
+                        hora = 0;
+                    }
                 }
-                int minutos = Convert.ToInt32(txtMinutosReserva.Text.Trim());
-                if (minutos >= 60)
+                catch (FormatException)
                 {
-                    minutos = 0;
+                    MessageBox.Show("Hora introducida no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                try
+                {
+                    minutos = Convert.ToInt32(txtMinutosReserva.Text.Trim());
+                    if (minutos >= 60)
+                    {
+                        minutos = 0;
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Minutos introducidos no válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 string horaReserva = String.Format("{0,0:D2}:{1,0:D2}", hora, minutos);
                 string fechaReserva = dateTPReserva.Value.Day + "/" + dateTPReserva.Value.Month + "/" + dateTPReserva.Value.Year;
